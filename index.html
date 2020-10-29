@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>CyberPop!</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="styles.css">
+	</head>
+	<body>
+		<header>
+			<div id="title">
+				<h1>Cyber<span style="color: rgb(153, 51, 255);">Pop!</span></h1>
+				<h5>サイバー<span style="color: rgb(153, 51, 255);">ポップ！</span></h5>
+			</div>
+			<div id="intro">
+				<h3>Teaching technology <span style="color: rgb(153, 51, 255);">for absolute beginners</span></h3>
+			</div>
+		</header>
+
+		<div class="presentation">
+			<article class="show" style="display: inline; background: #222;">
+				<h3 class="show_title">HTML</h3>
+				<p>Every webpage you visit is most and foremost an HTML document.<br>It is what describes the structure of a webpage to your web browser, so think of it as its skeleton!</p>
+			</article>
+			<article class="show" style="display: inline; background: #222;">
+				<h3 class="show_title">CSS</h3>
+				<p>CSS is what makes the webpage beautiful and organised!<br>It completely changes how your web browser renders the HTML document with shaping, positionning and colors.</p>
+			</article>
+			<article class="show" style="display: inline; background: #222;">
+				<h3 class="show_title">JS</h3>
+				<p>Webpages are usually better when you can interact with them. That's one of many reasons why JS is used on so many websites!<br>Curious to see all the other reasons?</p>
+			</article>
+		</div>
+
+		<div class="presentation">
+			<button onclick="showElement(0)" style="display: inline">v Show more v</button> 
+			<button onclick="showElement(1)" style="display: inline">v Show more v</button>
+			<button onclick="showElement(2)" style="display: inline">v Show more v</button>
+		</div>
+
+		<script type="text/javascript"> 
+			function showElement(e) {
+				var shows = document.querySelectorAll('.show')
+				var buttons = document.querySelectorAll('button')
+				var hiddens = document.querySelectorAll('.hidden')
+				var x = false
+				for (let i = 0; i < shows.length; i++) {if (shows[i].style.display == "none") {x = true}}
+				if (x) {
+					for (let i = 0; i < shows.length; i++) {
+						shows[i].style.display = "inline"
+						shows[i].style.background = "#222"
+						buttons[e].innerHTML = "v Show more v"
+						buttons[i].style.display = "inline"
+					}
+					for (let i = 0; i < hiddens.length; i++) {hiddens[i].style.display = "none"}
+				} else {
+					for (let i = 0; i < shows.length; i++) {if (e !== i) {
+						shows[i].style.display = "none"
+						buttons[i].style.display = "none"
+					}}
+					shows[e].style.background = "#333"
+					buttons[e].innerHTML = "^ Show less ^"
+					hiddens[e].style.display = "block"
+				}
+			}
+		</script> 
+
+		<div class="hidden" style="display: none;">
+			<li>
+				<ul><a href="#">The initial structure of your own HTML document</a></ul>
+				<ul><a href="#">Something</a></ul>
+				<ul><a href="#">Something</a></ul>
+			</li>
+		</div>
+		<div class="hidden" style="display: none">
+			<li>
+				<ul><a href="#">Make the HTML use your own CSS file</a></ul>
+				<ul><a href="#">Something</a></ul>
+				<ul><a href="#">Something</a></ul>
+			</li>
+		</div>
+		<div class="hidden" style="display: none">
+			<li>
+				<ul><a href="#">Execute JS code by clicking on a HTML element</a></ul>
+				<ul><a href="#">Something</a></ul>
+				<ul><a href="#">Something</a></ul>
+			</li>
+		</div>
+
+		<footer>
+			<h3 style="margin-bottom: 0px;">Made by <a href="https://wheretofind.me/@Taevas" target="_blank">Taevas</a></h3>
+			<p style="margin-top: 5px;">Everything related to this website can be found on its <a href="." target="_blank">Github repository</a></p>
+			<a href="http://www.wtfpl.net/"><img src="http://www.wtfpl.net/wp-content/uploads/2012/12/wtfpl-badge-4.png" width="80" height="15" alt="WTFPL"/></a>
+		</footer>
+	</body>
+</html>
