@@ -1,41 +1,5 @@
-* {
-	font-family: Segoe UI, SegoeUI, Arial, sans-serif;
-	text-decoration: none;
-	text-align: center;
-	color: white;
-}
-
 a {
 	color: rgb(153, 51, 255);
-}
-
-body {
-	margin: 0px;
-	padding: 0px;
-	background-color: #141414;
-}
-
-header {
-	border-bottom: 1px solid
-}
-
-header h1 {
-	font-size: 50px;
-	margin-bottom: 0px;
-}
-
-header h5 {
-	font-size: 15px;
-	margin-top: 0px;
-}
-
-header h3 {
-	font-weight: bold;
-	margin-bottom: 2em;
-}
-
-#title {
-
 }
 
 .presentation {
@@ -59,6 +23,7 @@ header h3 {
 .show p {
 	font-size: 17px;
 	margin-bottom: 40px;
+	padding: 0px 20px;
 }
 
 button {
@@ -104,9 +69,5 @@ button:hover {
 }
 
 .hidden ul a:visited {
-	color: rgb(153, 51, 255);
-}
-
-footer {
-	border-top: solid 1px;
+	color: rgb(180, 105, 255);
 }

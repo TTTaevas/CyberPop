@@ -1,0 +1,11 @@
+#lesson {
+	display: inline-block;
+	margin: 0 50px;
+	font-size: 18px;
+}
+
+#lesson img {
+	background-color: black;
+	padding: 5px;
+	border: 1px solid;
+}

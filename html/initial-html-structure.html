@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>The initial structure of your own HTML document</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="../header-footer.css">
+		<link rel="stylesheet" type="text/css" href="../lessons.css">
+	</head>
+	<body>
+		<header>
+			<div id="title">
+				<h1>Cyber<span style="color: rgb(153, 51, 255);">Pop!</span></h1>
+				<h5>サイバー<span style="color: rgb(153, 51, 255);">ポップ！</span></h5>
+			</div>
+			<div id="intro">
+				<h3>Teaching technology <span style="color: rgb(153, 51, 255);">for absolute beginners</span></h3>
+			</div>
+		</header>
+
+		<div id="lesson">
+			<p>The webpage you are visiting right now is most and foremost a file with the .html extension and valid content so it can be rendered by whatever web browser you are currently in, no matter its window size.<br>This file is hosted somewhere in the world on a computer, and you can see of what it is made by right-clicking on it in your web browser, and choosing the "Inspect element" option.<br>However, you will hardly understand anything as you don't really know anything about HTML yet, so let's first see what every HTML files' content have in common!</p>
+
+			<a href="initial-html-structure-example.html" target="_blank"><img src="../images/html-1-1.png" alt="Default HTML document in Sublime Text 3"></a>
+
+			<p>The very first element is <span style="color: rgb(180, 105, 255);">&lt;!DOCTYPE html&gt;</span> which is something needed at the top of every HTML file to make it somewhat "valid". Don't question how come it is necessary, just remember it is, ok?<br>Before the fifth and current version of HTML, it used to be more complex: <span style="color: rgb(180, 105, 255);">&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"&gt;</span></p>
+
+			<p>The second element is <span style="color: rgb(180, 105, 255);">&lt;html&gt;</span>, but may I take your attention to the very last line of the file, as it is related to this element? It is written <span style="color: rgb(180, 105, 255);">&lt;/html&gt;</span> there. Basically, everything after <span style="color: rgb(180, 105, 255);">&lt;html&gt;</span> and everything before <span style="color: rgb(180, 105, 255);">&lt;/html&gt;</span> is where everything will be written in, with the only exception of <span style="color: rgb(180, 105, 255);">&lt;!DOCTYPE html&gt;</span> which you have already met. Anything else that is not written between those two is simply invalid.</p>
+
+			<p>By the way, everything that is written like <span style="color: rgb(180, 105, 255);">&lt;something&gt;</span> is called a start tag, while everything that is written like <span style="color: rgb(180, 105, 255);">&lt;/something&gt;</span> is called an end tag. Together, they form an element! Some rare elements only need a start tag.</p>
+
+			<p>The third element is the <span style="color: rgb(180, 105, 255);">&lt;head&gt;</span> element, it's basically where you're gonna put about everything related to the webpage that isn't meant to be visible ever in it, such as the title, the fonts, the character encoding and sometimes, the scripts necessary for interaction.</p>
+
+			<p>In this example, the <span style="color: rgb(180, 105, 255);">&lt;head&gt;</span> element contains the fourth element we're gonna talk about, and it is the <span style="color: rgb(180, 105, 255);">&lt;title&gt;</span> one! Its purpose is straight-forward, and how to use it is really simple. Pretty much every webpage you visit in your web browser has a <span style="color: rgb(180, 105, 255);">&lt;title&gt;</span> element, and it is the text between the start tag and the end tag that makes its tab name.<br>So, this here webpage has a <span style="color: rgb(180, 105, 255);">&lt;title&gt;</span> element of "The initial structure of your own HTML document" <!--currently anyway--> and if you were to run the example into your web browser, you will see that the webpage's tab name would be "CyberPop!", what a cool name.</p>
+
+			<p>The next element is the <span style="color: rgb(180, 105, 255);">&lt;body&gt;</span> one, which is yet again a very simple one, as it can be considered as the direct opposite to <span style="color: rgb(180, 105, 255);">&lt;head&gt;</span>. It is where you put all the elements that are or will become visible.<br>And you also can put your scripts there, it's up to preference.</p>
+
+			<p>The last element featured in this example conveniently happens to be in the <span style="color: rgb(180, 105, 255);">&lt;body&gt;</span> element. Let's talk about the <span style="color: rgb(180, 105, 255);">&lt;p&gt;</span> element!<br>This is with this element that you put paragraphs, or text with less importance than your webpage's titles, usually called "headings". More on those for another time!</p>
+		</div>
+
+		<footer>
+			<h3 style="margin-bottom: 0px;">Made by <a href="https://wheretofind.me/@Taevas" target="_blank">Taevas</a></h3>
+			<p style="margin-top: 5px;">Everything related to this website can be found on its <a href="." target="_blank">Github repository</a></p>
+			<a href="http://www.wtfpl.net/"><img src="http://www.wtfpl.net/wp-content/uploads/2012/12/wtfpl-badge-4.png" width="80" height="15" alt="WTFPL"/></a>
+		</footer>
+	</body>
+</html>
