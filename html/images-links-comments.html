@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Images, links and comments</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="../header-footer.css">
+		<link rel="stylesheet" type="text/css" href="../lessons.css">
+	</head>
+	<body>
+		<header>
+			<div id="title">
+				<h1>Cyber<span style="color: rgb(153, 51, 255);">Pop!</span></h1>
+				<h5>サイバー<span style="color: rgb(153, 51, 255);">ポップ！</span></h5>
+			</div>
+			<div id="intro">
+				<h3>Teaching technology <span style="color: rgb(153, 51, 255);">for absolute beginners</span></h3>
+			</div>
+		</header>
+
+		<div id="lesson">
+			<p>Visuals are important. Not only on the side of what the web browser renders, but also on the inside of the HTML document!<br>Let's take a look at how to add images and links on the web browser's side, and how to add comments in order to make our HTML file more organized.</p>
+
+			<a href="images-links-comments-example.html" target="_blank"><img src="../images/html-3-1.png" alt="Nothing yet."></a>
+
+			<p>Usually, you want to add an image to your website using the <span style="color: rgb(180, 105, 255);">&lt;img&gt;</span> tag. But using it alone is useless if you do not add the necessary attributes! The <span style="color: rgb(180, 105, 255);">&lt;img&gt;</span> element doesn't have an end tag, which means that you need to use attributes in order to make it so a web browser renders your <span style="color: rgb(180, 105, 255);">&lt;img&gt;</span> element as an actual image.</p>
+
+			<p>First of all, you want to tell the HTML file what image it is that you want rendered by a web browser. It is for that reason that the <span style="color: rgb(180, 105, 255);">src</span> attribute exists! The value you would give to this element would either be an URL to an image file, or the position of the file relative to the HTML file. I'm afraid the latter may be too complicated for now, so you should only focus on using URLs with the <span style="color: rgb(180, 105, 255);">src</span> attribute until you decide to properly learn HTML.<br>The syntax is similar to <span style="color: rgb(180, 105, 255);">style</span>, as it is simply <span style="color: rgb(180, 105, 255);">src="url"</span>.<br>So far, your <span style="color: rgb(180, 105, 255);">&lt;img&gt;</span> tag would be something like <span style="color: rgb(180, 105, 255);">&lt;img src="https://www.w3schools.com/images/lamp.jpg"&gt;</span>, but it's still missing another attribute.</p>
+
+			<p>Introducing the <span style="color: rgb(180, 105, 255);">alt</span> attribute! Because a web browser may not render the image for some reason, this attribute exists.</p>
+
+			<p>When the web browser fails to render an image, it will try to render the value inside the <span style="color: rgb(180, 105, 255);">alt</span> attribute instead, which would be text.<br>You should always put text that describes the image that should have been rendered as the value of <span style="color: rgb(180, 105, 255);">alt</span>.</p>
+
+			<p>Below is the result of <span style="color: rgb(180, 105, 255);">&lt;img src="https://www.w3schools.com/images/lamp.jpg" alt="A lamp icon"&gt;</span>:</p>
+
+			<img src="https://www.w3schools.com/images/lamp.jpg" alt="Congrats! You figured out that the alt element is different, somehow!">
+
+			<p>And below is the result of <span style="color: rgb(180, 105, 255);">&lt;img src="https://nonexistenturl.com/images/cat.png" alt="A very cute cat!"&gt;</span>:</p>
+
+			<img src="https://nonexistenturl.com/images/cat.png" alt="A very cute cat!">
+
+			<p>Your web browser has failed to render the above image because it simply doesn't exist. Too bad, you couldn't see how cute that cat was.</p>
+
+			<p>In the example in the image at the very top, you can see if you click it that it features two elements, and if you click on them, it opens a link. Introducing the <span style="color: rgb(180, 105, 255);">&lt;a&gt;</span> element!<br>Everything that is inside that element will send the user onto another webpage (or somewhere else on the same webpage) when clicked onto!</p>
+
+			<p>The <span style="color: rgb(180, 105, 255);">&lt;a&gt;</span> element requires one attribute, more specifically, the <span style="color: rgb(180, 105, 255);">href</span> attribute.<br>How it works is really simple, it works the same as the <span style="color: rgb(180, 105, 255);">src</span> attribute for the <span style="color: rgb(180, 105, 255);">&lt;img&gt;</span> start tag. Its value is the URL you want the user to see. That's how it works in the example too!</p>
+
+			<p>But in the example, when you click on the image, it opens the URL into a new tab, while when you click on the blue text, it opens the URL into the same tab!<br>There is an optional attribute to <span style="color: rgb(180, 105, 255);">&lt;a&gt;</span>, called <span style="color: rgb(180, 105, 255);">target</span>.</p>
+
+			<p><span style="color: rgb(180, 105, 255);">target</span>, for the <span style="color: rgb(180, 105, 255);">&lt;a&gt;</span> start tag, has only one value you should remember for now, which is <span style="color: rgb(180, 105, 255);">_blank</span>. Simply adding that attribute with this value will make it so the URL is opened in another, new and fresh tab!<br>Just so you know, you can put as many elements in the <span style="color: rgb(180, 105, 255);">&lt;a&gt;</span> element as you want, and you can also put in simple text, without the need for a <span style="color: rgb(180, 105, 255);">&lt;p&gt;</span> element.</p>
+
+			<p>Have you ever heard of comments? In HTML files, they're used to tell things to whoever reads them that will not be rendered by the web browser.<br>For example, in the example at the very top, there are three comments that are not rendered. They can be placed about everywhere, but they should be placed at a place where they stand out from all the stuff that ain't comments.</p>
+
+			<p>A comment starts with <span style="color: rgb(180, 105, 255);">&lt;!--</span> and ends with <span style="color: rgb(180, 105, 255);">--&gt;</span>. It can take from one line to as many as you want.<br>That's really it. See, all that stuff isn't so complex after all!</p>
+		</div>
+
+		<footer>
+			<h3 style="margin-bottom: 0px;">Made by <a href="https://wheretofind.me/@Taevas" target="_blank">Taevas</a></h3>
+			<p style="margin-top: 5px;">Everything related to this website can be found on its <a href="." target="_blank">Github repository</a></p>
+			<a href="http://www.wtfpl.net/"><img src="http://www.wtfpl.net/wp-content/uploads/2012/12/wtfpl-badge-4.png" width="80" height="15" alt="WTFPL"/></a>
+		</footer>
+	</body>
+</html>
