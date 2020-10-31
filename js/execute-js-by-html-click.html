@@ -5,17 +5,12 @@
 		<meta charset="utf-8">
 		<link rel="stylesheet" type="text/css" href="../header-footer.css">
 		<link rel="stylesheet" type="text/css" href="../lessons.css">
+		<script type="text/javascript" src="../jquery-3.5.1.min.js"></script>
+		<script>$(function() {$("#header").load("../header.html")})</script> <!--Load header with jquery-->
+		<script>$(function() {$("#footer").load("../footer.html")})</script> <!--Load footer with jquery-->
 	</head>
 	<body>
-		<header>
-			<div id="title">
-				<h1>Cyber<span style="color: rgb(153, 51, 255);">Pop!</span></h1>
-				<h5>サイバー<span style="color: rgb(153, 51, 255);">ポップ！</span></h5>
-			</div>
-			<div id="intro">
-				<h3>Teaching technology <span style="color: rgb(153, 51, 255);">for absolute beginners</span></h3>
-			</div>
-		</header>
+		<div id="header"></div> <!--Load header with jquery-->
 
 		<div id="lesson">
 			<p>Nothing yet.</p>
@@ -23,10 +18,6 @@
 			<a href="execute-js-by-html-click-example.html" target="_blank"><img src="../images/js-1-1.png" alt="Nothing yet."></a>
 		</div>
 
-		<footer>
-			<h3 style="margin-bottom: 0px;">Made by <a href="https://wheretofind.me/@Taevas" target="_blank">Taevas</a></h3>
-			<p style="margin-top: 5px;">Everything related to this website can be found on its <a href="." target="_blank">Github repository</a></p>
-			<a href="http://www.wtfpl.net/"><img src="http://www.wtfpl.net/wp-content/uploads/2012/12/wtfpl-badge-4.png" width="80" height="15" alt="WTFPL"/></a>
-		</footer>
+		<div id="footer"></div> <!--Load footer with jquery-->
 	</body>
 </html>
