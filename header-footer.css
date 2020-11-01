@@ -5,10 +5,6 @@
 	color: #ddd;
 }
 
-a {
-	color: rgb(153, 51, 255);
-}
-
 body {
 	margin: 0px;
 	padding: 0px;
@@ -40,4 +36,8 @@ header h3 {
 
 footer {
 	border-top: solid 1px;
+}
+
+footer a {
+	color: rgb(153, 51, 255);
 }
