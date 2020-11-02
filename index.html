@@ -6,80 +6,115 @@
 		<link rel="stylesheet" type="text/css" href="./header-footer.css">
 		<link rel="stylesheet" type="text/css" href="./main-page.css">
 		<script type="text/javascript" src="./jquery-3.5.1.min.js"></script>
+		<script type="text/javascript" src="./main-page.js"></script>
 		<script>$(function() {$("#header").load("./header.html")})</script> <!--Load header with jquery-->
 		<script>$(function() {$("#footer").load("./footer.html")})</script> <!--Load footer with jquery-->
 	</head>
 	<body>
 		<div id="header"></div> <!--Load header with jquery-->
 
-		<div class="presentation">
-			<article class="show" style="display: inline; background: #222;">
-				<h3 class="show_title">HTML</h3>
-				<p>Every webpage you visit is most and foremost an HTML document.<br>It is what describes the structure of a webpage to your web browser, so think of it as its skeleton!</p>
-			</article>
-			<article class="show" style="display: inline; background: #222;">
-				<h3 class="show_title">CSS</h3>
-				<p>CSS is what makes the webpage beautiful and organised!<br>It completely changes how your web browser renders the HTML document with shaping, positionning and colors.</p>
-			</article>
-			<article class="show" style="display: inline; background: #222;">
-				<h3 class="show_title">JS</h3>
-				<p>Webpages are usually better when you can interact with them. That's one of many reasons why JS is used on so many websites!<br>Curious to see all the other reasons?</p>
-			</article>
+		<div class="lessons">
+
+			<h2>WEB DEVELOPMENT</h2>
+
+			<div class="presentation">
+				<article class="show" style="background: #222;">
+					<h3 class="show_title">HTML</h3>
+					<p>Every webpage you visit is most and foremost an HTML document.<br>It is what describes the structure of a webpage to your web browser, so think of it as its skeleton!</p>
+				</article>
+				<article class="show" style="background: #222;">
+					<h3 class="show_title">CSS</h3>
+					<p>CSS is what makes the webpage beautiful and organised!<br>It completely changes how your web browser renders the HTML document with shaping, positionning and colors.</p>
+				</article>
+				<article class="show" style="background: #222;">
+					<h3 class="show_title">JS</h3>
+					<p>Webpages are usually better when you can interact with them. That's one of many reasons why JS is used on so many websites!<br>Curious to see all the other reasons?</p>
+				</article>
+			</div>
+
+			<div class="buttons">
+				<button>^ Show more ^</button>
+				<button>^ Show more ^</button>
+				<button>^ Show more ^</button>
+			</div>
+
+			<div class="hidden">
+				<h3 class="show_title">Hypertext Markup Language</h3>
+				<li>
+					<ul><a href="web-dev/html/initial-html-structure.html">The initial structure of your own HTML document</a></ul>
+					<ul><a href="web-dev/html/headings-sections-attributes.html">Headings, sections and attributes</a></ul>
+					<ul><a href="web-dev/html/images-links-comments.html">Images, links and comments</a></ul>
+				</li>
+			</div>
+			<div class="hidden">
+				<h3 class="show_title">Cascading Style Sheets</h3>
+				<li>
+					<ul><a href="web-dev/css/html-use-css-file.html">Make the HTML use your own CSS file</a></ul>
+					<ul><a href="#">Something</a></ul>
+					<ul><a href="#">Something</a></ul>
+				</li>
+			</div>
+			<div class="hidden">
+				<h3 class="show_title">Javascript</h3>
+				<li>
+					<ul><a href="web-dev/js/execute-js-by-html-click.html">Execute JS code by clicking on a HTML element</a></ul>
+					<ul><a href="#">Something</a></ul>
+					<ul><a href="#">Something</a></ul>
+				</li>
+			</div>
+
 		</div>
 
-		<div class="presentation">
-			<button onclick="showElement(0)" style="display: inline">v Show more v</button> 
-			<button onclick="showElement(1)" style="display: inline">v Show more v</button>
-			<button onclick="showElement(2)" style="display: inline">v Show more v</button>
-		</div>
+		<div class="lessons">
 
-		<script type="text/javascript"> 
-			function showElement(e) {
-				var shows = document.querySelectorAll('.show')
-				var buttons = document.querySelectorAll('button')
-				var hiddens = document.querySelectorAll('.hidden')
-				var x = false
-				for (let i = 0; i < shows.length; i++) {if (shows[i].style.display == "none") {x = true}}
-				if (x) {
-					for (let i = 0; i < shows.length; i++) {
-						shows[i].style.display = "inline"
-						shows[i].style.background = "#222"
-						buttons[e].innerHTML = "v Show more v"
-						buttons[i].style.display = "inline"
-					}
-					for (let i = 0; i < hiddens.length; i++) {hiddens[i].style.display = "none"}
-				} else {
-					for (let i = 0; i < shows.length; i++) {if (e !== i) {
-						shows[i].style.display = "none"
-						buttons[i].style.display = "none"
-					}}
-					shows[e].style.background = "#333"
-					buttons[e].innerHTML = "^ Show less ^"
-					hiddens[e].style.display = "block"
-				}
-			}
-		</script> 
+			<h2>this whole thing here is for test purposes</h2> <!-- WILL BE REPLACED ONCE CSS & JS LESSONS ARE DONE -->
 
-		<div class="hidden" style="display: none">
-			<li>
-				<ul><a href="web-dev/html/initial-html-structure.html">The initial structure of your own HTML document</a></ul>
-				<ul><a href="web-dev/html/headings-sections-attributes.html">Headings, sections and attributes</a></ul>
-				<ul><a href="web-dev/html/images-links-comments.html">Images, links and comments</a></ul>
-			</li>
-		</div>
-		<div class="hidden" style="display: none">
-			<li>
-				<ul><a href="web-dev/css/html-use-css-file.html">Make the HTML use your own CSS file</a></ul>
-				<ul><a href="#">Something</a></ul>
-				<ul><a href="#">Something</a></ul>
-			</li>
-		</div>
-		<div class="hidden" style="display: none">
-			<li>
-				<ul><a href="web-dev/js/execute-js-by-html-click.html">Execute JS code by clicking on a HTML element</a></ul>
-				<ul><a href="#">Something</a></ul>
-				<ul><a href="#">Something</a></ul>
-			</li>
+			<div class="presentation">
+				<article class="show" style="background: #222;">
+					<h3 class="show_title">HTML</h3>
+					<p>Every webpage you visit is most and foremost an HTML document.<br>It is what describes the structure of a webpage to your web browser, so think of it as its skeleton!</p>
+				</article>
+				<article class="show" style="background: #222;">
+					<h3 class="show_title">CSS</h3>
+					<p>CSS is what makes the webpage beautiful and organised!<br>It completely changes how your web browser renders the HTML document with shaping, positionning and colors.</p>
+				</article>
+				<article class="show" style="background: #222;">
+					<h3 class="show_title">JS</h3>
+					<p>Webpages are usually better when you can interact with them. That's one of many reasons why JS is used on so many websites!<br>Curious to see all the other reasons?</p>
+				</article>
+			</div>
+
+			<div class="buttons">
+				<button>^ Show more ^</button>
+				<button>^ Show more ^</button>
+				<button>^ Show more ^</button>
+			</div>
+
+			<div class="hidden">
+				<h3 class="show_title">Hypertext Markup Language</h3>
+				<li>
+					<ul><a href="web-dev/html/initial-html-structure.html">The initial structure of your own HTML document</a></ul>
+					<ul><a href="web-dev/html/headings-sections-attributes.html">Headings, sections and attributes</a></ul>
+					<ul><a href="web-dev/html/images-links-comments.html">Images, links and comments</a></ul>
+				</li>
+			</div>
+			<div class="hidden">
+				<h3 class="show_title">Cascading Style Sheets</h3>
+				<li>
+					<ul><a href="web-dev/css/html-use-css-file.html">Make the HTML use your own CSS file</a></ul>
+					<ul><a href="#">Something</a></ul>
+					<ul><a href="#">Something</a></ul>
+				</li>
+			</div>
+			<div class="hidden">
+				<h3 class="show_title">Javascript</h3>
+				<li>
+					<ul><a href="web-dev/js/execute-js-by-html-click.html">Execute JS code by clicking on a HTML element</a></ul>
+					<ul><a href="#">Something</a></ul>
+					<ul><a href="#">Something</a></ul>
+				</li>
+			</div>
+
 		</div>
 
 		<div id="footer"></div> <!--Load footer with jquery-->
