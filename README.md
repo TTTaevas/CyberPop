@@ -6,6 +6,6 @@ Its goal is therefore to make technology more comprehensible to anyone so they c
 
 **Check [CONTRIBUTING.md](CONTRIBUTING.md) if you want to contribute to this project!!**
 
-### How to run it properly
+### How do I check out how it looks?
 
-This website does "Cross-Origin Requests". If you run one of the html documents, [your browser may not load the header and the footer as they are local files](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS/Errors/CORSRequestNotHttp). You will need to either (recommended) run the website on, for example localhost:8000, or (not recommended) change your browser's settings for the webpage to show up properly.
+As the website is early in development, it is currently not hosted anywhere on the internet, besides on [GitHub Pages](https://tttaevas.github.io/CyberPop/).

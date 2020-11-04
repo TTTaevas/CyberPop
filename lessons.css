@@ -1,7 +1,7 @@
 #lesson {
 	display: inline-block;
-	margin: 0 50px;
-	font-size: 18px;
+	margin: 0 200px;
+	font-size: 20px;
 }
 
 #lesson h1 {
@@ -9,6 +9,8 @@
 }
 
 #lesson img {
+	max-width:100%;
+	max-height:100%;
 	background-color: black;
 	padding: 5px;
 	border: 1px solid;
@@ -17,4 +19,29 @@
 #lesson a {
 	text-decoration: underline;
 	color: rgb(180, 105, 255);
+}
+
+.other-lessons {
+	display: flex;
+	padding: 20px 50px 40px 50px
+}
+
+#prev-lesson, #next-lesson {
+	transition: transform 0.3s;
+	flex: 1;
+	cursor: pointer;
+	font-weight: bold;
+	border: none;
+	background-color: rgb(153, 51, 255);
+	padding: 15px;
+	margin: 20px 80px;
+	width: 35%;
+}
+
+#prev-lesson:visited, #next-lesson:visited {
+	background-color: rgb(34, 34, 34);
+}
+
+#prev-lesson:hover, #next-lesson:hover {
+	transform: scale(1.1);
 }
