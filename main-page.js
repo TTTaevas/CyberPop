@@ -7,7 +7,8 @@ $(document).ready(function() {
 		var presentation = $(this).parent().siblings().filter(".presentation").children()
 		var hiddenElements = $(this).parent().siblings().filter(".hidden")
 
-		$(this).html() == "^ Show more ^" ? $(this).html("v Show less v") : $(this).html("^ Show more ^")
+		if ($('html')[0].lang == "en") {$(this).html() == "^ Show more ^" ? $(this).html("v Show less v") : $(this).html("^ Show more ^")}
+		if ($('html')[0].lang == "fr") {$(this).html() == "^ Montrer plus ^" ? $(this).html("v Montrer moins v") : $(this).html("^ Montrer plus ^")}
 		
 		//CURRENT ANIMATIONS ARE SUBJECT TO CHANGE
 		for (let i = 0; i < buttonsToChange.length; i++) {

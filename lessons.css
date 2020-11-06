@@ -26,6 +26,10 @@
 	margin-right: 25px;
 }
 
+.highlight {
+	color: rgb(180, 105, 255);
+}
+
 .other-lessons {
 	display: flex;
 	padding: 20px 50px 40px 50px
