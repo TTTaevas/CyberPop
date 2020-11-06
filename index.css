@@ -1,0 +1,38 @@
+* {
+	font-family: Segoe UI, Arial, sans-serif;
+	text-decoration: none;
+	text-align: center;
+	color: #ddd;
+}
+
+h1 {
+	font-size: 100px;
+	margin-bottom: 0px;
+}
+
+h5 {
+	font-size: 30px;
+	margin-top: 0px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+button {
+	transition: transform 0.3s;
+	cursor: pointer;
+	font-size: 50px;
+	font-weight: bold;
+	border: none;
+	background-color: rgb(153, 51, 255);
+	padding: 15px;
+	margin: 10px 80px;
+	width: 60%;
+}
+
+button:hover {
+	transform: scale(1.1);
+}
