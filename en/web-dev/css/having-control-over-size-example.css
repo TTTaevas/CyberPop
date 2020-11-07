@@ -1,5 +1,39 @@
+body {
+	padding-right: 100px;
+	padding-top: 0px;
+	padding-bottom: 1000px;
+}
+
 .example {
 	font-size: 100px;
 	background-color: black;
 	color: white;
+	width: 10%;
+	padding-left: 2em; 
+}
+
+.example-2 {
+	font-size: 25px;
+	font-family: sans-serif;
+	background-color: rgba(255, 0, 0, 0.5);
+	margin-left: 2em;
+}
+
+.example-2 img {
+	height: 10%;
+	width: 10%;
+	padding: 0px 70px;
+}
+
+#ghost img, #ghost-2 img {
+	height: 60%;
+	width: 60%;
+}
+
+#ghost {
+	float: left;
+}
+
+#ghost-2 {
+	float: right;
 }
