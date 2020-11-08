@@ -4,7 +4,25 @@
 		<title>CyberPop!</title>
 		<link rel="stylesheet" type="text/css" href="./understanding-css-priority-example.css">
 	</head>
-	<body>
-		<p class="example">Hello World!</p>
+	<body class="all">
+		<p class="one-c" id="one-i">1 Hello World!</p>
+		<p id="one-i" class="one-c">2 Hello World!</p>
+		<p class="one-c">3 Hello World!</p>
+		<p id="one-i">4 Hello World!</p>
+		<p>5 Hello World!</p>
+		<section class="unique">
+			<p class="two-c" id="two-i">6 Word World!</p>
+			<p id="two-i" class="two-c">7 Word World!</p>
+			<p class="two-c">8 Word World!</p>
+			<p id="two-i">9 Word World!</p>
+			<p>10 Word World!</p>
+		</section>
+		<section class="unique" id="none">
+			<p class="two-c" id="two-i">11 Bye World!</p>
+			<p id="two-i" class="two-c">12 Bye World!</p>
+			<p class="two-c">13 Bye World!</p>
+			<p id="two-i">14 Bye World!</p>
+			<p>15 Bye World!</p>
+		</section>
 	</body>
 </html>

@@ -17,9 +17,41 @@
 		<div id="lesson">
 			<h1>Understanding the concept of priority in CSS</h1>
 
-			<p>Nothing yet!</p>
+			<p>You may already know that there are some ways to give an element the same attributes but with different values. It actually happens a lot!<br>Let's take a close look at what are the results of most of the possible contradictions.</p>
 
-			<a href="./web-dev/css/understanding-css-priority-example.html" target="_blank"><img src="./web-dev/images/css-3-1.png" alt="Nothing yet!"></a>
+			<a href="./web-dev/css/understanding-css-priority-example.html" target="_blank"><img src="./web-dev/images/css-3-1.png" alt="HTML featuring 15 paragraphs, 10 being within 2 different sections, all elements having various ids and classes"></a>
+
+			<p>The <span class="highlight">&lt;body&gt;</span> has a <span class="highlight">class</span>, five paragraphs with various <span class="highlight">ids</span> and <span class="highlight">classes</span> and two <span class="highlight">&lt;sections&gt;</span> which also have various <span class="highlight">ids</span> and <span class="highlight">classes</span> which each contain five similar paragraphs.<br>So, there are 15 different paragraphs in this HTML document, all being subject to different rules in one way or the other.</p>
+
+			<p>What rules? Well, all of them are defined in the 60 lines of CSS right below, have fun figuring out how the HTML document will look like!</p>
+
+			<a href="./web-dev/css/understanding-css-priority-example.css" target="_blank"><img src="./web-dev/images/css-3-2.png" alt="60 lines of contradicting CSS"></a>
+
+			<p>So let's take a look at the first paragraph. All paragraphs inherit from the <span class="highlight">&lt;body&gt;</span> element which has the <span class="highlight">class</span> "all", which gives a red color to text.<br>This paragraph has the "one-c" <span class="highlight">class</span> and the "one-i" <span class="highlight">id</span>.<br>If you look at what the "one-c" <span class="highlight">class</span> is, you'll see that it has an attribute that is defined two different times with two different values!</p>
+
+			<p>In the CSS file, this <span class="highlight">class</span> gets "text-align: right" on Line 10 and "text-align: left" on Line 14.<br>Also, the paragraph gets "text-align: center" from the <span class="highlight">&lt;body&gt;</span> element, written on Line 2.<br>The "one-i" <span class="highlight">id</span> doesn't do anything to "text-align", but does give "color: blue" in Line 28 after it gave "color: green" in Line 22.<br>Also, the "one-c" <span class="highlight">class</span> gives "color: pink" in Line 17. Fun!</p>
+
+			<p>The first paragraph ends up being aligned to the left, with a blue color, among other things. How come?</p>
+
+			<p>Basically, inheritance is lowest priority, then there's the <span class="highlight">class</span> and finally, the <span class="highlight">id</span>.<br>The first paragraph gets the color red from the <span class="highlight">&lt;body&gt;</span> element, then the color pink from its <span class="highlight">class</span>, then the color green from both its <span class="highlight">class</span> and <span class="highlight">id</span> and finally, the color blue from its <span class="highlight">id</span>.</p>
+
+			<p>The priority in CSS file is simple: If it's below, it has the priority. So the <span class="highlight">class</span> ends up never having the pink color, and the <span class="highlight">id</span> ends up never having the green color.<br>So for the first paragraph, it's a contest between the inheritance with the red color, the <span class="highlight">class</span> with the green color and the <span class="highlight">id</span> with the blue color.<br>The <span class="highlight">class</span> has priority over the inheritance and the <span class="highlight">id</span> has priority over the <span class="highlight">class</span>. Blue > Green > Red.</p>
+
+			<p>The second paragraph is exactly the same as the first one, despite the order in which it gets its <span class="highlight">class</span> and <span class="highlight">id</span> being different.<br>The third paragraph doesn't have the "one-i" <span class="highlight">id</span>, so it ends up being green among other things!</p>
+
+			<p>The fourth paragraph isn't similar to the first and second ones despite having the "one-i" <span class="highlight">id</span> because it doesn't have the "one-c" <span class="highlight">class</span>.<br>You see, while the first and second paragraphs treated "one-i" with priority, it still got, for example, the "text-align: left" from "one-c", while the fourth one ends up using the "text-align" it inherited from the <span class="highlight">&lt;body&gt;</span> element, "text-align: center"!</p>
+
+			<p>The fifth paragraph is simple, it only uses what it inherited from the <span class="highlight">&lt;body&gt;</span> element, as it doesn't have a <span class="highlight">class</span>, an <span class="highlight">id</span>, or anything else to inherit from.</p>
+
+			<p>Paragraphs 6 to 9 are the same as 1 to 4, with the difference that those have a <span class="highlight">&lt;section&gt;</span> they can inherit from, with priority over the <span class="highlight">&lt;body&gt;</span> element.<br>6 to 9 still have the <span class="highlight">id</span> > <span class="highlight">class</span> > inheritance order, of course, but the inheritance they get is more complex as they have a second element to inherit from, their <span class="highlight">&lt;section&gt;</span>.<br>Their <span class="highlight">&lt;section&gt;</span> has priority over the <span class="highlight">&lt;body&gt;</span> element as it is "closer", not in terms of lines but rather in terms of.. parent-child relation? The paragraph will inherit mostly from its parent (<span class="highlight">&lt;section&gt;</span>), then from its grand-parent (<span class="highlight">&lt;body&gt;</span>), and so on if the <span class="highlight">&lt;body&gt;</span>'s parent, the html element, had any attribute. Hopefully you get it.</p>
+
+			<p>The tenth paragraph differs from the fifth one despite both not having any <span class="highlight">class</span> or <span class="highlight">id</span> as the tenth paragraph inherits from both the <span class="highlight">&lt;section&gt;</span> element and the <span class="highlight">&lt;body&gt;</span> element, while the fifth only inherits from the <span class="highlight">&lt;body&gt;</span> element, and the <span class="highlight">&lt;section&gt;</span> element has priority over the <span class="highlight">&lt;body&gt;</span> element as we already discussed.</p>
+
+			<p>And finally, paragraphs 11 to 15. All of them, just like paragraphs 6 to 10, inherit from their respective <span class="highlight">&lt;section&gt;</span> (both share the same <span class="highlight">class</span>) and then from the <span class="highlight">&lt;body&gt;</span> element, but the difference here is that this <span class="highlight">&lt;section&gt;</span> also has an <span class="highlight">id</span>, which has priority over the <span class="highlight">class</span>!<br>Therefore, if the <span class="highlight">&lt;section&gt;</span>'s <span class="highlight">class</span> and <span class="highlight">id</span> as two contradicting attributes, the paragraphs will inherit from the <span class="highlight">&lt;section&gt;</span>'s <span class="highlight">id</span> rather than its <span class="highlight">class</span>. That is what happens with the "font-size".<br>The <span class="highlight">id</span> gives "font-size: 150px" while the <span class="highlight">class</span> gives "font-size: 20px". The paragraphs end up with the <span class="highlight">id</span>'s "font-size".</p>
+
+			<p>Pretty much the same thing happens with the fifteen paragraph's color, which doesn't end up red like the fifth or yellow like the tenth, but black.</p>
+
+			<p>There are various attributes I did not mention, but by now, you should be able to understand what gets affected how by CSS' priority system!</p>
 		</div>
 
 		<div class="other-lessons">

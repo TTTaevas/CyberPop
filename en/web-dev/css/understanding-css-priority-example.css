@@ -1,5 +1,59 @@
-.example {
-	font-size: 100px;
+.all {
+	text-align: center;
+	font-size: 250px;
+	width: 50%;
+	color: red;
 	background-color: black;
-	color: white;
+}
+
+.one-c {
+	text-align: right;
+}
+
+.one-c {
+	text-align: left;
+	font-size: 70px;
+	font-family: sans-serif;
+	color: pink;
+	background-color: white;
+}
+
+.one-c, #one-i {
+	color: green;
+}
+
+#one-i {
+	font-size: 40px;
+	font-family: serif;
+	color: blue;
+}
+
+.unique {
+	width: 20%;
+	font-size: 20px;
+	color: yellow;
+}
+
+.two-c {
+	text-align: left;
+}
+
+.two-c {
+	text-align: right;
+	font-family: sans-serif;
+	color: green;
+	background-color: white;
+}
+
+#two-i {
+	font-family: serif;
+	color: blue;
+}
+
+#none {
+	text-align: right;
+	font-size: 150px;
+	width: 100%;
+	color: black;
+	background-color: white;
 }
