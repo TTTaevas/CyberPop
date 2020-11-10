@@ -17,39 +17,39 @@
 		<div id="lesson">
 			<h1>Images, liens et commentaires</h1>
 
-			<p>Visuals are important. Not only on the side of what the web browser renders, but also on the inside of the HTML document!<br>Let's take a look at how to add images and links on the web browser's side, and how to add comments in order to make our HTML file more organized.</p>
+			<p>Les visuels sont importants. Et pas seulement du côté de ce que l'utilisateur voit lorsque son navigateur web charge la page, mais aussi du côté de l'intérieur du fichier HTML !<br>Jettons un oeil à comment ajouter des images et des liens du côté du navigateur web, et comment ajouter des commentaires pour mieux organiser nos fichiers HTML.</p>
 
 			<a href="./web-dev/html/images-links-comments-example.html" target="_blank"><img src="./web-dev/images/html-3-1.png" alt="HTML using images, links and comments"></a>
 
-			<p>Usually, you want to add an image to your website using the <span class="highlight">&lt;img&gt;</span> tag. But using it alone is useless if you do not add the necessary attributes! The <span class="highlight">&lt;img&gt;</span> element doesn't have an end tag, which means that you need to use attributes in order to make it so a web browser renders your <span class="highlight">&lt;img&gt;</span> element as an actual image.</p>
+			<p>En temps normal, vous voulez ajouter une image à votre site web en utilisant la balise <span class="highlight">&lt;img&gt;</span>. Mais l'utiliser seule est inutile si vous n'y ajoutez pas les attributs nécessaires ! L'élément <span class="highlight">&lt;img&gt;</span> n'a pas de balise de fin, ce qui veut dire que vous avez besoin d'utiliser des attributs afin que le navigateur web montre l'élément <span class="highlight">&lt;img&gt;</span> comme une image.</p>
 
-			<p>First of all, you want to tell the HTML file what image it is that you want rendered by a web browser. It is for that reason that the <span class="highlight">src</span> attribute exists! The value you would give to this element would either be an URL to an image file, or the position of the file relative to the HTML file. I'm afraid the latter may be too complicated for now, so you should only focus on using URLs with the <span class="highlight">src</span> attribute until you decide to properly learn HTML.<br>The syntax is similar to <span class="highlight">style</span>, as it is simply <span class="highlight">src="url"</span>.<br>So far, your <span class="highlight">&lt;img&gt;</span> tag would be something like <span class="highlight">&lt;img src="https://www.w3schools.com/images/lamp.jpg"&gt;</span>, but it's still missing another attribute.</p>
+			<p>Tout d'abord, vous voulez dire au fichier HTML quelle est l'image que vous voulez que le navigateur web montre. C'est pour cette raison que l'attribut <span class="highlight">src</span> existe ! La valeur que vous lui donneriez serait soit une URL menant à un fichier d'image, soit la position du fichier relative à celle du fichier HTML. Je pense que la deuxième option sera un peu trop compliquée pour l'instant, donc concentrez-vous sur l'utilisation de l'attribut <span class="highlight">src</span> avec des URLs jusqu'à ce que vous décidez d'apprendre proprement l'HTML.<br>La syntaxe est très simple, elle est quelque chose comme <span class="highlight">src="url"</span>.<br>Pour l'instant, votre balise <span class="highlight">&lt;img&gt;</span> ressemblerait à quelque chose comme <span class="highlight">&lt;img src="https://www.w3schools.com/images/lamp.jpg"&gt;</span>, mais il lui manque toujours un attribut.</p>
 
-			<p>Introducing the <span class="highlight">alt</span> attribute! Because a web browser may not render the image for some reason, this attribute exists.</p>
+			<p>Voici l'attribut <span class="highlight">alt</span> ! Parce qu'un navigateur web pourrait ne pas bien "interpréter" l'image pour je ne sais quelle raison, par exemple des soucis de compatibilités ou de connexion, cet attribut existe.</p>
 
-			<p>When the web browser fails to render an image, it will try to render the value inside the <span class="highlight">alt</span> attribute instead, which would be text.<br>You should always put text that describes the image that should have been rendered as the value of <span class="highlight">alt</span>.</p>
+			<p>Quand un navigateur web n'arrive pas à interpréter une image, il va tenter d'interpréter à sa place la valeur de <span class="highlight">alt</span>, qui serait du texte.<br>Vous devriez toujours mettre du texte qui décrit qu'est ce que l'image qui aurait dû être affichée en tant que valeur de <span class="highlight">alt</span>.</p>
 
-			<p>Below is the result of <span class="highlight">&lt;img src="https://www.w3schools.com/images/lamp.jpg" alt="A lamp icon"&gt;</span>:</p>
+			<p>Ci-dessous est le résultat de <span class="highlight">&lt;img src="https://www.w3schools.com/images/lamp.jpg" alt="Une îcone de lampe"&gt;</span>:</p>
 
-			<img src="https://www.w3schools.com/images/lamp.jpg" alt="Congrats! You figured out that the alt element is different, somehow!">
+			<img src="https://www.w3schools.com/images/lamp.jpg" alt="Félicitations ! D'une façon ou d'une autre, vous avez remarqué que l'attribut alt est différent !">
 
-			<p>And below is the result of <span class="highlight">&lt;img src="https://nonexistenturl.com/images/cat.png" alt="A very cute cat!"&gt;</span>:</p>
+			<p>Et ci-dessous est le résultat de <span class="highlight">&lt;img src="https://urlnonexistante.com/images/cat.png" alt="Un chat trop mignon !"&gt;</span>:</p>
 
-			<img src="https://nonexistenturl.com/images/cat.png" alt="A very cute cat!">
+			<img src="https://urlnonexistante.com/images/cat.png" alt="Un chat trop mignon !">
 
-			<p>Your web browser has failed to render the above image because it simply doesn't exist. Too bad, you couldn't see how cute that cat was.</p>
+			<p>Votre navigateur web n'a pas réussi à vous montrer l'image ci-dessus car elle n'existe tout simplement pas. C'est dommage, vous n'avez pas pu voir à quel point le chat était mignon.</p>
 
-			<p>In the example in the image at the very top, you can see if you click it that it features two elements, and if you click on them, it opens a link. Introducing the <span class="highlight">&lt;a&gt;</span> element!<br>Everything that is inside that element will send the user onto another webpage (or somewhere else on the same webpage) when clicked onto!</p>
+			<p>Dans l'exemple de l'image tout en haut de la page, il y a deux éléments sur lesquels vous pouvez cliquer. Si vous choisissez de cliquer dessus, votre navigateur web ouvrira un lien. Ce serait grâce à l'élément <span class="highlight">&lt;a&gt;</span> !<br>Tout ce qui est à l'intérieur de cet élément envoiera l'utilisateur sur une autre page web (ou ailleurs sur la même page web) lorsqu'il lui cliquera dessus !</p>
 
-			<p>The <span class="highlight">&lt;a&gt;</span> element requires one attribute, more specifically, the <span class="highlight">href</span> attribute.<br>How it works is really simple, it works the same as the <span class="highlight">src</span> attribute for the <span class="highlight">&lt;img&gt;</span> start tag. Its value is the URL you want the user to see. That's how it works in the example too!</p>
+			<p>L'élément <span class="highlight">&lt;a&gt;</span> requiert un attribut, plus spécifiquement <span class="highlight">href</span>.<br>Comment cet attribut marche est très simple, car il marche comme <span class="highlight">src</span>, l'attribut utilisé pour la balise de départ <span class="highlight">&lt;img&gt;</span>. Sa valeur est l'URL que vous voulez visible d'une façon ou d'une autre par l'utilisateur. C'est comme ça que ça marche dans l'exemple aussi !</p>
 
-			<p>But in the example, when you click on the image, it opens the URL into a new tab, while when you click on the blue text, it opens the URL into the same tab!<br>There is an optional attribute to <span class="highlight">&lt;a&gt;</span>, called <span class="highlight">target</span>.</p>
+			<p>Mais dans l'exemple, quand vous cliquez sur l'image, le navigateur web ouvre l'URL dans un nouvel onglet, alors que lorsque vous cliquez le texte blue, il ouvre l'URL dans le même onglet !<br>Il y a en fait un attribut optionnel pour l'élément <span class="highlight">&lt;a&gt;</span>, que l'on appelle <span class="highlight">target</span>.</p>
 
-			<p><span class="highlight">target</span>, for the <span class="highlight">&lt;a&gt;</span> start tag, has only one value you should remember for now, which is <span class="highlight">_blank</span>. Simply adding that attribute with this value will make it so the URL is opened in another, new and fresh tab!<br>Just so you know, you can put as many elements in the <span class="highlight">&lt;a&gt;</span> element as you want, and you can also put in simple text, without the need for a <span class="highlight">&lt;p&gt;</span> element.</p>
+			<p><span class="highlight">target</span>, pour la balise de départ <span class="highlight">&lt;a&gt;</span>, n'a qu'une seule valeur que vous devriez retenir pour le moment : <span class="highlight">_blank</span>. Ajouter cet attribut avec cette valeur fait que le navigateur web ouvre le lien dans un nouvel onglet, tout frais !<br>Vous pouvez mettre autant d'éléments que vous voulez dans l'élément <span class="highlight">&lt;a&gt;</span>, et vous pouvez aussi y mettre du texte simple sans avoir besoin d'un élément <span class="highlight">&lt;p&gt;</span>.</p>
 
-			<p>Have you ever heard of comments? In HTML files, they're used to tell things to whoever reads them that will not be rendered by the web browser.<br>For example, in the example at the very top, there are three comments that are not rendered. They can be placed about everywhere, but they should be placed at a place where they stand out from all the stuff that ain't comments.</p>
+			<p>Sinon, avez-vous déjà entendu parler des commentaires ? Dans les fichiers HTML, ils sont utilisés pour dire des choses à n'importe qui qui lirait l'intérieut du fichier, et ne seront tout simplement pas interpreté par le navigateur web, ils seront ignorés à la place.<br>Dans l'exemple en haut de cette page, il y a trois commentaires non-interprétés. Ils peuvent être plus ou moins n'importe où, mais ils devraient être placés à un endroit où ils peuvent être dicernés des choses qui ne sont pas des commentaires.</p>
 
-			<p>A comment starts with <span class="highlight">&lt;!--</span> and ends with <span class="highlight">--&gt;</span>. It can take from one line to as many as you want.<br>That's really it. See, all that stuff isn't so complex after all!</p>
+			<p>Un commentaire commence avec <span class="highlight">&lt;!--</span> puis finit avec <span class="highlight">--&gt;</span>. Il peut prendre autant de lignes que vous voulez !<br>Et c'est tout, du coup. Vous voyez que tout ça n'est pas si compliqué après tout !</p>
 		</div>
 
 		<div class="other-lessons">
