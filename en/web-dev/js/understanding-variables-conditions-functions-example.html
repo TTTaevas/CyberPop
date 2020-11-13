@@ -2,8 +2,20 @@
 <html>
 	<head>
 		<title>CyberPop!</title>
+		<script type="text/javascript" src="./understanding-variables-conditions-functions-example.js"></script>
 	</head>
 	<body>
-		<p>Nothing yet.</p>
+		<p id="alpha" style="font-size: 8px; background-color: red; display: inline;">I'm Alpha!</p>
+		<section id="bigger">
+			<p onclick="makeBigger(2)">If you click on me, Alpha will grow bigger and stronger!</p>
+			<p onclick="makeBigger(50)">Alpha will use drugs that aren't really legal if you click on me!</p>
+		</section>
+		<section id="color">
+			<p onclick="changeColor()">Alpha's color changes by clicking on me!</p>
+			<p onclick="changeBG()">And Alpha's background color changes by clicking on me!</p>
+		</section>
+		<section id="displaying">
+			<img src="https://upload.wikimedia.org/wikipedia/commons/0/0c/Nevado_del_Ruiz_1985.jpg" onclick="changeDisplay()">
+		</section>
 	</body>
 </html>
