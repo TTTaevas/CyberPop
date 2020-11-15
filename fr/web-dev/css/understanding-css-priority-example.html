@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>CyberPop!</title>
+		<link rel="stylesheet" type="text/css" href="./understanding-css-priority-example.css">
+	</head>
+	<body class="all">
+		<p class="one-c" id="one-i">1 Bonjour le Monde !</p>
+		<p id="one-i" class="one-c">2 Bonjour le Monde !</p>
+		<p class="one-c">3 Bonjour le Monde !</p>
+		<p id="one-i">4 Bonjour le Monde !</p>
+		<p>5 Bonjour le Monde !</p>
+		<section class="unique">
+			<p class="two-c" id="two-i">6 Mot Monde !</p>
+			<p id="two-i" class="two-c">7 Mot Monde !</p>
+			<p class="two-c">8 Mot Monde !</p>
+			<p id="two-i">9 Mot Monde !</p>
+			<p>10 Mot Monde !</p>
+		</section>
+		<section class="unique" id="none">
+			<p class="two-c" id="two-i">11 Au revoir le Monde !</p>
+			<p id="two-i" class="two-c">12 Au revoir le Monde !</p>
+			<p class="two-c">13 Au revoir le Monde !</p>
+			<p id="two-i">14 Au revoir le Monde !</p>
+			<p>15 Au revoir le Monde !</p>
+		</section>
+	</body>
+</html>
