@@ -3,7 +3,7 @@
 First of all, thank you so much for considering contributing to this project! You can contribute in any of those ways:
 
 - Verify if the website is bug-proof as it should be
-- Check files to see any typo, unnecessary code/elements, and so on...
+- Take a look at the website and its files to check for any typo or any bad grammar, unnecessary code/elements, and so on...
 - Attempt to fix open issues
 - Make suggestions via the issues tab
 
