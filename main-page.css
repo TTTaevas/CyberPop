@@ -3,7 +3,7 @@ a {
 }
 
 .lessons {
-	background-image: url(../resources/bg.jpg);
+	background-image: url(./resources/bg.jpg);
 	border: solid 1px;
 	margin: 20px;
 }

@@ -1,6 +1,6 @@
 #lesson {
 	display: inline-block;
-	padding: 0 150px;
+	padding: 0px 20%;
 	font-size: 20px;
 	background-color: #0F0F0F;
 	border-bottom: 1px solid;
@@ -33,7 +33,7 @@
 }
 
 .other-lessons {
-	background-image: url(../resources/bg.jpg);
+	background-image: url(./resources/bg.jpg);
 	display: flex;
 	padding: 20px;
 }
