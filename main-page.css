@@ -3,6 +3,7 @@ a {
 }
 
 .lessons {
+	background-image: url(../resources/bg.jpg);
 	border: solid 1px;
 	margin: 20px;
 }
@@ -36,7 +37,7 @@ a {
 	padding: 0px 20px;
 }
 
-button {
+.lessons button {
 	flex: 1;
 	cursor: pointer;
 	font-weight: bold;
@@ -47,15 +48,15 @@ button {
 	width: 100%;
 }
 
-button:hover {
-	content: "a";
+.lessons button:hover {
 	background-color: black;
 }
 
 .hidden {
-	padding: 0px;
+	padding: 0px 0px 20px 0px;
 	border-top: 1px solid;
 	display: block;
+	background-color: #141414;
 }
 
 .hidden h3 {
@@ -66,9 +67,9 @@ button:hover {
 .hidden ul {
 	border: 1px solid;
 	margin: 20px 100px;
+	padding: 20px;
 	max-width: 100%;
 	max-height: 100%;
-	padding: 20px;
 	font-size: 20px;
 }
 

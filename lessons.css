@@ -1,7 +1,9 @@
 #lesson {
 	display: inline-block;
-	margin: 0 150px;
+	padding: 0 150px;
 	font-size: 20px;
+	background-color: #0F0F0F;
+	border-bottom: 1px solid;
 }
 
 #lesson h1 {
@@ -31,8 +33,9 @@
 }
 
 .other-lessons {
+	background-image: url(../resources/bg.jpg);
 	display: flex;
-	padding: 20px 50px 40px 50px
+	padding: 20px;
 }
 
 #prev-lesson, #next-lesson {
