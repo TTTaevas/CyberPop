@@ -1,3 +1,50 @@
+#menu {
+	height: 100%;
+	width: 250px;
+	position: fixed;
+}
+
+#menu_toggle * {
+	height: 100%;
+	width: 50px;
+	margin: 0px;
+	padding: 0px;
+	text-align: left;
+	background-color: red;
+}
+
+#menu_content {
+	height: 100%;
+	width: 100%;
+	background-color: rgb(153, 51, 255);
+}
+
+#menu_content * {
+	margin: 0px;
+	padding: 0px;
+}
+
+#menu_content h1 {
+	padding: 5px;
+	border-bottom: 1px solid;
+}
+
+#menu_content h3 {
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+
+#menu_content ul {
+	list-style-type: none;
+	padding-bottom: 20px;
+	border-bottom: 1px solid;
+}
+
+#menu_content li {
+	padding: 2px;
+	margin: 2px;
+}
+
 #lesson {
 	display: inline-block;
 	padding: 0px 20%;

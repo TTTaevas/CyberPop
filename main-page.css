@@ -64,7 +64,7 @@ a {
 	font-size: 35px;
 }
 
-.hidden ul {
+.hidden li {
 	border: 1px solid;
 	margin: 20px 100px;
 	padding: 20px;
@@ -73,7 +73,7 @@ a {
 	font-size: 20px;
 }
 
-li {
+ul {
 	list-style-type: none;
 }
 
