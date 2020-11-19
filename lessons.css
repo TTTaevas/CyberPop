@@ -12,6 +12,7 @@
 }
 
 #menu_content {
+	display: none;
 	overflow-y: auto;
 	height: 100%;
 	width: 260px;
@@ -42,8 +43,8 @@
 }
 
 #menu_content li {
-	padding: 2px;
-	margin: 2px;
+	padding: 2px 0;
+	margin: 2px 0;
 }
 
 #lesson {
