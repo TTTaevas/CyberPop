@@ -1,21 +1,21 @@
-#menu {
-	height: 100%;
-	width: 250px;
+#menu_toggle {
 	position: fixed;
+	bottom: 50%;
+	cursor: pointer;
 }
 
 #menu_toggle * {
-	height: 100%;
-	width: 50px;
-	margin: 0px;
-	padding: 0px;
 	text-align: left;
-	background-color: red;
+	padding: 5px;
+	margin: 0px;
+	background-image: url(./resources/bg2.jpg);
 }
 
 #menu_content {
+	overflow-y: auto;
 	height: 100%;
-	width: 100%;
+	width: 260px;
+	position: fixed;
 	background-color: rgb(153, 51, 255);
 }
 
@@ -27,6 +27,7 @@
 #menu_content h1 {
 	padding: 5px;
 	border-bottom: 1px solid;
+	background-color: black;
 }
 
 #menu_content h3 {

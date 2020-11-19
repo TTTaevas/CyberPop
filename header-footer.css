@@ -7,7 +7,7 @@
 
 body {
 	margin: 0px;
-	padding: 1px 0 0 0;
+	padding: 1px 0px 0px 0px; /*menu_content doesn't get to the top without this, sadly doesn't work at 0px, a fix would be appreciated*/
 	background-color: #141414;
 }
 
