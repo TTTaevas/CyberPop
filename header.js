@@ -1,12 +1,10 @@
-function languageSwitch(selection) {
-	var val = selection.options[selection.selectedIndex].value;
-	if (val == "english" || val == "francais" || val == "deutsche") {
-		if (val == "english") {lang = "en"}
-		if (val == "francais") {lang = "fr"}
-		if (val == "deutsche") {lang = "de"}
-		var url = window.location.href.split("/");
-		url[3] = lang;
-		url = url.join("/")
-		window.location.replace(url)
-	} else {console.log("Invalid value given!")}
+function languageSwitch() {
+	var url = window.location.href.split("/")
+	$(".lang-select").children().each(function() {
+		if ($(this).text() == "English") {url[3] = "en"}
+		if ($(this).text() == "Français") {url[3] = "fr"}
+		if ($(this).text() == "Deutsche") {url[3] = "de"}
+		
+		$(this).attr("href", url.join("/"))
+	})
 }

@@ -1,19 +1,15 @@
-<script src="../header.js"></script>
-<div style="float: right; padding-right:5px">
-	<span>
-		Language: 
-	</span>
-	<select onchange="languageSwitch(this)" style="color: rgb(153, 51, 255);">
-		<option value="english" style="color: black;" selected="selected">
-			English
-		</option>
-		<option value="francais" style="color: black;">
-			Français
-		</option>
-		<option value="deutsche" style="color: black;">
-			Deutsche
-		</option>
-	</select>
+<div style="float: right; padding-right: 20px">
+	<div class="lang-menu">
+		<span>
+			Language: 
+		</span>
+		<button class="lang-btn">English</button>
+		<div class="lang-select">
+			<a href="">English</a> <!--JS changes its href-->
+			<a href="">Français</a> <!--JS changes its href-->
+			<a href="">Deutsche</a> <!--JS changes its href-->
+		</div>
+	</div>
 </div>
 
 <div id="title">
