@@ -9,6 +9,7 @@ $(document).ready(function() {
 
 		if ($('html')[0].lang == "en") {$(this).html() == "^ Show more ^" ? $(this).html("v Show less v") : $(this).html("^ Show more ^")}
 		if ($('html')[0].lang == "fr") {$(this).html() == "^ Montrer plus ^" ? $(this).html("v Montrer moins v") : $(this).html("^ Montrer plus ^")}
+		if ($('html')[0].lang == "de") {$(this).html() == "^ Mehr ^" ? $(this).html("v Weniger v") : $(this).html("^ Mehr ^")}
 		
 		//CURRENT ANIMATIONS ARE SUBJECT TO CHANGE
 		for (let i = 0; i < buttonsToChange.length; i++) {
