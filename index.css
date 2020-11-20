@@ -3,6 +3,7 @@
 	text-decoration: none;
 	text-align: center;
 	color: #ddd;
+	list-style-type: none;
 }
 
 h1 {
@@ -16,9 +17,8 @@ h5 {
 }
 
 ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
+	margin: 0;
+	padding: 0;
 }
 
 button {

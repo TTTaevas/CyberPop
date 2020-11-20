@@ -8,11 +8,19 @@
 		<link rel="stylesheet" type="text/css" href="../header-footer.css">
 		<link rel="stylesheet" type="text/css" href="../lessons.css">
 		<script type="text/javascript" src="../jquery-3.5.1.min.js"></script>
-		<script>$(function() {$("#header").load("./header.html")})</script> <!--Load header with jquery-->
-		<script>$(function() {$("#footer").load("./footer.html")})</script> <!--Load footer with jquery-->
+		<script type="text/javascript" src="../menu.js"></script>
+		<script>$(function() {$("#menu_toggle").load("./menu_toggle.html")})</script>
+		<script>$(function() {$("#menu_content").load("./web-dev/menu_content.html", function(){changeButtons()})})</script>
+		<script>$(function() {$("#header").load("./header.html")})</script>
+		<script>$(function() {$("#footer").load("./footer.html")})</script>
 	</head>
 	<body>
-		<div id="header"></div> <!--Load header with jquery-->
+		<div id="menu">
+			<div id="menu_toggle"></div>
+			<div id="menu_content"></div>
+		</div> 
+		
+		<div id="header"></div>
 
 		<div id="lesson">
 			<h1>Titres, sections et attributs</h1>
@@ -39,10 +47,10 @@
 		</div>
 
 		<div class="other-lessons">
-			<a id="prev-lesson" href="./web-dev/html/initial-html-structure.html"><- La structure initiale de votre document HTML</a>
-			<a id="next-lesson" href="./web-dev/html/images-links-comments.html">Images, liens et commentaires -></a>
+			<a id="prev-lesson" href="./web-dev/html/initial-html-structure.html"><- Précédente leçon</a>
+			<a id="next-lesson" href="./web-dev/html/images-links-comments.html">Leçon suivante -></a>
 		</div>
 
-		<div id="footer"></div> <!--Load footer with jquery-->
+		<div id="footer"></div>
 	</body>
 </html>
