@@ -8,18 +8,26 @@
 		<link rel="stylesheet" type="text/css" href="../header-footer.css">
 		<link rel="stylesheet" type="text/css" href="../lessons.css">
 		<script type="text/javascript" src="../jquery-3.5.1.min.js"></script>
-		<script>$(function() {$("#header").load("./header.html")})</script> <!--Load header with jquery-->
-		<script>$(function() {$("#footer").load("./footer.html")})</script> <!--Load footer with jquery-->
+		<script type="text/javascript" src="../menu.js"></script>
+		<script>$(function() {$("#menu_toggle").load("./menu_toggle.html")})</script>
+		<script>$(function() {$("#menu_content").load("./web-dev/menu_content.html", function(){changeButtons()})})</script>
+		<script>$(function() {$("#header").load("./header.html")})</script>
+		<script>$(function() {$("#footer").load("./footer.html")})</script>
 	</head>
 	<body>
-		<div id="header"></div> <!--Load header with jquery-->
+		<div id="menu">
+			<div id="menu_toggle"></div>
+			<div id="menu_content"></div>
+		</div> 
+
+		<header id="header"></header>
 
 		<div id="lesson">
 			<h1>Images, liens et commentaires</h1>
 
 			<p>Les visuels sont importants. Et pas seulement du côté de ce que l'utilisateur voit lorsque son navigateur web charge la page, mais aussi du côté de l'intérieur du fichier HTML !<br>Jettons un oeil à comment ajouter des images et des liens du côté du navigateur web, et comment ajouter des commentaires pour mieux organiser nos fichiers HTML.</p>
 
-			<a href="./web-dev/html/images-links-comments-example.html" target="_blank"><img src="./web-dev/images/html-3-1.png" alt="HTML using images, links and comments"></a>
+			<a href="./web-dev/html/images-links-comments-example.html" target="_blank"><img src="./web-dev/images/html-3-1.png" alt="De l'HTML faisant usage d'images, liens et de commentaires"></a>
 
 			<p>En temps normal, vous voulez ajouter une image à votre site web en utilisant la balise <span class="highlight">&lt;img&gt;</span>. Mais l'utiliser seule est inutile si vous n'y ajoutez pas les attributs nécessaires ! L'élément <span class="highlight">&lt;img&gt;</span> n'a pas de balise de fin, ce qui veut dire que vous avez besoin d'utiliser des attributs afin que le navigateur web montre l'élément <span class="highlight">&lt;img&gt;</span> comme une image.</p>
 
@@ -53,10 +61,10 @@
 		</div>
 
 		<div class="other-lessons">
-			<a id="prev-lesson" href="./web-dev/html/headings-sections-attributes.html"><- Titres, sections et attributs</a>
-			<a id="next-lesson" href="./web-dev/css/html-use-css-file.html">Faire en sorte que le HTML utilise votre document CSS -></a>
+			<a id="prev-lesson" href="./web-dev/html/headings-sections-attributes.html"><- Précédente leçon</a>
+			<a id="next-lesson" href="./web-dev/css/html-use-css-file.html">Leçon suivante -></a>
 		</div>
 
-		<div id="footer"></div> <!--Load footer with jquery-->
+		<footer id="footer"></footer>
 	</body>
 </html>

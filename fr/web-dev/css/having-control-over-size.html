@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Prendre le contrôle de la taille des éléments HTML grâce au CSS</title>
+		<meta charset="utf-8">
+		<base href="../../index.html">
+		<link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
+		<link rel="stylesheet" type="text/css" href="../header-footer.css">
+		<link rel="stylesheet" type="text/css" href="../lessons.css">
+		<script type="text/javascript" src="../jquery-3.5.1.min.js"></script>
+		<script type="text/javascript" src="../menu.js"></script>
+		<script>$(function() {$("#menu_toggle").load("./menu_toggle.html")})</script>
+		<script>$(function() {$("#menu_content").load("./web-dev/menu_content.html", function(){changeButtons()})})</script>
+		<script>$(function() {$("#header").load("./header.html")})</script>
+		<script>$(function() {$("#footer").load("./footer.html")})</script>
+	</head>
+	<body>
+		<div id="menu">
+			<div id="menu_toggle"></div>
+			<div id="menu_content"></div>
+		</div> 
+
+		<header id="header"></header>
+
+		<div id="lesson">
+			<h1>Prendre le contrôle de la taille des éléments HTML grâce au CSS</h1>
+
+			<p>Juste au dessous se trouve une page web ressemblant plus à un gros bazard qu'à autre chose, avec son texte et ses images de tailles variées se trouvant à des positions relatives aux éléments visibles seulement grâce à un choix horrible de couleurs de fond.</p>
+
+			<a href="./web-dev/css/having-control-over-size-example.html" target="_blank"><img src="./web-dev/images/css-2-1.png" alt="HTML rempli d'URLs"></a>
+
+			<p>Il est important de noter que ce ne serait pas un si gros bazard sans le fichier CSS ci-dessous. On se concentrera sur ce fichier-là car le HTML est au final assez simple.<br>Mais juste au cas-où, l'attribut <span class="highlight">id</span> est presque comme <span class="highlight">class</span>, la différence étant qu'un seul élément aura un certain <span class="highlight">id</span>.</p>
+
+			<a href="./web-dev/css/having-control-over-size-example.css" target="_blank"><img src="./web-dev/images/css-2-2.png" alt="Le CSS utilisé par le HTML au dessus"></a>
+
+			<p>En tout premier lieu, parlons de la Ligne 22 et de la Ligne 28, car elles fonctionnent avec une légère différence comparé à l'habituel "L'élément HTML avant les accolades dans lesquels se trouvent des attributs et des valuers".</p>
+
+			<p>Alors, la Ligne 22 a deux éléments séparés par un espace, ce qui veut dire que ce qui est dans les accolades va affecter tous les second éléments qui sont à l'intérieur de n'importe quel premier élément.<br>Dans cet exemple, ce qui est à l'intérieur des accolades affecte tous les éléments <span class="highlight">img</span> qui sont dans n'importe quel élément qui a la <span class="highlight">class</span> "example-2". On sait que c'est une <span class="highlight">class</span> grâce au point avant le nom.</p>
+
+			<p>La Ligne 28 a quatre éléments séparés, avec une virgule et deux espaces. On sait ce que veut dire la séparation par les espaces, mais qu'en est-t-il de la séparation par les virgules ?<br>Ca veut dire que, à la fois les seconds éléments dans les premiers éléments et les quatrièmes éléments dans les troisièmes éléments seront affectés par ce qu'il y a dans les accolades !<br>Dans notre cas, les éléments <span class="highlight">img</span> qui sont dans les éléments qui ont soit l'<span class="highlight">id</span> "ghost" ou l'<span class="highlight">id</span> "ghost-2" vont être affectés par ce qu'il y a dans les accolades.<br>On sait que "ghost" et "ghost-2" sont des <span class="highlight">ids</span> grâce au # avant les deux noms.</p>
+
+			<p>Avez-vous déjà entendu parler du modèle de la boîte ? C'est quelque chose qui est pas mal important, alors retenez bien ce qui suit !<br>Vous pouvez vous dire que chaque élément HTML a une boîte composé de quatre choses.</p>
+
+			<ol>
+				<li>Content (contenu), la zone dans laquelle les images et le texte apparaissent</li>
+				<li>Padding (remplissage<!--enfin je suppose-->), la zone transparente entre la bordure et le contenu</li>
+				<li>Border (bordure), la zone entre le remplissage et la marge</li>
+				<li>Margin (marge), la zone transparente à l'extérieure de la bordure</li>
+			</ol>
+
+			<p>Vous devriez visiter <a href="https://www.w3schools.com/Css/tryit.asp?filename=trycss_boxmodel" target="_blank">ce lien (en anglais)</a> si c'est encore un peu confus pour vous!<br>Notez que pour ces quatre choses, leurs noms anglais seront utilisés à partir de maintenant.</p>
+
+			<p>Souvenez-vous que l'HTML est en gros, des éléments qui sont dans d'autres éléments, qui sont eux-mêmes dans des éléments. <a href="../html/initial-html-structure.html" target="_blank">La structure initiale de votre document HTML</a> parle de l'élément <span class="highlight">&lt;body&gt;</span>, qui a une petite Margin qui affecte sa position afin qu'elle soit un peu eloignée de l'élément <span class="highlight">&lt;html&gt;</span> !<br>Dans le gros bazard qu'on a vu il y a peu de temps, si la Margin de <span class="highlight">&lt;body&gt;</span> était de 0px, vous n'aurez pas était capable de voir la couleur de fond bleue d'<span class="highlight">&lt;html&gt;</span> sur la gauche ou sur la droite de la page web !</p>
+
+			<p>Parce que si vous jetez un oeil à l'HTML ainsi qu'au CSS, vous devriez remarquer que quatre éléments au total ont une couleur unique de fond.</p>
+
+			<ul>
+				<li>L'élément <span class="highlight">&lt;html&gt;</span> a une couleur de fond bleue comme indiqué dans le fichier HTML</li>
+				<li>L'élément <span class="highlight">&lt;body&gt;</span> a une couleur de fond jaune comme indiqué dans le fichier HTML</li>
+				<li>Le seul élément avec la <span class="highlight">class</span> "example" a une couleur de fond noire comme indiqué dans le fichier CSS</li>
+				<li>Le seul élément avec la <span class="highlight">class</span> "example-2" a un fond a moitié transparent qui a une couleur rouge comme indiqué dans le fichier CSS, le rendant orange car il est positionné sur du jaune</li>
+			</ul>
+
+			<p>L'une des choses intéressantes de cette page web est que le texte "Bonjour le Monde !" est partiellement en dehors de la <span class="highlight">&lt;div&gt;</span> "example", représentée avec la couleur de fond noire.<br>"Bonjour le Monde !" ne commence même pas du côté gauche de l'élément <span class="highlight">&lt;div&gt;</span>. Alors pourquoi est-ce que tout se produit ?</p>
+
+			<p>Hé bien, tout ça est à cause de la combinaison de trois attributs en particuler que la <span class="highlight">class</span> "example" a.</p>
+
+			<ul>
+				<li>Elle a une "width" (longeur) de 10%, ce qui veut dire que sa taille horizontale sera égale à 10% de la taille horizontale de la fenêtre du navigateur web</li>
+				<li>Elle a une "font-size" (taille de police) de 100px, ce qui veut dire que tout le contenu texte à l'intérieur de cet élément aura une taille de 100 pixels</li>
+				<li>Elle a un "padding-left" (remplissage à gauche) de 2em, cette valeur se traduit à celle du "font-size" multipliée par 2 (donc 200px), "padding-left" applique du remplissage seulement sur le côté gauche de l'élément</li>
+			</ul>
+
+			<p>Donc la width rend l'élément petit, le padding fait en sorte que tout ce qui est petit reste en dehors de son côté gauche et la font-size rend le texte gros.<br>Résultat, le "Bonjour le Monde !" est trop gros pour être complètement contenu par son élément parent, la <span class="highlight">&lt;div&gt;</span> avec la classe <span class="highlight">class</span> "example".<br>C'est pareil pour l'image des manchots empereur.</p>
+
+			<p>La <span class="highlight">class</span> "example-2" a une différence avec la <span class="highlight">class</span> "example". Les images ont des attributs "height" (hauteur) et "width" !<br>Si vous changez la taille de votre fenêtre, les images s'adapteront elles-mêmes, essayez !</p>
+
+			<p>La taille de notre <span class="highlight">class</span> est définie par un petit nombre de choses.</p>
+
+			<ol>
+				<li>L'élément <span class="highlight">&lt;body&gt;</span> a un "padding-right" (right == droite) de 100px, ce qui rend son côté droite inaccessible pour "example-2"</li>
+				<li>La <span class="highlight">class</span> elle-même a une "margin-left" de 2em (donc 50px car "font-size" est 25px), ce qui rend le jaune visible entre le bleu et l'orange</li>
+				<li>La taille des images de phoques qui sont dans la <span class="highlight">class</span> définissent aussi sa taille. Voici une explication !</li>
+			</ol>
+
+			<p>Alors, la taille de ces images en particulier est dépendante de la taille de la fenêtre de votre navigateur web, c'est ce qu'on sait déjà.<br>En revanche, la plupart des éléments, comme les <span class="highlight">&lt;divs&gt;</span>, ont une taille qui s'adapte afin que les éléments qui sont à l'intérieur d'eux-mêmes ne soient ni trop petit ni trop grand, ce qui au fait est comment le site web de CyberPop! fonctionne peu importe la taille de la fenêtre de votre navigateur web.<br>La <span class="highlight">&lt;div&gt;</span> avec la <span class="highlight">class</span> "example" était différente car on lui avait donné un attribut "width", ce qui l'empêchait de s'adapter en fonction de la taille de ses éléments enfants.</p>
+
+			<p>La position de ces images est en gros décidé par leur Padding, qui est verticalement de 0px et horizontalement de 70px.<br>Donc elles sont distancées horizontalement et très proches verticalement.</p>
+
+			<p>Le texte "Au revoir le Monde !" n'a rien de spécial, il se trouve en haut à gauche parce qu'il n'est affecté par aucun attribut qui changerait sa position, seulement des attributs qui change sa police et la taille de cette dernière.<br>Par contre, il se passe quoi avec ces squelettes ?..</p>
+
+			<p>Ils ont bien une "heighr" et une "width" de 60%, mais ils ne prennent clairement pas 60% de l'écran.<br>C'est parce qu'ils utilisent l'attribut "float" qui est assez étrange. Vous l'apprendrez un jour !<br>Mais sachez que dans son état actuel, sans l'attribut "float", sur un grand écran d'ordinateur, il prendrait 60% de la longeur de l'écran, et bien plus de la hauteur à cause de ses proportions.<br>Pas toutes les images ne peuvent être affichées sur l'integralité de votre écran correctement, par exemple cette image est plus large verticalement qu'horizontalement !</p>
+		</div>
+
+		<div class="other-lessons">
+			<a id="prev-lesson" href="./web-dev/css/html-use-css-file.html"><- Précédente leçon</a>
+			<a id="next-lesson" href="./web-dev/css/understanding-css-priority.html">Leçon suivante -></a>
+		</div>
+
+		<footer id="footer"></footer>
+	</body>
+</html>

@@ -1,7 +1,58 @@
+#menu_toggle {
+	position: fixed;
+	bottom: 50%;
+	cursor: pointer;
+}
+
+#menu_toggle * {
+	text-align: left;
+	padding: 5px;
+	margin: 0px;
+	background-image: url(./resources/bg2.jpg);
+}
+
+#menu_content {
+	display: none;
+	overflow-y: auto;
+	height: 100%;
+	width: 260px;
+	position: fixed;
+	background-color: rgb(153, 51, 255);
+}
+
+#menu_content * {
+	margin: 0px;
+	padding: 0px;
+}
+
+#menu_content h1 {
+	padding: 5px;
+	border-bottom: 1px solid;
+	background-color: black;
+}
+
+#menu_content h3 {
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+
+#menu_content ul {
+	list-style-type: none;
+	padding-bottom: 20px;
+	border-bottom: 1px solid;
+}
+
+#menu_content li {
+	padding: 2px 0;
+	margin: 2px 0;
+}
+
 #lesson {
 	display: inline-block;
-	margin: 0 150px;
+	padding: 0px 20%;
 	font-size: 20px;
+	background-color: #0F0F0F;
+	border-bottom: 1px solid;
 }
 
 #lesson h1 {
@@ -31,8 +82,9 @@
 }
 
 .other-lessons {
+	background-image: url(./resources/bg.jpg);
 	display: flex;
-	padding: 20px 50px 40px 50px
+	padding: 20px;
 }
 
 #prev-lesson, #next-lesson {

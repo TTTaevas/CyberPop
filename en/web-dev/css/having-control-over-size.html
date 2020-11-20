@@ -8,11 +8,19 @@
 		<link rel="stylesheet" type="text/css" href="../header-footer.css">
 		<link rel="stylesheet" type="text/css" href="../lessons.css">
 		<script type="text/javascript" src="../jquery-3.5.1.min.js"></script>
-		<script>$(function() {$("#header").load("./header.html")})</script> <!--Load header with jquery-->
-		<script>$(function() {$("#footer").load("./footer.html")})</script> <!--Load footer with jquery-->
+		<script type="text/javascript" src="../menu.js"></script>
+		<script>$(function() {$("#menu_toggle").load("./menu_toggle.html")})</script>
+		<script>$(function() {$("#menu_content").load("./web-dev/menu_content.html", function(){changeButtons()})})</script>
+		<script>$(function() {$("#header").load("./header.html")})</script>
+		<script>$(function() {$("#footer").load("./footer.html")})</script>
 	</head>
 	<body>
-		<div id="header"></div> <!--Load header with jquery-->
+		<div id="menu">
+			<div id="menu_toggle"></div>
+			<div id="menu_content"></div>
+		</div> 
+		
+		<header id="header"></header>
 
 		<div id="lesson">
 			<h1>Having control over the size of your HTML elements with CSS</h1>
@@ -27,14 +35,14 @@
 
 			<p>First of all, let's talk about Line 22 and Line 28, as they work slightly differently compared to the usual "HTML element before the brackets in which attributes and values are".</p>
 
-			<p>So Line 22 has two elements separated by a space before the brackets, which means that what's inside the brackets will affect all second elements that are inside any of all of the first elements.<br>In this example, what's inside the brackets affects all <span class="highlight">img</span> elements that are inside any of the elements that has the "example-2" <span class="highlight">class</span>. We know it's a <span class="highlight">class</span> because of the dot before the name.</p>
+			<p>So Line 22 has two elements which are separated by a space, which means that what's inside the brackets will affect all second elements that are inside any of all of the first elements.<br>In this example, what's inside the brackets affects all <span class="highlight">img</span> elements that are inside any of the elements that has the "example-2" <span class="highlight">class</span>. We know it's a <span class="highlight">class</span> because of the dot before the name.</p>
 
 			<p>Line 28 has four elements separated, with one comma and two spaces. We already know what separation with spaces does, but what about separation by commas?<br>It means that both the second element inside the first and the fourth element inside the third will be affected by whatever is inside the brackets that follow them!<br>So in this case, the <span class="highlight">img</span> elements from elements that have either the "ghost" <span class="highlight">id</span> or the "ghost-2" <span class="highlight">id</span> will get affected by whatever's inside the brackets!<br>We know "ghost" and "ghost-2" are <span class="highlight">ids</span> because there is a # before both names.</p>
 
 			<p>Now, have you ever heard of the Box Model? It's something quite important, so remember the following!<br>You can think of every HTML element has a box composed of 4 things.</p>
 
 			<ol>
-				<li>Content, the area where images and text will appear</li>
+				<li>Content, the area where images and text appears</li>
 				<li>Padding, the transparent area between the border and the content</li>
 				<li>Border, the area between the padding and the margin</li>
 				<li>Margin, the transparent area outside of the border</li>
@@ -42,25 +50,25 @@
 
 			<p>I recommend checking out <a href="https://www.w3schools.com/Css/tryit.asp?filename=trycss_boxmodel" target="_blank">this link</a> if you got confused!</p>
 
-			<p>Remember that HTML is basically elements within elements, themselves within elements. <a href="../html/initial-html-structure.html" target="_blank">The initial structure of any HTML file</a> features the <span class="highlight">&lt;body&gt;</span> element, which has a slight margin which affects its position so it gets further away from the <span class="highlight">&lt;html&gt;</span> element!<br>In the mess of a website I showed you quite a bit ago, if the <span class="highlight">&lt;body&gt;</span>'s margin was of 0px, you wouldn't be able to see the <span class="highlight">&lt;html&gt;</span>'s blue background on the webpage's left or right!</p>
+			<p>Remember that HTML is basically elements within elements, themselves within elements. <a href="../html/initial-html-structure.html" target="_blank">The initial structure of any HTML file</a> features the <span class="highlight">&lt;body&gt;</span> element, which has a slight margin which affects its position so it gets further away from the <span class="highlight">&lt;html&gt;</span> element!<br>In the mess of a webpage I showed you quite a bit ago, if the <span class="highlight">&lt;body&gt;</span>'s margin was of 0px, you wouldn't be able to see the <span class="highlight">&lt;html&gt;</span>'s blue background on the webpage's left or right!</p>
 
 			<p>Because if you take a look at both the HTML and the CSS, you should notice that four elements in total have a unique background color.</p>
 
 			<ul>
 				<li>The <span class="highlight">&lt;html&gt;</span> element has a blue background-color as written in the HTML file</li>
 				<li>The <span class="highlight">&lt;body&gt;</span> element has a yellow background-color as written in the HTML file</li>
-				<li>The only element with the class "example" has a black background-color as written in the CSS file</li>
-				<li>The only element with the class "example-2" has an half-transparent red background-color as written in the CSS file, making it orange as it is positionned on yellow</li>
+				<li>The only element with the <span class="highlight">class</span> "example" has a black background-color as written in the CSS file</li>
+				<li>The only element with the <span class="highlight">class</span> "example-2" has an half-transparent red background-color as written in the CSS file, making it orange as it is positionned on yellow</li>
 			</ul>
 
-			<p>One of the many interesting things of this webpage is that the "Hello World!" text goes partially outside of the "example" <span class="highlight">&lt;div&gt;</span> represented in black.<br>The "Hello World" also doesn't start at the left side of the <span class="highlight">&lt;div&gt;</span> element. So why is all of that happening?</p>
+			<p>One of the many interesting things of this webpage is that the "Hello World!" text goes partially outside of the "example" <span class="highlight">&lt;div&gt;</span> represented in black.<br>"Hello World!" also doesn't start at the left side of the <span class="highlight">&lt;div&gt;</span> element. So why is all of that happening?</p>
 
 			<p>Well, all of that is due to the combination of three particular attributes that the "example" <span class="highlight">class</span> has.</p>
 
 			<ul>
 				<li>It has a "width" of 10%, which means that its horizontal size will be equal to 10% of the width of the web browser's window</li>
-				<li>It has a "font-size" of 100px, which means that all content that is text inside this element will be 100 pixels</li>
-				<li>It has a "padding-left" of 2em, its value translates to the font-size times 2, so 200px, and "padding-left" applies padding only to the left-side of the element</li>
+				<li>It has a "font-size" of 100px, which means that all content that is text inside this element will have a size of 100 pixels</li>
+				<li>It has a "padding-left" of 2em, its value translates to the font-size times 2 (so 200px), "padding-left" applies padding only to the left-side of the element</li>
 			</ul>
 
 			<p>So the width makes the element small, the padding makes it so everything inside it is away from its left side and the font-size makes it so the text's big.<br>In the end, the "Hello World!" is too big to be fully contained by its parent element, the <span class="highlight">&lt;div&gt;</span> with the "example" <span class="highlight">class</span>.<br>The same goes for the image featuring emperor penguins.</p>
@@ -75,7 +83,7 @@
 				<li>The size of the images featuring seals that are within the <span class="highlight">class</span> itself also define its size. Let me explain!</li>
 			</ol>
 
-			<p>So, the size of those images in particular are dependant of the size of your web browser's window, that, we already know.<br>However, most elements such as <span class="highlight">&lt;divs&gt;</span> have a size that is adapted to fit conveniently all elements that are inside itsell, which, by the way, is how the actual CyberPop! website works no matter the size of your web browser's window, which is usually close to full screen.<br>The "example" <span class="highlight">&lt;div&gt;</span> was different as we had put a "width" attribute to it, which prevented it from adapting itself to its children elements.</p>
+			<p>So, the size of those images in particular are dependant of the size of your web browser's window, that, we already know.<br>However, most elements such as <span class="highlight">&lt;divs&gt;</span> have a size that is adapted to conveniently fit all elements that are inside itsell, which, by the way, is how the actual CyberPop! website works no matter the size of your web browser's window.<br>The <span class="highlight">&lt;div&gt;</span> with the "example" <span class="highlight">class</span> was different as we had put a "width" attribute to it, which prevented it from adapting itself according to its children elements' size.</p>
 
 			<p>The position of those images is basically decided by their padding, which is vertically 0px and horizontally 70px.<br>So they're far away from each other horizontally, and really close to each other vertically.</p>
 
@@ -85,10 +93,10 @@
 		</div>
 
 		<div class="other-lessons">
-			<a id="prev-lesson" href="./web-dev/css/html-use-css-file.html"><- Make the HTML use your own CSS file</a>
-			<a id="next-lesson" href="./web-dev/css/understanding-css-priority.html">Understanding the concept of priority in CSS -></a>
+			<a id="prev-lesson" href="./web-dev/css/html-use-css-file.html"><- Previous lesson</a>
+			<a id="next-lesson" href="./web-dev/css/understanding-css-priority.html">Next lesson -></a>
 		</div>
 
-		<div id="footer"></div> <!--Load footer with jquery-->
+		<footer id="footer"></footer>
 	</body>
 </html>
