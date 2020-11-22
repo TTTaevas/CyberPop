@@ -2,7 +2,7 @@
 
 # CyberPop!
 
-CyberPop! is a website built to teach the basics of technology to people who don't know anything about it, from kids to the elderly!
+CyberPop! is a static website built to teach the basics of technology to people who don't know anything about it, from kids to the elderly!
 
 It aims to make the concepts of technology more comprehensible to everyone before they decide to put their time (and money) into learning it, for example through a course.
 

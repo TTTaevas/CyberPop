@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<title>Exécuter du JS en cliquant sur un élément HTML</title>
+		<meta charset="utf-8">
+		<base href="../../index.html">
+		<link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
+		<link rel="stylesheet" type="text/css" href="../header-footer.css">
+		<link rel="stylesheet" type="text/css" href="../lessons.css">
+		<script type="text/javascript" src="../jquery-3.5.1.min.js"></script>
+		<script type="text/javascript" src="../menu.js"></script>
+		<script type="text/javascript" src="../header.js"></script>
+		<script>$(function() {$("#menu_toggle").load("./menu_toggle.html")})</script>
+		<script>$(function() {$("#menu_content").load("./web-dev/menu_content.html", function(){changeButtons()})})</script>
+		<script>$(function() {$("#header").load("./header.html", function(){languageSwitch()})})</script>
+		<script>$(function() {$("#footer").load("./footer.html")})</script>
+	</head>
+	<body>
+		<div id="menu">
+			<div id="menu_toggle"></div>
+			<div id="menu_content"></div>
+		</div> 
+		
+		<header id="header"></header>
+
+		<div id="lesson">
+			<h1>Exécuter du JS en cliquant sur un élément HTML</h1>
+
+			<p>Javascript is a programming language that is one of the core technologies of the Internet, alongside HTML and CSS. But how do we make it so our own Javascript file gets used in our webpage, and how can our Javascript change how it will look like in various ways when the user wants to?</p>
+
+			<a href="./web-dev/js/execute-js-by-html-click-example.html" target="_blank"><img src="./web-dev/images/js-1-1.png" alt="HTML that uses JS from a .js file!"></a>
+
+			<p>So this HTML file features a <span class="highlight">&lt;script&gt;</span> element, alongside one or two attributes that may be unknown to you for now.<br>Even though this lesson is about Javascript, we're talking about HTML because we are required to put some stuff in it so the Javascript works properly! Basically, we're importing function(s) from one certain JS file, and our button is told to execute a certain function. Let's first talk about the importing part!</p>
+
+			<p>So hopefully you remember how to use CSS files with your HTML files, because despite the elements and attributes being different, the concept is exactly the same.<br>In the <span class="highlight">&lt;head&gt;</span> element, create a <span class="highlight">&lt;script&gt;</span> element. At the start tag, we'll add an attribute, <span class="highlight">type</span>, to tell that we're importing JS.</p>
+
+			<p>As for telling what JS file we are importing, we will be using the <span class="highlight">src</span> attribute! We use <span class="highlight">href</span> for <span class="highlight">&lt;link&gt;</span> elements, which are notably used for importing CSS files, remember?<br>The <span class="highlight">src</span> attribute works the same way as the <span class="highlight">href</span> one. If you forgot how it works, <a href="./web-dev/css/html-use-css-file.html">simply click on me!</a></p>
+
+			<p>But what does "Importing a JS file" actually means?<br>Well basically, you're importing all the functions from the JS file, so they can be called by your HTML file!<br>And what functions? Well in our example, there's only one function called <span class="highlight">executeJS()</span>, let's take a look at it!</p>
+
+			<a href="./web-dev/js/execute-js-by-html-click-example.js" target="_blank"><img src="./web-dev/images/js-1-2.png" alt="The .js file that is being used!"></a>
+
+			<p>Doesn't <span class="highlight">executeJS()</span> ring a bell? That's right! It's part of the value used in <span class="highlight">&lt;button&gt;</span>'s new attribute, <span class="highlight">onclick</span>!<br>This attribute is used so a function gets called when its element is clicked onto, and in this case, it's the <span class="highlight">executeJS()</span> function we imported with the <span class="highlight">&lt;script&gt;</span> element!</p>
+
+			<p>When calling a function, you use () after its name. If the function requires it, you can put values between ( and ), for example "executeOtherJS("string")".<br>Our function, <span class="highlight">executeJS()</span>, doesn't need any value, therefore nothing is put between ( and )!<br>How do we know our function doesn't require any value? Well let's look at the JS file for a moment.</p>
+
+			<p>On the first line, the line creating the function, there is also (), but it's not there to execute the function, it's there because that's JS' syntax with functions.<br>It's that way because if you want your function to support values, the syntax in JS will be like "function addValues(value1, value2) {console.log(value2 + value1)}, which would be a function that "logs" the result of the addition between two values, ideally two numbers, called integers in programming. More on "logging" later.<br>To call that function, "addValues" through HTML or JS, you can simply write something like "addValues(5, 7)" and it'll "log" 12 because math is a thing!</p>
+
+			<p>Quite like in CSS, what defines before the { is what is between { and }, which, in this case, is code. And despite the fact that there's only a few lines, it's pretty complex.<br>Everything in this JS file will be explained in the next lesson, but we'll still go through the purpose and the concept of this function.</p>
+
+			<p>In the third line, it stores every <span class="highlight">&lt;p&gt;</span> element of the HTML file that called it in the variable (array) named "paragraphs".<br>Then from line 5 to 9, for each of those <span class="highlight">&lt;p&gt;</span> elements stored in "paragraphs", it executes the code between { and }, with the extra variable <span class="highlight">i</span>.</p>
+
+			<p><span class="highlight">i</span> is the variable used to numerate the number of times (-1) it went through the code. So the first time it goes through the code, it's because of the first paragraph, the fourth time because of the fourth paragraph. I wrote "(-1)" in my explanation because 0 is the equivalent of 1 in human language, the first paragraph is at index 0 (of the "paragraphs" array), the fourth paragraph is at index 3, and <span class="highlight">i</span> starts at 0.</p>
+
+			<p>The "new_size" variable changes everytime the code between line 5 to 9 gets executed, and is a random integer that is from 4 to 70 to which the text (string) "px" is added.<br>This is used to create a font-size that will be used twice for each time the code between line 5 and 9 gets executed!</p>
+
+			<p>In line 7, we use <span class="highlight">console.log()</span>, which is a function JS has. When you call that function, it writes something in the console, wherever it may be.<br>So on our HTML page, by right clicking anywhere on it then choosing "inspect element" and moving to the "console" tab, you can access the console for the webpage! Every function called by this same webpage that features a <span class="highlight">console.log()</span> function will show the content of the <span class="highlight">console.log()</span> function in the console.</p>
+
+			<p>In our case, it's text merged with the <span class="highlight">i</span> variable to which we add 1 and the "new_size" variable. So something like "New font-size for paragraph 4: 39px" shows up in the console.<br><span class="highlight">i</span>+1 being the 4, "new_size" being the 39px.</p>
+
+			<p>The last line of code in our function redefines the size of the paragraph at the index defined by <span class="highlight">i</span> of our "paragraphs" variable to "new_size".<br>So for example, at the second execution of the code from line 5 to 9, it sets the font-size of the webpage's second paragraph, the paragraph at index 1 in our "paragraphs" variable, to whatever random value "new_size" now is, from "4px" to "70px". It'll always ends with "px".</p>
+
+			<p>And so, when we click on the only <span class="highlight">&lt;button&gt;</span> element, this whole function gets executed, which changes every paragraph's font-size.<br>It also "logs" stuff in the console, of course! Think you got the idea now?</p>
+		</div>
+
+		<div class="other-lessons">
+			<a id="prev-lesson" href="./web-dev/css/understanding-css-priority.html"><- Previous lesson</a>
+			<a id="next-lesson" href="./web-dev/js/understanding-variables-conditions-functions.html">Next lesson -></a>
+		</div>
+
+		<footer id="footer"></footer>
+	</body>
+</html>
