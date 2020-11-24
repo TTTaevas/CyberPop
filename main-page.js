@@ -1,7 +1,7 @@
 $(document).ready(function() {
 	$(".hidden").hide() //Hide elements that are supposed to be hidden in the first place
 
-	$("button").click(function() {
+	$(".buttons button").click(function() {
 		var index = $(this).index()
 		var buttonsToChange = $(this).siblings()
 		var presentation = $(this).parent().siblings().filter(".presentation").children()
