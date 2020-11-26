@@ -1,16 +1,14 @@
 function highlightLesson() {
 
-	// "I" REPRESENTS WHICH PARAGRAPH IN THE ARRAY THAT HAS ALL OF THEM NAMED "P"
-	// "E" REPRESENTS THE CHILD NODE
+	// Since all those functions delete&add new paragraphs, they definitely shouldn't be executed at the same exact time
 
-	//Since all those functions delete&add new paragraphs, they definitely shouldn't be executed at the same exact time
 	const first_highlight = new Promise((resolve, reject) => {chevronsHighlight()})
-	const second_highlight = first_highlight.then(new Promise((resolve, reject) => {quotationsHighlight()}))
+	//vv this is commented as it is slightly too buggy to my liking atm vv
+	//const second_highlight = first_highlight.then(new Promise((resolve, reject) => {quotationsHighlight()}))
 }
 
-// Both functions below need a different way of adding back characters that died due to .split()
-
-function chevronsHighlight() { //This function will see its code changed by tomorrow, I'm sure it can be much more logic and readable
+function chevronsHighlight() {
+	const replacementChar = "@"
 	var p = document.getElementById("lesson").getElementsByTagName("p") //Get all paragraphs
 
 	for (let i = 0; i < p.length; i++) {
@@ -21,28 +19,26 @@ function chevronsHighlight() { //This function will see its code changed by tomo
 
 			if (p_nodes[e].nodeType == 3) { //If the node has text, if not a <br>
 
-				//// "A" REPRESENTS ONE OF TWO PARTS OF A TEXT:
-				//// IF "A" CANNOT BE 1, THERE IS NO HIGHLIGHTING TO BE DONE
-				//// IF "A" CAN BE 1 AND IS 0, IT REPRESENTS TEXT THAT NEEDS TO BE HIGHLIGHTED
-				//// IF "A" CAN BE AND IS 1, IT REPRESENTS TEXT THAT SHOULDN'T BE HIGHLIGHTED
+				var node_text = p_nodes[e].data.replace(/</gi, `${replacementChar}<`).split(replacementChar)
 
-				var node_text = p_nodes[e].data.split("<")
-				for (let a = 0; a < node_text.length; a++) {if (a != 0) {node_text[a] = "<" + node_text[a]}} //Add < back
-				for (let a = 0; a < node_text.length; a++) {
-					node_text[a] = node_text[a].split(">")
-					
-					if (node_text[a].length > 1) {
-						for (let u = 0; u < node_text[a].length; u++) {if (u == 0) {node_text[a][u] += ">"}} //Add > back
-						var node_highlight = document.createElement("span")
-						node_highlight.classList.add("highlight")
-						node_highlight.appendChild(document.createTextNode(node_text[a][0]))
-						to_add.push(node_highlight)
-						node_text[a] = node_text[a][1]
+				if (node_text.length > 1) { //If highlighting is needed in the first place
+				
+					for (let a = 0; a < node_text.length; a++) {
+						node_text[a] = node_text[a].replace(/>/gi, `>${replacementChar}`).split(replacementChar)
+
+						for (let u = 0; u < node_text[a].length; u++) {
+							if (node_text[a][u].charAt(0) == "<" && node_text[a][u].charAt(node_text[a][u].length - 1) == ">") {
+								//Highlight
+								var node_highlight = document.createElement("span")
+								node_highlight.classList.add("highlight")
+								node_highlight.appendChild(document.createTextNode(node_text[a][u]))
+								to_add.push(node_highlight)
+							} else {to_add.push(document.createTextNode(node_text[a][u]))} //Don't highlight
+						}
+
 					}
 
-					to_add.push(document.createTextNode(node_text[a]))
-					
-				}
+				} else {to_add.push(document.createTextNode(node_text[0]))} //If not highlighting needed in first place, just add
 
 			} else {to_add.push(p_nodes[e])} //Just add it directly if it doesn't have text
 			
@@ -56,8 +52,10 @@ function chevronsHighlight() { //This function will see its code changed by tomo
 	}
 }
 
-function quotationsHighlight() {
+function quotationsHighlight() { // THIS FUNCTION WILL BE WORKEN ON IN A FUTURE COMMIT
+	const replacementChar = "¤"
 	var p = document.getElementById("lesson").getElementsByTagName("p") //Get all paragraphs
+
 	for (let i = 0; i < p.length; i++) {
 		var p_nodes = p[i].childNodes
 		var to_add = []
@@ -65,24 +63,23 @@ function quotationsHighlight() {
 		for (let e = 0; e < p_nodes.length; e++) {
 
 			if (p_nodes[e].nodeType == 3) { //If the node has text, if not a <br>
-				var node_text = p_nodes[e].data.split('"')
-				if (node_text.length == 1) { //There is no highlighting needed there
-					to_add.push(document.createTextNode(node_text[0]))
-				} else { //There is highlighting needed there
-					for (let a = 0; a < node_text.length; a++) {
 
-						if (a % 2 != 0) { //Since the character at start&end of highlight is similar, highlight is at odd index
-							//HOWEVER, THIS ACTUALLY CAUSES A BUG IN FR JS LESSON 1 & EN JS LESSON 2, F ME
-							node_text[a] = '"' + node_text[a] + '"' //Add " and " back, theoritically
-							var node_highlight = document.createElement("span")
-							node_highlight.classList.add("highlight-quotation")
-							node_highlight.appendChild(document.createTextNode(node_text[a]))
-							to_add.push(node_highlight)
-						} else {to_add.push(document.createTextNode(node_text[a]))}
-
-					}
-				}
+				var node_text = p_nodes[e].data.replace(/ "/gi, ' ¤"').split(replacementChar)
 				
+				for (let a = 0; a < node_text.length; a++) {
+					node_text[a] = node_text[a].replace(/" /gi, '"¤ ').split(replacementChar)
+					if (node_text[a].length > 1) {
+						var node_highlight = document.createElement("span")
+						node_highlight.classList.add("highlight-quotation")
+						node_highlight.appendChild(document.createTextNode(node_text[a][0]))
+						to_add.push(node_highlight)
+						node_text[a] = node_text[a][1] // For adding non-highlight text
+					}
+
+					to_add.push(document.createTextNode(node_text[a])) //Add non-highlight text
+					
+				}
+
 			} else {to_add.push(p_nodes[e])} //Just add it directly if it doesn't have text
 			
 		}
