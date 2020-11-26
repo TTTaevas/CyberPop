@@ -10,12 +10,13 @@
 		<script type="text/javascript" src="../jquery-3.5.1.min.js"></script>
 		<script type="text/javascript" src="../menu.js"></script>
 		<script type="text/javascript" src="../header.js"></script>
+		<script type="text/javascript" src="../lessons.js"></script>
 		<script>$(function() {$("#menu_toggle").load("./menu_toggle.html")})</script>
 		<script>$(function() {$("#menu_content").load("./web-dev/menu_content.html", function(){changeButtons()})})</script>
 		<script>$(function() {$("#header").load("./header.html", function(){languageSwitch()})})</script>
 		<script>$(function() {$("#footer").load("./footer.html")})</script>
 	</head>
-	<body>
+	<body onload="highlightLesson()">
 		<div id="menu">
 			<div id="menu_toggle"></div>
 			<div id="menu_content"></div>
@@ -30,35 +31,35 @@
 
 			<a href="./web-dev/html/images-links-comments-example.html" target="_blank"><img src="./web-dev/images/html-3-1.png" alt="De l'HTML faisant usage d'images, liens et de commentaires"></a>
 
-			<p>En temps normal, vous voulez ajouter une image à votre site web en utilisant la balise <span class="highlight">&lt;img&gt;</span>. Mais l'utiliser seule est inutile si vous n'y ajoutez pas les attributs nécessaires ! L'élément <span class="highlight">&lt;img&gt;</span> n'a pas de balise de fin, ce qui veut dire que vous avez besoin d'utiliser des attributs afin que le navigateur web montre l'élément <span class="highlight">&lt;img&gt;</span> comme une image.</p>
+			<p>En temps normal, vous voulez ajouter une image à votre site web en utilisant la balise &lt;img&gt;. Mais l'utiliser seule est inutile si vous n'y ajoutez pas les attributs nécessaires ! L'élément &lt;img&gt; n'a pas de balise de fin, ce qui veut dire que vous avez besoin d'utiliser des attributs afin que le navigateur web montre l'élément &lt;img&gt; comme une image.</p>
 
-			<p>Tout d'abord, vous voulez dire au fichier HTML quelle est l'image que vous voulez que le navigateur web montre. C'est pour cette raison que l'attribut <span class="highlight">src</span> existe ! La valeur que vous lui donneriez serait soit une URL menant à un fichier d'image, soit la position du fichier relative à celle du fichier HTML. Je pense que la deuxième option sera un peu trop compliquée pour l'instant, donc concentrez-vous sur l'utilisation de l'attribut <span class="highlight">src</span> avec des URLs jusqu'à ce que vous décidez d'apprendre proprement l'HTML.<br>La syntaxe est très simple, elle est quelque chose comme <span class="highlight">src="url"</span>.<br>Pour l'instant, votre balise <span class="highlight">&lt;img&gt;</span> ressemblerait à quelque chose comme <span class="highlight">&lt;img src="https://www.w3schools.com/images/lamp.jpg"&gt;</span>, mais il lui manque toujours un attribut.</p>
+			<p>Tout d'abord, vous voulez dire au fichier HTML quelle est l'image que vous voulez que le navigateur web montre. C'est pour cette raison que l'attribut src existe ! La valeur que vous lui donneriez serait soit une URL menant à un fichier d'image, soit la position du fichier relative à celle du fichier HTML. Je pense que la deuxième option sera un peu trop compliquée pour l'instant, donc concentrez-vous sur l'utilisation de l'attribut src avec des URLs jusqu'à ce que vous décidez d'apprendre proprement l'HTML.<br>La syntaxe est très simple, elle est quelque chose comme src="url".<br>Pour l'instant, votre balise &lt;img&gt; ressemblerait à quelque chose comme &lt;img src="https://www.w3schools.com/images/lamp.jpg"&gt;, mais il lui manque toujours un attribut.</p>
 
-			<p>Voici l'attribut <span class="highlight">alt</span> ! Parce qu'un navigateur web pourrait ne pas bien "interpréter" l'image pour je ne sais quelle raison, par exemple des soucis de compatibilités ou de connexion, cet attribut existe.</p>
+			<p>Voici l'attribut alt ! Parce qu'un navigateur web pourrait ne pas bien "interpréter" l'image pour je ne sais quelle raison, par exemple des soucis de compatibilités ou de connexion, cet attribut existe.</p>
 
-			<p>Quand un navigateur web n'arrive pas à interpréter une image, il va tenter d'interpréter à sa place la valeur de <span class="highlight">alt</span>, qui serait du texte.<br>Vous devriez toujours mettre du texte qui décrit qu'est ce que l'image qui aurait dû être affichée en tant que valeur de <span class="highlight">alt</span>.</p>
+			<p>Quand un navigateur web n'arrive pas à interpréter une image, il va tenter d'interpréter à sa place la valeur de alt, qui serait du texte.<br>Vous devriez toujours mettre du texte qui décrit qu'est ce que l'image qui aurait dû être affichée en tant que valeur de alt.</p>
 
-			<p>Ci-dessous est le résultat de <span class="highlight">&lt;img src="https://www.w3schools.com/images/lamp.jpg" alt="Une îcone de lampe"&gt;</span>:</p>
+			<p>Ci-dessous est le résultat de &lt;img src="https://www.w3schools.com/images/lamp.jpg" alt="Une îcone de lampe"&gt;:</p>
 
 			<img src="https://www.w3schools.com/images/lamp.jpg" alt="Félicitations ! D'une façon ou d'une autre, vous avez remarqué que l'attribut alt est différent !">
 
-			<p>Et ci-dessous est le résultat de <span class="highlight">&lt;img src="https://urlnonexistante.com/images/cat.png" alt="Un chat trop mignon !"&gt;</span>:</p>
+			<p>Et ci-dessous est le résultat de &lt;img src="https://urlnonexistante.com/images/cat.png" alt="Un chat trop mignon !"&gt;:</p>
 
 			<img src="https://urlnonexistante.com/images/cat.png" alt="Un chat trop mignon !">
 
 			<p>Votre navigateur web n'a pas réussi à vous montrer l'image ci-dessus car elle n'existe tout simplement pas. C'est dommage, vous n'avez pas pu voir à quel point le chat était mignon.</p>
 
-			<p>Dans l'exemple de l'image tout en haut de la page, il y a deux éléments sur lesquels vous pouvez cliquer. Si vous choisissez de cliquer dessus, votre navigateur web ouvrira un lien. Ce serait grâce à l'élément <span class="highlight">&lt;a&gt;</span> !<br>Tout ce qui est à l'intérieur de cet élément envoiera l'utilisateur sur une autre page web (ou ailleurs sur la même page web) lorsqu'il lui cliquera dessus !</p>
+			<p>Dans l'exemple de l'image tout en haut de la page, il y a deux éléments sur lesquels vous pouvez cliquer. Si vous choisissez de cliquer dessus, votre navigateur web ouvrira un lien. Ce serait grâce à l'élément &lt;a&gt; !<br>Tout ce qui est à l'intérieur de cet élément envoiera l'utilisateur sur une autre page web (ou ailleurs sur la même page web) lorsqu'il lui cliquera dessus !</p>
 
-			<p>L'élément <span class="highlight">&lt;a&gt;</span> requiert un attribut, plus spécifiquement <span class="highlight">href</span>.<br>Comment cet attribut marche est très simple, car il marche comme <span class="highlight">src</span>, l'attribut utilisé pour la balise de départ <span class="highlight">&lt;img&gt;</span>. Sa valeur est l'URL que vous voulez visible d'une façon ou d'une autre par l'utilisateur. C'est comme ça que ça marche dans l'exemple aussi !</p>
+			<p>L'élément &lt;a&gt; requiert un attribut, plus spécifiquement href.<br>Comment cet attribut marche est très simple, car il marche comme src, l'attribut utilisé pour la balise de départ &lt;img&gt;. Sa valeur est l'URL que vous voulez visible d'une façon ou d'une autre par l'utilisateur. C'est comme ça que ça marche dans l'exemple aussi !</p>
 
-			<p>Mais dans l'exemple, quand vous cliquez sur l'image, le navigateur web ouvre l'URL dans un nouvel onglet, alors que lorsque vous cliquez le texte blue, il ouvre l'URL dans le même onglet !<br>Il y a en fait un attribut optionnel pour l'élément <span class="highlight">&lt;a&gt;</span>, que l'on appelle <span class="highlight">target</span>.</p>
+			<p>Mais dans l'exemple, quand vous cliquez sur l'image, le navigateur web ouvre l'URL dans un nouvel onglet, alors que lorsque vous cliquez le texte blue, il ouvre l'URL dans le même onglet !<br>Il y a en fait un attribut optionnel pour l'élément &lt;a&gt;, que l'on appelle target.</p>
 
-			<p><span class="highlight">target</span>, pour la balise de départ <span class="highlight">&lt;a&gt;</span>, n'a qu'une seule valeur que vous devriez retenir pour le moment : <span class="highlight">_blank</span>. Ajouter cet attribut avec cette valeur fait que le navigateur web ouvre le lien dans un nouvel onglet, tout frais !<br>Vous pouvez mettre autant d'éléments que vous voulez dans l'élément <span class="highlight">&lt;a&gt;</span>, et vous pouvez aussi y mettre du texte simple sans avoir besoin d'un élément <span class="highlight">&lt;p&gt;</span>.</p>
+			<p>target, pour la balise de départ &lt;a&gt;, n'a qu'une seule valeur que vous devriez retenir pour le moment : _blank. Ajouter cet attribut avec cette valeur fait que le navigateur web ouvre le lien dans un nouvel onglet, tout frais !<br>Vous pouvez mettre autant d'éléments que vous voulez dans l'élément &lt;a&gt;, et vous pouvez aussi y mettre du texte simple sans avoir besoin d'un élément &lt;p&gt;.</p>
 
 			<p>Sinon, avez-vous déjà entendu parler des commentaires ? Dans les fichiers HTML, ils sont utilisés pour dire des choses à n'importe qui qui lirait l'intérieut du fichier, et ne seront tout simplement pas interpreté par le navigateur web, ils seront ignorés à la place.<br>Dans l'exemple en haut de cette page, il y a trois commentaires non-interprétés. Ils peuvent être plus ou moins n'importe où, mais ils devraient être placés à un endroit où ils peuvent être dicernés des choses qui ne sont pas des commentaires.</p>
 
-			<p>Un commentaire commence avec <span class="highlight">&lt;!--</span> puis finit avec <span class="highlight">--&gt;</span>. Il peut prendre autant de lignes que vous voulez !<br>Et c'est tout, du coup. Vous voyez que tout ça n'est pas si compliqué après tout !</p>
+			<p>Un commentaire commence avec &lt;!-- puis finit avec --&gt;. Il peut prendre autant de lignes que vous voulez !<br>Et c'est tout, du coup. Vous voyez que tout ça n'est pas si compliqué après tout !</p>
 		</div>
 
 		<div class="other-lessons">

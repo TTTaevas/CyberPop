@@ -10,12 +10,13 @@
 		<script type="text/javascript" src="../jquery-3.5.1.min.js"></script>
 		<script type="text/javascript" src="../menu.js"></script>
 		<script type="text/javascript" src="../header.js"></script>
+		<script type="text/javascript" src="../lessons.js"></script>
 		<script>$(function() {$("#menu_toggle").load("./menu_toggle.html")})</script>
 		<script>$(function() {$("#menu_content").load("./web-dev/menu_content.html", function(){changeButtons()})})</script>
 		<script>$(function() {$("#header").load("./header.html", function(){languageSwitch()})})</script>
 		<script>$(function() {$("#footer").load("./footer.html")})</script>
 	</head>
-	<body>
+	<body onload="highlightLesson()">
 		<div id="menu">
 			<div id="menu_toggle"></div>
 			<div id="menu_content"></div>
@@ -32,9 +33,9 @@
 
 			<p>You will come up with ideas using the concepts you have learned, but how to apply ideas in a language differs depending on the language.<br>(It isn't so bad in web development if you only use Javascript as a programming language, though!)</p>
 
-			<p>For example, let's say that in HTML, you've made some <span class="highlight">&lt;p&gt;</span> elements, all with different <span class="highlight">classes</span>. How to make a function in JS that gets all <span class="highlight">&lt;p&gt;</span> elements that have a certain <span class="highlight">class</span> in order to make all of them slightly bigger is something you probably currently have no idea how to do in practice, though you may have some sort of theory.</p>
+			<p>For example, let's say that in HTML, you've made some &lt;p&gt; elements, all with different classes. How to make a function in JS that gets all &lt;p&gt; elements that have a certain class in order to make all of them slightly bigger is something you probably currently have no idea how to do in practice, though you may have some sort of theory.</p>
 
-			<p>Like, there's probably a function in JS that gets all elements fitting that description, and you can do a <span class="highlight">for loop</span> to go through an array of those elements, but do you even remember how to make a <span class="highlight">for loop</span>, and do you even know what function in JS gets all elements from a webpage that have a certain <span class="highlight">class</span>?</p>
+			<p>Like, there's probably a function in JS that gets all elements fitting that description, and you can do a for loop to go through an array of those elements, but do you even remember how to make a for loop, and do you even know what function in JS gets all elements from a webpage that have a certain class?</p>
 
 			<p>There's definitely no shame in not knowing, truly. As I said, you're not expected, and you will never be expected to know every JS function!<br>So.. how do you apply your idea if you don't know how?..</p>
 

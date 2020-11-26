@@ -10,12 +10,13 @@
 		<script type="text/javascript" src="../jquery-3.5.1.min.js"></script>
 		<script type="text/javascript" src="../menu.js"></script>
 		<script type="text/javascript" src="../header.js"></script>
+		<script type="text/javascript" src="../lessons.js"></script>
 		<script>$(function() {$("#menu_toggle").load("./menu_toggle.html")})</script>
 		<script>$(function() {$("#menu_content").load("./web-dev/menu_content.html", function(){changeButtons()})})</script>
 		<script>$(function() {$("#header").load("./header.html", function(){languageSwitch()})})</script>
 		<script>$(function() {$("#footer").load("./footer.html")})</script>
 	</head>
-	<body>
+	<body onload="highlightLesson()">
 		<div id="menu">
 			<div id="menu_toggle"></div>
 			<div id="menu_content"></div>
@@ -31,29 +32,29 @@
 
 			<a href="./web-dev/css/html-use-css-file-example.html" target="_blank"><img src="./web-dev/images/css-1-1.png" alt="Simple exemple d'un fichier HTML utilisant un fichier CSS"></a>
 
-			<p>Si on assume que vous connaissez un minimum d'HTML, les seules choses qui devraient vous sembler étrange dans l'exemple juste au dessus sont l'élément <span class="highlight">&lt;link&gt;</span> et l'attribut <span class="highlight">class</span> de l'élément <span class="highlight">&lt;p&gt;</span>. Si vous n'êtes pas déjà familier avec l'HTML, <a href="./web-dev/html/initial-html-structure.html">alors cliquez-moi dessus !</a></p>
+			<p>Si on assume que vous connaissez un minimum d'HTML, les seules choses qui devraient vous sembler étrange dans l'exemple juste au dessus sont l'élément &lt;link&gt; et l'attribut class de l'élément &lt;p&gt;. Si vous n'êtes pas déjà familier avec l'HTML, <a href="./web-dev/html/initial-html-structure.html">alors cliquez-moi dessus !</a></p>
 
-			<p>L'élément <span class="highlight">&lt;link&gt;</span> dit au navigateur web que, dans ce contexte-là, d'utiliser un fichier CSS spécifique.<br>Cet élément peut être utilisé pour des fichiers autres que CSS, mais c'est quelque chose qui est juste bien trop rare.</p>
+			<p>L'élément &lt;link&gt; dit au navigateur web que, dans ce contexte-là, d'utiliser un fichier CSS spécifique.<br>Cet élément peut être utilisé pour des fichiers autres que CSS, mais c'est quelque chose qui est juste bien trop rare.</p>
 
-			<p>Cet élément a besoin de deux attributs, qui sont <span class="highlight">rel</span> et <span class="highlight">href</span>.<br>L'attribut <span class="highlight">rel</span> spécifie comment le navigateur web utilisera le dit-fichier avec le fichier HTML, qui est la page web.<br>Quant à l'attribut <span class="highlight">href</span>, il dit au navigateur web qu'est-ce que le fichier, et où se trouve-t-il, par rapport à, <span style="font-weight: bold">DANS CET EXEMPLE</span>, l'endroit où se situe le fichier HTML dans le serveur.</p>
+			<p>Cet élément a besoin de deux attributs, qui sont rel et href.<br>L'attribut rel spécifie comment le navigateur web utilisera le dit-fichier avec le fichier HTML, qui est la page web.<br>Quant à l'attribut href, il dit au navigateur web qu'est-ce que le fichier, et où se trouve-t-il, par rapport à, <span style="font-weight: bold">DANS CET EXEMPLE, l'endroit où se situe le fichier HTML dans le serveur.</p>
 
-			<p>Dans cet exemple, l'attribut <span class="highlight">href</span> a la valeur de "./html-use-css-file-example.css". Le nom du fichier est "html-use-css-file-example.css", et le "./" est complètement optionnel, il veut juste dire que c'est dans le bon dossier.<br>Par contre, "../" voudrait dire que c'est dans le dossier parent !</p>
+			<p>Dans cet exemple, l'attribut href a la valeur de "./html-use-css-file-example.css". Le nom du fichier est "html-use-css-file-example.css", et le "./" est complètement optionnel, il veut juste dire que c'est dans le bon dossier.<br>Par contre, "../" voudrait dire que c'est dans le dossier parent !</p>
 
-			<p>Une nouvelle fois dans notre exemple, le fichier CSS est dans le même dosier que notre fichier HTML, génial ! Mais toujours dans l'exemple, un troisième attribut est utilisé : <span class="highlight">type</span>.<br>C'est un attribut optionnem qui dit au navigateur web quel type de fichier la valeur de <span class="highlight">href</span> est, mais c'est maintenant pratiquement inutile car le navigateur web va automatiquement assumer que la valeur de <span class="highlight">type</span> est "text/css", étant donné que la valeur de <span class="highlight">rel</span> est "stylesheet".</p>
+			<p>Une nouvelle fois dans notre exemple, le fichier CSS est dans le même dosier que notre fichier HTML, génial ! Mais toujours dans l'exemple, un troisième attribut est utilisé : type.<br>C'est un attribut optionnem qui dit au navigateur web quel type de fichier la valeur de href est, mais c'est maintenant pratiquement inutile car le navigateur web va automatiquement assumer que la valeur de type est "text/css", étant donné que la valeur de rel est "stylesheet".</p>
 
 			<p>Tout ça, c'est bien joli, mais on ne sait toujours pas exactement quel est l'effet d'un fichier CSS sur le fichier HTML. Alors jettons un oeil à ce qui y est écrit !</p>
 
 			<a href="./web-dev/css/html-use-css-file-example.css" target="_blank"><img src="./web-dev/images/css-1-2.png" alt="Simple fichier CSS"></a>
 
-			<p>La première ligne a ".example {", qui a trois parties que nous devons distinguer : Le point, le nom et l'accolade.<br>Tout ce qui est entre les deux accolades affecte l'élément qui est les précède directement. Dans le cas présent, c'est ".example".<br>Le point spécifie que l'élément affecté est quelque chose que l'on appelle une <span class="highlight">class</span>, mot anglais pour classe, pendant que ce qui est directement après ce point est le nom de cette classe.</p>
+			<p>La première ligne a ".example {", qui a trois parties que nous devons distinguer : Le point, le nom et l'accolade.<br>Tout ce qui est entre les deux accolades affecte l'élément qui est les précède directement. Dans le cas présent, c'est ".example".<br>Le point spécifie que l'élément affecté est quelque chose que l'on appelle une class, mot anglais pour classe, pendant que ce qui est directement après ce point est le nom de cette classe.</p>
 
-			<p>Donc dans notre exemple, c'est la <span class="highlight">class</span> avec le nom "example" qui est affectée par les propriétés qui sont entre les deux accolades !</p>
+			<p>Donc dans notre exemple, c'est la class avec le nom "example" qui est affectée par les propriétés qui sont entre les deux accolades !</p>
 
-			<p>Les classes sont des attributs que vous pouvez donner à (peut être quasiment) n'importe quel élément HTML que vous voulez.<br>Comme on peut voir dans l'image tout en haut, la <span class="highlight">class</span> "example" est donnée à l'élément <span class="highlight">&lt;p&gt;</span>, ce qui veut dire que les attributs CSS lui sont donnés !</p>
+			<p>Les classes sont des attributs que vous pouvez donner à (peut être quasiment) n'importe quel élément HTML que vous voulez.<br>Comme on peut voir dans l'image tout en haut, la class "example" est donnée à l'élément &lt;p&gt;, ce qui veut dire que les attributs CSS lui sont donnés !</p>
 
 			<p>C'est la raison pour laquelle le paragraphe avec le texte "Bonjour le Monde !" est gros, blanc et est avec un fond noir.<br>Tous les attributs dans le fichier CSS sont donnés avec la syntaxe "attribut: valeur" avec le ";" étant optionnel dans le cas du dernier attribut.</p>
 
-			<p>Le texte de l'élément <span class="highlight">&lt;p&gt;</span>, "Bonjour le Monde !", a une "font-size" (taille de police) de 100px, px étant pour pixels.<br>Sa "color" (couleur) est "white" (blanc).<br>Quant à la "background-color" (couleur de fond) du paragraphe, elle est "black" (noire). La taille horizontale du paragraphe ne dépend pas, dans ce cas particulier, de la taille du texte.</p>
+			<p>Le texte de l'élément &lt;p&gt;, "Bonjour le Monde !", a une "font-size" (taille de police) de 100px, px étant pour pixels.<br>Sa "color" (couleur) est "white" (blanc).<br>Quant à la "background-color" (couleur de fond) du paragraphe, elle est "black" (noire). La taille horizontale du paragraphe ne dépend pas, dans ce cas particulier, de la taille du texte.</p>
 
 			<p>Comment on s'occupe de la taille d'un élément, c'est quelque chose que l'on verra plus tard !</p>
 		</div>

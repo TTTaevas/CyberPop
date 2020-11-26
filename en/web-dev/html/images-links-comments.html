@@ -10,12 +10,13 @@
 		<script type="text/javascript" src="../jquery-3.5.1.min.js"></script>
 		<script type="text/javascript" src="../menu.js"></script>
 		<script type="text/javascript" src="../header.js"></script>
+		<script type="text/javascript" src="../lessons.js"></script>
 		<script>$(function() {$("#menu_toggle").load("./menu_toggle.html")})</script>
 		<script>$(function() {$("#menu_content").load("./web-dev/menu_content.html", function(){changeButtons()})})</script>
 		<script>$(function() {$("#header").load("./header.html", function(){languageSwitch()})})</script>
 		<script>$(function() {$("#footer").load("./footer.html")})</script>
 	</head>
-	<body>
+	<body onload="highlightLesson()">
 		<div id="menu">
 			<div id="menu_toggle"></div>
 			<div id="menu_content"></div>
@@ -30,35 +31,35 @@
 
 			<a href="./web-dev/html/images-links-comments-example.html" target="_blank"><img src="./web-dev/images/html-3-1.png" alt="HTML using images, links and comments"></a>
 
-			<p>Usually, you want to add an image to your website using the <span class="highlight">&lt;img&gt;</span> tag. But using it alone is useless if you do not add the necessary attributes! The <span class="highlight">&lt;img&gt;</span> element doesn't have an end tag, which means that you need to use attributes in order to make it so a web browser renders your <span class="highlight">&lt;img&gt;</span> element as an actual image.</p>
+			<p>Usually, you want to add an image to your website using the &lt;img&gt; tag. But using it alone is useless if you do not add the necessary attributes! The &lt;img&gt; element doesn't have an end tag, which means that you need to use attributes in order to make it so a web browser renders your &lt;img&gt; element as an actual image.</p>
 
-			<p>First of all, you want to tell the HTML file what image it is that you want rendered by a web browser. It is for that reason that the <span class="highlight">src</span> attribute exists! The value you would give to this element would either be an URL to an image file, or the position of the file relative to the HTML file. I'm afraid the latter may be too complicated for now, so you should only focus on using URLs with the <span class="highlight">src</span> attribute until you decide to properly learn HTML.<br>The syntax is really simple, it is something that is very much like <span class="highlight">src="url"</span>.<br>So far, your <span class="highlight">&lt;img&gt;</span> tag would be something like <span class="highlight">&lt;img src="https://www.w3schools.com/images/lamp.jpg"&gt;</span>, but it's still missing another attribute.</p>
+			<p>First of all, you want to tell the HTML file what image it is that you want rendered by a web browser. It is for that reason that the src attribute exists! The value you would give to this element would either be an URL to an image file, or the position of the file relative to the HTML file. I'm afraid the latter may be too complicated for now, so you should only focus on using URLs with the src attribute until you decide to properly learn HTML.<br>The syntax is really simple, it is something that is very much like src="url".<br>So far, your &lt;img&gt; tag would be something like &lt;img src="https://www.w3schools.com/images/lamp.jpg"&gt;, but it's still missing another attribute.</p>
 
-			<p>Introducing the <span class="highlight">alt</span> attribute! Because a web browser may not render the image for some reason, this attribute exists.</p>
+			<p>Introducing the alt attribute! Because a web browser may not render the image for some reason, this attribute exists.</p>
 
-			<p>When the web browser fails to render an image, it will try to render the value inside the <span class="highlight">alt</span> attribute instead, which would be text.<br>You should always put text that describes the image that should have been rendered as the value of <span class="highlight">alt</span>.</p>
+			<p>When the web browser fails to render an image, it will try to render the value inside the alt attribute instead, which would be text.<br>You should always put text that describes the image that should have been rendered as the value of alt.</p>
 
-			<p>Below is the result of <span class="highlight">&lt;img src="https://www.w3schools.com/images/lamp.jpg" alt="A lamp icon"&gt;</span>:</p>
+			<p>Below is the result of &lt;img src="https://www.w3schools.com/images/lamp.jpg" alt="A lamp icon"&gt;:</p>
 
 			<img src="https://www.w3schools.com/images/lamp.jpg" alt="Congrats! You figured out that the alt attribute is different, somehow!">
 
-			<p>And below is the result of <span class="highlight">&lt;img src="https://nonexistenturl.com/images/cat.png" alt="A very cute cat!"&gt;</span>:</p>
+			<p>And below is the result of &lt;img src="https://nonexistenturl.com/images/cat.png" alt="A very cute cat!"&gt;:</p>
 
 			<img src="https://nonexistenturl.com/images/cat.png" alt="A very cute cat!">
 
 			<p>Your web browser has failed to render the above image because it simply doesn't exist. Too bad, you couldn't see how cute that cat was.</p>
 
-			<p>In the example in the image at the very top, you can see that it features two elements, and if you were to click on them, it opens a link. Introducing the <span class="highlight">&lt;a&gt;</span> element!<br>Everything that is inside that element will send the user onto another webpage (or somewhere else on the same webpage) when clicked onto!</p>
+			<p>In the example in the image at the very top, you can see that it features two elements, and if you were to click on them, it opens a link. Introducing the &lt;a&gt; element!<br>Everything that is inside that element will send the user onto another webpage (or somewhere else on the same webpage) when clicked onto!</p>
 
-			<p>The <span class="highlight">&lt;a&gt;</span> element requires one attribute, more specifically, the <span class="highlight">href</span> attribute.<br>How it works is really simple, it works the same as the <span class="highlight">src</span> attribute for the <span class="highlight">&lt;img&gt;</span> start tag. Its value is the URL you want the user to see. That's how it works in the example too!</p>
+			<p>The &lt;a&gt; element requires one attribute, more specifically, the href attribute.<br>How it works is really simple, it works the same as the src attribute for the &lt;img&gt; start tag. Its value is the URL you want the user to see. That's how it works in the example too!</p>
 
-			<p>But in the example, when you click on the image, it opens the URL into a new tab, while when you click on the blue text, it opens the URL into the same tab!<br>There is an optional attribute to <span class="highlight">&lt;a&gt;</span>, called <span class="highlight">target</span>.</p>
+			<p>But in the example, when you click on the image, it opens the URL into a new tab, while when you click on the blue text, it opens the URL into the same tab!<br>There is an optional attribute to &lt;a&gt;, called target.</p>
 
-			<p><span class="highlight">target</span>, for the <span class="highlight">&lt;a&gt;</span> start tag, has only one value you should remember for now, which is <span class="highlight">_blank</span>. Simply adding that attribute with this value will make it so the URL is opened in another, new and fresh tab!<br>Just so you know, you can put as many elements in the <span class="highlight">&lt;a&gt;</span> element as you want, and you can also put in simple text, without the need for a <span class="highlight">&lt;p&gt;</span> element.</p>
+			<p>target, for the &lt;a&gt; start tag, has only one value you should remember for now, which is _blank. Simply adding that attribute with this value will make it so the URL is opened in another, new and fresh tab!<br>Just so you know, you can put as many elements in the &lt;a&gt; element as you want, and you can also put in simple text, without the need for a &lt;p&gt; element.</p>
 
 			<p>Have you ever heard of comments? In HTML files, they're used to tell things to whoever reads them that will not be rendered by the web browser.<br>For example, in the example at the very top, there are three comments that are not rendered. They can be placed about everywhere, but they should be placed at a place where they stand out from all the stuff that ain't comments.</p>
 
-			<p>A comment starts with <span class="highlight">&lt;!--</span> and ends with <span class="highlight">--&gt;</span>. It can take from one line to as many as you want.<br>That's really it. See, all that stuff isn't so complex after all!</p>
+			<p>A comment starts with &lt;!-- and ends with --&gt;. It can take from one line to as many as you want.<br>That's really it. See, all that stuff isn't so complex after all!</p>
 		</div>
 
 		<div class="other-lessons">

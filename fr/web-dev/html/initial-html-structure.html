@@ -10,12 +10,13 @@
 		<script type="text/javascript" src="../jquery-3.5.1.min.js"></script>
 		<script type="text/javascript" src="../menu.js"></script>
 		<script type="text/javascript" src="../header.js"></script>
+		<script type="text/javascript" src="../lessons.js"></script>
 		<script>$(function() {$("#menu_toggle").load("./menu_toggle.html")})</script>
 		<script>$(function() {$("#menu_content").load("./web-dev/menu_content.html", function(){changeButtons()})})</script>
 		<script>$(function() {$("#header").load("./header.html", function(){languageSwitch()})})</script>
 		<script>$(function() {$("#footer").load("./footer.html")})</script>
 	</head>
-	<body>
+	<body onload="highlightLesson()">
 		<div id="menu">
 			<div id="menu_toggle"></div>
 			<div id="menu_content"></div>
@@ -30,19 +31,19 @@
 
 			<a href="./web-dev/html/initial-html-structure-example.html" target="_blank"><img src="./web-dev/images/html-1-1.png" alt="La structure initiale de chaque document HTML"></a>
 
-			<p>Le tout premier élément est <span class="highlight">&lt;!DOCTYPE html&gt;</span>, qui est quelque chose que chaque fichier HTML a besoin d'avoir en premier ligne afin qu'il soit considéré comme "valide". Pas la peine de savoir pourquoi c'est nécessaire, c'est suffisant de savoir que ça l'est !<br>Avant l'actuelle version d'HTML, la cinquième, c'était un peu plus compliqué. Voici un exemple : <span class="highlight">&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"&gt;</span></p>
+			<p>Le tout premier élément est &lt;!DOCTYPE html&gt;, qui est quelque chose que chaque fichier HTML a besoin d'avoir en premier ligne afin qu'il soit considéré comme "valide". Pas la peine de savoir pourquoi c'est nécessaire, c'est suffisant de savoir que ça l'est !<br>Avant l'actuelle version d'HTML, la cinquième, c'était un peu plus compliqué. Voici un exemple : &lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"&gt;</p>
 
-			<p>Le deuxième élément est <span class="highlight">&lt;html&gt;</span>, mais puis-je porter votre attention vers la toute dernière ligne du fichier, étant donné qu'elle concerne ce même élément ? Il y est écrit <span class="highlight">&lt;/html&gt;</span>. En gros, tout ce qu'il y a après <span class="highlight">&lt;html&gt;</span> et tout ce qu'il y a avant <span class="highlight">&lt;/html&gt;</span> est l'endroit où tout sera écrit, à l'exception de <span class="highlight">&lt;!DOCTYPE html&gt;</span> que vous connaissez déjà. Toute autre chose écrite entre <span class="highlight">&lt;html&gt;</span> et <span class="highlight">&lt;/html&gt;</span> est tout simplement invalide.</p>
+			<p>Le deuxième élément est &lt;html&gt;, mais puis-je porter votre attention vers la toute dernière ligne du fichier, étant donné qu'elle concerne ce même élément ? Il y est écrit &lt;/html&gt;. En gros, tout ce qu'il y a après &lt;html&gt; et tout ce qu'il y a avant &lt;/html&gt; est l'endroit où tout sera écrit, à l'exception de &lt;!DOCTYPE html&gt; que vous connaissez déjà. Toute autre chose écrite entre &lt;html&gt; et &lt;/html&gt; est tout simplement invalide.</p>
 
-			<p>Ah, au fait, tout ce qui est écrit comme <span class="highlight">&lt;ça&gt;</span> est une balise de début, pendant que tout ce qui est écrit comme <span class="highlight">&lt;/ça&gt;</span> est une balise de fin. Ensemble, ils forment tous les deux un élément ! Bien qu'il existe des éléments rares qui n'ont besoin que d'une balise de début.</p>
+			<p>Ah, au fait, tout ce qui est écrit comme &lt;ça&gt; est une balise de début, pendant que tout ce qui est écrit comme &lt;/ça&gt; est une balise de fin. Ensemble, ils forment tous les deux un élément ! Bien qu'il existe des éléments rares qui n'ont besoin que d'une balise de début.</p>
 
-			<p>Le troisième élément est appelé <span class="highlight">&lt;head&gt;</span>, head étant le mot anglais pour tête. C'est basiquement là où vous allez mettre tout ce qui concerne la page web mais qui n'est pas fait pour être directement visible quoi qu'il arrive, comme le "titre", les polices d'écriture, l'encodage de charactères et parfois, les "scripts" qui sont nécessaires pour que l'utilisateur puisse intéragir avec la page web.</p>
+			<p>Le troisième élément est appelé &lt;head&gt;, head étant le mot anglais pour tête. C'est basiquement là où vous allez mettre tout ce qui concerne la page web mais qui n'est pas fait pour être directement visible quoi qu'il arrive, comme le "titre", les polices d'écriture, l'encodage de charactères et parfois, les "scripts" qui sont nécessaires pour que l'utilisateur puisse intéragir avec la page web.</p>
 
-			<p>Dans cet example, l'élément <span class="highlight">&lt;head&gt;</span> contient le quatrième élément dont on va parler, et il s'agit de l'élément <span class="highlight">&lt;title&gt;</span>, title étant le mot anglais pour titre ! Son utilité est assez évidente, et comment l'utiliser est très simple. Plus ou moins chaque page web que vous allez visiter dans votre navigateur web a un élément <span class="highlight">&lt;title&gt;</span>, et c'est le texte entre la balise de début et la balise de fin qui compose le nom de son onglet.<br>Donc, cette page web sur laquelle vous êtes actuellement présent a un élément <span class="highlight">&lt;title&gt;</span> dont la valeur est "La structure initiale de votre document HTML" et si vous cliquez sur l'image de l'exemple plus haut, vous verrez que le nom de l'onglet sera "CyberPop!", qui, au fait, est un nom vachement cool.</p>
+			<p>Dans cet example, l'élément &lt;head&gt; contient le quatrième élément dont on va parler, et il s'agit de l'élément &lt;title&gt;, title étant le mot anglais pour titre ! Son utilité est assez évidente, et comment l'utiliser est très simple. Plus ou moins chaque page web que vous allez visiter dans votre navigateur web a un élément &lt;title&gt;, et c'est le texte entre la balise de début et la balise de fin qui compose le nom de son onglet.<br>Donc, cette page web sur laquelle vous êtes actuellement présent a un élément &lt;title&gt; dont la valeur est "La structure initiale de votre document HTML" et si vous cliquez sur l'image de l'exemple plus haut, vous verrez que le nom de l'onglet sera "CyberPop!", qui, au fait, est un nom vachement cool.</p>
 
-			<p>Le prochain élément est <span class="highlight">&lt;body&gt;</span>, body étant le mot anglais pour corps. Encore une fois, il est très simple car on peut dire que c'est le complet opposé à <span class="highlight">&lt;head&gt;</span>. C'est là que vous mettez tous les éléments qui sont ou qui deviendront visibles.<br>Vous pouvez aussi y mettre vos "scripts", mais c'est vraiment comme vous voulez.</p>
+			<p>Le prochain élément est &lt;body&gt;, body étant le mot anglais pour corps. Encore une fois, il est très simple car on peut dire que c'est le complet opposé à &lt;head&gt;. C'est là que vous mettez tous les éléments qui sont ou qui deviendront visibles.<br>Vous pouvez aussi y mettre vos "scripts", mais c'est vraiment comme vous voulez.</p>
 
-			<p>Le dernier élément de cet exemple se trouve dans l'élément <span class="highlight">&lt;body&gt;</span>. Parlons un peu de l'élément <span class="highlight">&lt;p&gt;</span>!<br>C'est un élément que vous utilisez pour créer des paragraphes, ou des textes moins importants que les "titres", "headings" en anglais. On verra qu'est-ce qu'ils sont un autre jour !</p>
+			<p>Le dernier élément de cet exemple se trouve dans l'élément &lt;body&gt;. Parlons un peu de l'élément &lt;p&gt;!<br>C'est un élément que vous utilisez pour créer des paragraphes, ou des textes moins importants que les "titres", "headings" en anglais. On verra qu'est-ce qu'ils sont un autre jour !</p>
 		</div>
 
 		<div class="other-lessons">

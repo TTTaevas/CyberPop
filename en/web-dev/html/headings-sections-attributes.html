@@ -10,12 +10,13 @@
 		<script type="text/javascript" src="../jquery-3.5.1.min.js"></script>
 		<script type="text/javascript" src="../menu.js"></script>
 		<script type="text/javascript" src="../header.js"></script>
+		<script type="text/javascript" src="../lessons.js"></script>
 		<script>$(function() {$("#menu_toggle").load("./menu_toggle.html")})</script>
 		<script>$(function() {$("#menu_content").load("./web-dev/menu_content.html", function(){changeButtons()})})</script>
 		<script>$(function() {$("#header").load("./header.html", function(){languageSwitch()})})</script>
 		<script>$(function() {$("#footer").load("./footer.html")})</script>
 	</head>
-	<body>
+	<body onload="highlightLesson()">
 		<div id="menu">
 			<div id="menu_toggle"></div>
 			<div id="menu_content"></div>
@@ -26,21 +27,21 @@
 		<div id="lesson">
 			<h1>Headings, sections and attributes</h1>
 			
-			<p>Sometimes, when you make a HTML file, there is text to which you want to give more importance than others. That is what headings are for!<br>But what's more important than important text are <span class="highlight">&lt;section&gt;</span> elements, and the fact that pretty much all of the elements in HTML can have attributes, which can be used to customize them!<br>To begin with, let's see a HTML document which features all three of those things.</p>
+			<p>Sometimes, when you make a HTML file, there is text to which you want to give more importance than others. That is what headings are for!<br>But what's more important than important text are &lt;section&gt; elements, and the fact that pretty much all of the elements in HTML can have attributes, which can be used to customize them!<br>To begin with, let's see a HTML document which features all three of those things.</p>
 
 			<a href="./web-dev/html/headings-sections-attributes-example.html" target="_blank"><img src="./web-dev/images/html-2-1.png" alt="HTML file featuring new things!"></a>
 
-			<p>But! Before we talk about what was previously mentionned, we'll check out two really easy elements that are featured in this HTML file, namely <span class="highlight">&lt;header&gt;</span> and <span class="highlight">&lt;footer&gt;</span>.<br><span class="highlight">&lt;header&gt;</span> features all the things that should show up at the top of the page, while <span class="highlight">&lt;footer&gt;</span> features all the things that should show up at its bottom. If you have visited many websites, you may have already noticed that the header and the footer elements are usually the same throughout all webpages of a same website!</p>
+			<p>But! Before we talk about what was previously mentionned, we'll check out two really easy elements that are featured in this HTML file, namely &lt;header&gt; and &lt;footer&gt;.<br>&lt;header&gt; features all the things that should show up at the top of the page, while &lt;footer&gt; features all the things that should show up at its bottom. If you have visited many websites, you may have already noticed that the header and the footer elements are usually the same throughout all webpages of a same website!</p>
 
-			<p>Alright, now, headings. There are 6 headings element in HTML, from <span class="highlight">&lt;h1&gt;</span> to <span class="highlight">&lt;h6&gt;</span>, each of them make its content bold and changes its size (differently) without the need for CSS.<br><span class="highlight">&lt;h1&gt;</span> makes the text quite big, <span class="highlight">&lt;h4&gt;</span> doesn't really change the text size, while <span class="highlight">&lt;h6&gt;</span> makes it really small. Remember that all of them makes the text bold.</p>
+			<p>Alright, now, headings. There are 6 headings element in HTML, from &lt;h1&gt; to &lt;h6&gt;, each of them make its content bold and changes its size (differently) without the need for CSS.<br>&lt;h1&gt; makes the text quite big, &lt;h4&gt; doesn't really change the text size, while &lt;h6&gt; makes it really small. Remember that all of them makes the text bold.</p>
 
-			<p>Now, <span class="highlight">&lt;section&gt;</span>. This element is basically a box of whatever size which you can put wherever in which you can put whatever. You can even put a <span class="highlight">&lt;section&gt;</span> inside another <span class="highlight">&lt;section&gt;</span>, or put it in a page's header or footer! Or just inside the <span class="highlight">&lt;body&gt;</span>, that's fine too.</p>
+			<p>Now, &lt;section&gt;. This element is basically a box of whatever size which you can put wherever in which you can put whatever. You can even put a &lt;section&gt; inside another &lt;section&gt;, or put it in a page's header or footer! Or just inside the &lt;body&gt;, that's fine too.</p>
 
-			<p>Something I must mention is that, while there should only be one <span class="highlight">&lt;!DOCTYPE html&gt;</span>, one <span class="highlight">&lt;html&gt;</span>, one <span class="highlight">&lt;head&gt;</span> and one <span class="highlight">&lt;body&gt;</span>, there can be as many <span class="highlight">&lt;p&gt;</span>, <span class="highlight">&lt;h1&gt;</span>, <span class="highlight">&lt;h6&gt;</span>, <span class="highlight">&lt;section&gt;</span> and many other elements as you want!</p>
+			<p>Something I must mention is that, while there should only be one &lt;!DOCTYPE html&gt;, one &lt;html&gt;, one &lt;head&gt; and one &lt;body&gt;, there can be as many &lt;p&gt;, &lt;h1&gt;, &lt;h6&gt;, &lt;section&gt; and many other elements as you want!</p>
 
-			<p>And to about any element you want, you can give as many attributes as you want! In the example, only the <span class="highlight">style</span> attribute is given, thrice, one to the only <span class="highlight">&lt;section&gt;</span> element, one to the <span class="highlight">&lt;p&gt;</span> element that happens to be inside that same <span class="highlight">&lt;section&gt;</span> element, and the <span class="highlight">&lt;h4&gt;</span> element.<br>The <span class="highlight">style</span> attribute is used to apply CSS directly into the HTML, instead of using CSS files, with a syntax of <span class="highlight">style="property: value"</span> inside the start tag.</p>
+			<p>And to about any element you want, you can give as many attributes as you want! In the example, only the style attribute is given, thrice, one to the only &lt;section&gt; element, one to the &lt;p&gt; element that happens to be inside that same &lt;section&gt; element, and the &lt;h4&gt; element.<br>The style attribute is used to apply CSS directly into the HTML, instead of using CSS files, with a syntax of style="property: value" inside the start tag.</p>
 
-			<p>The <span class="highlight">style</span> of <span class="highlight">&lt;section&gt;</span> is there to make it so every text inside this same <span class="highlight">&lt;section&gt;</span> becomes red.<br>The one of <span class="highlight">&lt;p&gt;</span> makes it so its content gets aligned to the right. (put simply)<br><span class="highlight">&lt;h4&gt;</span>'s made so it gets centered to the middle.</p>
+			<p>The style of &lt;section&gt; is there to make it so every text inside this same &lt;section&gt; becomes red.<br>The one of &lt;p&gt; makes it so its content gets aligned to the right. (put simply)<br>&lt;h4&gt;'s made so it gets centered to the middle.</p>
 
 			<p>Simple, right? You should now understand why the "Hello World" paragraph is both red and aligned to the right, and how each element is affected by its own position!</p>
 		</div>

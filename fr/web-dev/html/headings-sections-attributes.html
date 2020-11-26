@@ -10,12 +10,13 @@
 		<script type="text/javascript" src="../jquery-3.5.1.min.js"></script>
 		<script type="text/javascript" src="../menu.js"></script>
 		<script type="text/javascript" src="../header.js"></script>
+		<script type="text/javascript" src="../lessons.js"></script>
 		<script>$(function() {$("#menu_toggle").load("./menu_toggle.html")})</script>
 		<script>$(function() {$("#menu_content").load("./web-dev/menu_content.html", function(){changeButtons()})})</script>
 		<script>$(function() {$("#header").load("./header.html", function(){languageSwitch()})})</script>
 		<script>$(function() {$("#footer").load("./footer.html")})</script>
 	</head>
-	<body>
+	<body onload="highlightLesson()">
 		<div id="menu">
 			<div id="menu_toggle"></div>
 			<div id="menu_content"></div>
@@ -26,23 +27,23 @@
 		<div id="lesson">
 			<h1>Titres, sections et attributs</h1>
 			
-			<p>Parfois, quand vous créez un fichier HTML, il y a du texte auquel vous voulez donner plus d'importance qu'aux autres. C'est pour quoi les "headings", ou les titres, sont faits pour !<br>Mais ce qui est plus important que du texte important sont les éléments "<span class="highlight">&lt;section&gt;</span>", et le fait que plus ou moins tous les éléments en HTML peuvent avoir des attributs, qui peuvent être utilisés pour être customiser !<br>Pour commencer, lisons un document HTML qui possède ces trois choses.</p>
+			<p>Parfois, quand vous créez un fichier HTML, il y a du texte auquel vous voulez donner plus d'importance qu'aux autres. C'est pour quoi les "headings", ou les titres, sont faits pour !<br>Mais ce qui est plus important que du texte important sont les éléments "&lt;section&gt;", et le fait que plus ou moins tous les éléments en HTML peuvent avoir des attributs, qui peuvent être utilisés pour être customiser !<br>Pour commencer, lisons un document HTML qui possède ces trois choses.</p>
 
 			<a href="./web-dev/html/headings-sections-attributes-example.html" target="_blank"><img src="./web-dev/images/html-2-1.png" alt="Un fichier HTML avec des nouvelles choses !"></a>
 
-			<p>Mais ! Avant que l'on parle de ce qui a été mentionné il y a un instant, on va parler de deux éléments très faciles à comprendre qui sont dans ce fichier HTML, plus précisément <span class="highlight">&lt;header&gt;</span>, entête ou haut de page en français et <span class="highlight">&lt;footer&gt;</span>, bas de page en français.<br>L'élément <span class="highlight">&lt;header&gt;</span> est fait pour posséder toutes les choses qui devraient apparaître en haut de la page, pendant que <span class="highlight">&lt;footer&gt;</span> est fait pour posséder les choses qui devraient apparaître en bas de la page. Si vous avez visité pas mal de sites web, pour avez peut-être déjà remarqué que le haut de page et le bas de page sont similaires à travers toutes les pages web d'un même site web !</p>
+			<p>Mais ! Avant que l'on parle de ce qui a été mentionné il y a un instant, on va parler de deux éléments très faciles à comprendre qui sont dans ce fichier HTML, plus précisément &lt;header&gt;, entête ou haut de page en français et &lt;footer&gt;, bas de page en français.<br>L'élément &lt;header&gt; est fait pour posséder toutes les choses qui devraient apparaître en haut de la page, pendant que &lt;footer&gt; est fait pour posséder les choses qui devraient apparaître en bas de la page. Si vous avez visité pas mal de sites web, pour avez peut-être déjà remarqué que le haut de page et le bas de page sont similaires à travers toutes les pages web d'un même site web !</p>
 
-			<p>L'élément <span class="highlight">&lt;meta&gt;</span> dans l'élément <span class="highlight">&lt;head&gt;</span> de la page est pour dire au navigateur web quel encodage de charactères utiliser. Je l'exclus généralement des exemples car c'est quelque chose d'assez hors-sujet, mais cette page utilise des accents, qui seraient mal interprétés sans cet élément <span class="highlight">&lt;meta&gt;</span> !</p>
+			<p>L'élément &lt;meta&gt; dans l'élément &lt;head&gt; de la page est pour dire au navigateur web quel encodage de charactères utiliser. Je l'exclus généralement des exemples car c'est quelque chose d'assez hors-sujet, mais cette page utilise des accents, qui seraient mal interprétés sans cet élément &lt;meta&gt; !</p>
 
-			<p>Parlons maintenant des titres. Il y a 6 différents éléments titres en HTML, qui vont de <span class="highlight">&lt;h1&gt;</span> à <span class="highlight">&lt;h6&gt;</span>, chacun d'entre eux rend le texte gras et change sa taille (différement) sans le besoin d'utiliser du CSS.<br><span class="highlight">&lt;h1&gt;</span> rend le texte assez gros, <span class="highlight">&lt;h4&gt;</span> ne change pas vraiment la taille du texte pendant que <span class="highlight">&lt;h6&gt;</span> le rend petit. Et bien sûr, tout ça rend le texte gras.</p>
+			<p>Parlons maintenant des titres. Il y a 6 différents éléments titres en HTML, qui vont de &lt;h1&gt; à &lt;h6&gt;, chacun d'entre eux rend le texte gras et change sa taille (différement) sans le besoin d'utiliser du CSS.<br>&lt;h1&gt; rend le texte assez gros, &lt;h4&gt; ne change pas vraiment la taille du texte pendant que &lt;h6&gt; le rend petit. Et bien sûr, tout ça rend le texte gras.</p>
 
-			<p>Place à <span class="highlight">&lt;section&gt;</span>. On peut dire que cet élément est une boîte de n'importe quelle taille dans laquelle vous pouvez mettre n'importe quoi et que vous pouvez placer n'importe où. Vous pouvez mettre une <span class="highlight">&lt;section&gt;</span> dans une autre <span class="highlight">&lt;section&gt;</span>, ou vous pouvez en placer une dans le haut ou bas de page ! Simplement à l'intérieur de l'élément <span class="highlight">&lt;body&gt;</span>, c'est cool aussi.</p>
+			<p>Place à &lt;section&gt;. On peut dire que cet élément est une boîte de n'importe quelle taille dans laquelle vous pouvez mettre n'importe quoi et que vous pouvez placer n'importe où. Vous pouvez mettre une &lt;section&gt; dans une autre &lt;section&gt;, ou vous pouvez en placer une dans le haut ou bas de page ! Simplement à l'intérieur de l'élément &lt;body&gt;, c'est cool aussi.</p>
 
-			<p>Et bien sûr, bien qu'il ne devrait y avoir qu'un seul élément <span class="highlight">&lt;!DOCTYPE html&gt;</span>, un seul <span class="highlight">&lt;html&gt;</span>, un seul <span class="highlight">&lt;head&gt;</span> et un seul <span class="highlight">&lt;body&gt;</span>, il peut y avoir autant de <span class="highlight">&lt;p&gt;</span>, <span class="highlight">&lt;h1&gt;</span>, <span class="highlight">&lt;h6&gt;</span>, <span class="highlight">&lt;section&gt;</span> et pas mal d'autres éléments que vous voulez !</p>
+			<p>Et bien sûr, bien qu'il ne devrait y avoir qu'un seul élément &lt;!DOCTYPE html&gt;, un seul &lt;html&gt;, un seul &lt;head&gt; et un seul &lt;body&gt;, il peut y avoir autant de &lt;p&gt;, &lt;h1&gt;, &lt;h6&gt;, &lt;section&gt; et pas mal d'autres éléments que vous voulez !</p>
 
-			<p>Et vous pouvez donner autant d'attributs que vous voulez à a peu près n'importe quel élément ! Dans l'exemple, seulement l'attribut <span class="highlight">style</span> est donné (trois fois), une fois pour le seul élément <span class="highlight">&lt;section&gt;</span>, une autre fois à l'élément <span class="highlight">&lt;p&gt;</span> qui, au fait, est dans l'élément <span class="highlight">&lt;section&gt;</span> mentionné il y a cinq secondes, et une dernière fois à l'élément <span class="highlight">&lt;h4&gt;</span>.<br>L'attribut <span class="highlight">style</span> est utilisé pour appliquer du CSS directement dans l'HTML, à la place d'utiliser des fichiers CSS, en utilisant une syntaxe comme <span class="highlight">style="propriété: valeur"</span> à l'intérieur de la balise de départ.</p>
+			<p>Et vous pouvez donner autant d'attributs que vous voulez à a peu près n'importe quel élément ! Dans l'exemple, seulement l'attribut style est donné (trois fois), une fois pour le seul élément &lt;section&gt;, une autre fois à l'élément &lt;p&gt; qui, au fait, est dans l'élément &lt;section&gt; mentionné il y a cinq secondes, et une dernière fois à l'élément &lt;h4&gt;.<br>L'attribut style est utilisé pour appliquer du CSS directement dans l'HTML, à la place d'utiliser des fichiers CSS, en utilisant une syntaxe comme style="propriété: valeur" à l'intérieur de la balise de départ.</p>
 
-			<p>Le <span class="highlight">style</span> de <span class="highlight">&lt;section&gt;</span> est là pour rendre tout le texte à l'intérieur de cette même <span class="highlight">&lt;section&gt;</span> rouge.<br>Celui de <span class="highlight">&lt;p&gt;</span> alligne son contenu vers la droite, dit simplement.<br> Et celui de <span class="highlight">&lt;h4&gt;</span> alligne vers le centre.</p>
+			<p>Le style de &lt;section&gt; est là pour rendre tout le texte à l'intérieur de cette même &lt;section&gt; rouge.<br>Celui de &lt;p&gt; alligne son contenu vers la droite, dit simplement.<br> Et celui de &lt;h4&gt; alligne vers le centre.</p>
 
 			<p>C'est simple, n'est-ce-pas ? Maintenant, vous devriez comprendre pourquoi le paragraphe "Bonjour le Monde !" est à la fois rouge et alligné vers la droite, ainsi que comment chaque élément est affecté par leur propre position !</p>
 		</div>

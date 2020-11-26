@@ -10,12 +10,13 @@
 		<script type="text/javascript" src="../jquery-3.5.1.min.js"></script>
 		<script type="text/javascript" src="../menu.js"></script>
 		<script type="text/javascript" src="../header.js"></script>
+		<script type="text/javascript" src="../lessons.js"></script>
 		<script>$(function() {$("#menu_toggle").load("./menu_toggle.html")})</script>
 		<script>$(function() {$("#menu_content").load("./web-dev/menu_content.html", function(){changeButtons()})})</script>
 		<script>$(function() {$("#header").load("./header.html", function(){languageSwitch()})})</script>
 		<script>$(function() {$("#footer").load("./footer.html")})</script>
 	</head>
-	<body>
+	<body onload="highlightLesson()">
 		<div id="menu">
 			<div id="menu_toggle"></div>
 			<div id="menu_content"></div>
@@ -31,29 +32,29 @@
 
 			<a href="./web-dev/css/html-use-css-file-example.html" target="_blank"><img src="./web-dev/images/css-1-1.png" alt="Simple case of HTML using a CSS file"></a>
 
-			<p>Assuming you know the bare minimum of HTML, the only things that should look strange for you in the example right above should be the <span class="highlight">&lt;link&gt;</span> element and <span class="highlight">&lt;p&gt;</span>'s <span class="highlight">class</span> attribute. If you're unfamiliar with HTML, <a href="./web-dev/html/initial-html-structure.html">please click on me!</a></p>
+			<p>Assuming you know the bare minimum of HTML, the only things that should look strange for you in the example right above should be the &lt;link&gt; element and &lt;p&gt;'s class attribute. If you're unfamiliar with HTML, <a href="./web-dev/html/initial-html-structure.html">please click on me!</a></p>
 
-			<p>The <span class="highlight">&lt;link&gt;</span> element basically tells the web browser to use a specific CSS file.<br>Well, you can use that element for files other than CSS, but that shouldn't be something you will ever encounter.</p>
+			<p>The &lt;link&gt; element basically tells the web browser to use a specific CSS file.<br>Well, you can use that element for files other than CSS, but that shouldn't be something you will ever encounter.</p>
 
-			<p>This element has two necessary attributes, namely <span class="highlight">rel</span> and <span class="highlight">href</span>.<br>The <span class="highlight">rel</span> attribute specifies how the web browser will use that file with the HTML file, aka the webpage.<br>The <span class="highlight">href</span> one tells the web browser what and where the file is, relatively to, <span style="font-weight: bold">IN THIS EXAMPLE</span>, the location of the HTML file on the server.</p>
+			<p>This element has two necessary attributes, namely rel and href.<br>The rel attribute specifies how the web browser will use that file with the HTML file, aka the webpage.<br>The href one tells the web browser what and where the file is, relatively to, <span style="font-weight: bold">IN THIS EXAMPLE, the location of the HTML file on the server.</p>
 
-			<p>In this example, the <span class="highlight">href</span> attribute's value is "./html-use-css-file-example.css". The file's name is "html-use-css-file-example.css", and the "./" is optional and really only means that this is the right directory.<br>However, a "../" would mean that it is in the parent directory.</p>
+			<p>In this example, the href attribute's value is "./html-use-css-file-example.css". The file's name is "html-use-css-file-example.css", and the "./" is optional and really only means that this is the right directory.<br>However, a "../" would mean that it is in the parent directory.</p>
 
-			<p>So in our example (again), the CSS file is in the same directory/folder as the HTML file, how convenient! But still in the example, a third attribute is used, namely <span class="highlight">type</span>.<br>It's an optional attribute that tells the web browser what type of file the value of <span class="highlight">href</span> is, but it's now basically useless because the web browser automatically assumes the value of <span class="highlight">type</span> is "text/css", as the value of <span class="highlight">rel</span> is "stylesheet".</p>
+			<p>So in our example (again), the CSS file is in the same directory/folder as the HTML file, how convenient! But still in the example, a third attribute is used, namely type.<br>It's an optional attribute that tells the web browser what type of file the value of href is, but it's now basically useless because the web browser automatically assumes the value of type is "text/css", as the value of rel is "stylesheet".</p>
 
 			<p>That's cool and all, but in the end, we don't know what exactly is the effect of that CSS file on the HTML document. So let's look at what's written inside it!</p>
 
 			<a href="./web-dev/css/html-use-css-file-example.css" target="_blank"><img src="./web-dev/images/css-1-2.png" alt="Simple CSS file"></a>
 
-			<p>The first line features ".example {", which has three distinct parts: The dot, the name and the curly bracket.<br>Everything inside the curly brackets affects the element that is directly before it. In this case, it's ".example".<br>The dot specifies that the affected element is something called a <span class="highlight">class</span>, while what's directly after this same dot is its name.</p>
+			<p>The first line features ".example {", which has three distinct parts: The dot, the name and the curly bracket.<br>Everything inside the curly brackets affects the element that is directly before it. In this case, it's ".example".<br>The dot specifies that the affected element is something called a class, while what's directly after this same dot is its name.</p>
 
-			<p>So, in our example, it is the <span class="highlight">class</span> called "example" that is affected by the properties that are inside the curly brackets!</p>
+			<p>So, in our example, it is the class called "example" that is affected by the properties that are inside the curly brackets!</p>
 
-			<p>Classes are attributes you can give to about any HTML element you want.<br>In the image at the very top, the <span class="highlight">class</span> "example" is given to the <span class="highlight">&lt;p&gt;</span> element, which means that the CSS attributes are applied to it!</p>
+			<p>Classes are attributes you can give to about any HTML element you want.<br>In the image at the very top, the class "example" is given to the &lt;p&gt; element, which means that the CSS attributes are applied to it!</p>
 
 			<p>And this is why the paragraph with the text "Hello World!" is big and white with a black background.<br>All attributes in the CSS file are given with the syntax "attribute: value;", with the ";" being optionnal for the last attribute.</p>
 
-			<p><span class="highlight">&lt;p&gt;</span>'s text, "Hello World!", has a font-size of 100px, with px standing for pixels.<br>Its color is white, obviously.<br>And the paragraph's background color is black. The horizontal size of the paragraph is, in this particular case, not dependant on the text itself.</p>
+			<p>&lt;p&gt;'s text, "Hello World!", has a font-size of 100px, with px standing for pixels.<br>Its color is white, obviously.<br>And the paragraph's background color is black. The horizontal size of the paragraph is, in this particular case, not dependant on the text itself.</p>
 
 			<p>How we deal with the size of an element, we will see that later!</p>
 		</div>

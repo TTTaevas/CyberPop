@@ -10,12 +10,13 @@
 		<script type="text/javascript" src="../jquery-3.5.1.min.js"></script>
 		<script type="text/javascript" src="../menu.js"></script>
 		<script type="text/javascript" src="../header.js"></script>
+		<script type="text/javascript" src="../lessons.js"></script>
 		<script>$(function() {$("#menu_toggle").load("./menu_toggle.html")})</script>
 		<script>$(function() {$("#menu_content").load("./web-dev/menu_content.html", function(){changeButtons()})})</script>
 		<script>$(function() {$("#header").load("./header.html", function(){languageSwitch()})})</script>
 		<script>$(function() {$("#footer").load("./footer.html")})</script>
 	</head>
-	<body>
+	<body onload="highlightLesson()">
 		<div id="menu">
 			<div id="menu_toggle"></div>
 			<div id="menu_content"></div>
@@ -30,19 +31,19 @@
 
 			<a href="./web-dev/html/initial-html-structure-example.html" target="_blank"><img src="./web-dev/images/html-1-1.png" alt="A default HTML document"></a>
 
-			<p>The very first element is <span class="highlight">&lt;!DOCTYPE html&gt;</span> which is something needed at the top of every HTML file to make it somewhat "valid". Don't question how come it is necessary, just remember it is, ok?<br>Before the fifth and current version of HTML, it used to be more complex: <span class="highlight">&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"&gt;</span></p>
+			<p>The very first element is &lt;!DOCTYPE html&gt; which is something needed at the top of every HTML file to make it somewhat "valid". Don't question how come it is necessary, just remember it is, ok?<br>Before the fifth and current version of HTML, it used to be more complex: &lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"&gt;</p>
 
-			<p>The second element is <span class="highlight">&lt;html&gt;</span>, but may I take your attention to the very last line of the file, as it is related to this element? It is written <span class="highlight">&lt;/html&gt;</span> there. Basically, everything after <span class="highlight">&lt;html&gt;</span> and everything before <span class="highlight">&lt;/html&gt;</span> is where everything will be written in, with the only exception of <span class="highlight">&lt;!DOCTYPE html&gt;</span> which you have already met. Anything else that is not written between those two is simply invalid.</p>
+			<p>The second element is &lt;html&gt;, but may I take your attention to the very last line of the file, as it is related to this element? It is written &lt;/html&gt; there. Basically, everything after &lt;html&gt; and everything before &lt;/html&gt; is where everything will be written in, with the only exception of &lt;!DOCTYPE html&gt; which you have already met. Anything else that is not written between those two is simply invalid.</p>
 
-			<p>By the way, everything that is written like <span class="highlight">&lt;something&gt;</span> is called a start tag, while everything that is written like <span class="highlight">&lt;/something&gt;</span> is called an end tag. Together, they form an element! Some rare elements only need a start tag.</p>
+			<p>By the way, everything that is written like &lt;something&gt; is called a start tag, while everything that is written like &lt;/something&gt; is called an end tag. Together, they form an element! Some rare elements only need a start tag.</p>
 
-			<p>The third element is the <span class="highlight">&lt;head&gt;</span> element, it's basically where you're gonna put about everything related to the webpage that isn't meant to be visible ever in it, such as the title, the fonts, the character encoding and sometimes, the scripts necessary for interaction.</p>
+			<p>The third element is the &lt;head&gt; element, it's basically where you're gonna put about everything related to the webpage that isn't meant to be visible ever in it, such as the title, the fonts, the character encoding and sometimes, the scripts necessary for interaction.</p>
 
-			<p>In this example, the <span class="highlight">&lt;head&gt;</span> element contains the fourth element we're gonna talk about, and it is the <span class="highlight">&lt;title&gt;</span> one! Its purpose is straight-forward, and how to use it is really simple. Pretty much every webpage you visit in your web browser has a <span class="highlight">&lt;title&gt;</span> element, and it is the text between the start tag and the end tag that makes its tab name.<br>So, this here webpage has a <span class="highlight">&lt;title&gt;</span> element of "The initial structure of your own HTML document" and if you click on the image above that shows the exemple, you will see that the webpage's tab name would be "CyberPop!", what a cool name.</p>
+			<p>In this example, the &lt;head&gt; element contains the fourth element we're gonna talk about, and it is the &lt;title&gt; one! Its purpose is straight-forward, and how to use it is really simple. Pretty much every webpage you visit in your web browser has a &lt;title&gt; element, and it is the text between the start tag and the end tag that makes its tab name.<br>So, this here webpage has a &lt;title&gt; element of "The initial structure of your own HTML document" and if you click on the image above that shows the exemple, you will see that the webpage's tab name would be "CyberPop!", what a cool name.</p>
 
-			<p>The next element is the <span class="highlight">&lt;body&gt;</span> one, which is yet again a very simple one, as it can be considered as the direct opposite to <span class="highlight">&lt;head&gt;</span>. It is where you put all the elements that are or will become visible.<br>And you also can put your scripts there, it's up to preference.</p>
+			<p>The next element is the &lt;body&gt; one, which is yet again a very simple one, as it can be considered as the direct opposite to &lt;head&gt;. It is where you put all the elements that are or will become visible.<br>And you also can put your scripts there, it's up to preference.</p>
 
-			<p>The last element featured in this example conveniently happens to be in the <span class="highlight">&lt;body&gt;</span> element. Let's talk about the <span class="highlight">&lt;p&gt;</span> element!<br>This is with this element that you put paragraphs, or text with less importance than your webpage's titles, usually called "headings". More on those for another time!</p>
+			<p>The last element featured in this example conveniently happens to be in the &lt;body&gt; element. Let's talk about the &lt;p&gt; element!<br>This is with this element that you put paragraphs, or text with less importance than your webpage's titles, usually called "headings". More on those for another time!</p>
 		</div>
 
 		<div class="other-lessons">
