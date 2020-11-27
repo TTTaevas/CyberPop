@@ -1,14 +1,19 @@
 function highlightLesson() {
 
-	// Since all those functions delete&add new paragraphs, they definitely shouldn't be executed at the same exact time
+	// Since all those functions delete&add new nodes, they definitely shouldn't be executed at the same exact time
 
-	const first_highlight = new Promise((resolve, reject) => {chevronsHighlight()})
-	const second_highlight = first_highlight.then(new Promise((resolve, reject) => {quotationsHighlight()}))
+	const first_highlight = new Promise((resolve, reject) => {
+		chevronsHighlight(document.getElementById("lesson").getElementsByTagName("p"))
+		chevronsHighlight(document.getElementById("lesson").getElementsByTagName("li"))
+	})
+	const second_highlight = first_highlight.then(new Promise((resolve, reject) => {
+		quotationsHighlight(document.getElementById("lesson").getElementsByTagName("p"))
+		quotationsHighlight(document.getElementById("lesson").getElementsByTagName("li"))
+	}))
 }
 
-function chevronsHighlight() {
+function chevronsHighlight(p) {
 	const replacementChar = "@"
-	var p = document.getElementById("lesson").getElementsByTagName("p") //Get all paragraphs
 
 	for (let i = 0; i < p.length; i++) {
 		var p_nodes = p[i].childNodes
@@ -47,9 +52,8 @@ function chevronsHighlight() {
 	}
 }
 
-function quotationsHighlight() {
+function quotationsHighlight(p) {
 	const replacementChar = "¤"
-	var p = document.getElementById("lesson").getElementsByTagName("p") //Get all paragraphs
 
 	for (let i = 0; i < p.length; i++) {
 		var p_nodes = p[i].childNodes
@@ -68,10 +72,10 @@ function quotationsHighlight() {
 				/// Therefore, replacements would need to be made case-by-case, saving the matching character into a variable,
 				/// Then using that variable in the replacement process. Replacement wouldn't be global anymore.
 
-				var node_text = p_nodes[e].data.replace(/ "/gi, ' ¤"').split(replacementChar)
+				var node_text = p_nodes[e].data.replace(/ "/gi, ` ${replacementChar}"`).split(replacementChar)
 				
 				for (let a = 0; a < node_text.length; a++) {
-					node_text[a] = node_text[a].replace(/" /gi, '"¤ ').split(replacementChar)
+					node_text[a] = node_text[a].replace(/" /gi, `"${replacementChar} `).split(replacementChar)
 
 					for (let u = 0; u < node_text[a].length; u++) {
 						if (node_text[a][u].charAt(0) == '"' && node_text[a][u].charAt(node_text[a][u].length - 1) == '"') {
