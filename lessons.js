@@ -3,8 +3,7 @@ function highlightLesson() {
 	// Since all those functions delete&add new paragraphs, they definitely shouldn't be executed at the same exact time
 
 	const first_highlight = new Promise((resolve, reject) => {chevronsHighlight()})
-	//vv this is commented as it is slightly too buggy to my liking atm vv
-	//const second_highlight = first_highlight.then(new Promise((resolve, reject) => {quotationsHighlight()}))
+	const second_highlight = first_highlight.then(new Promise((resolve, reject) => {quotationsHighlight()}))
 }
 
 function chevronsHighlight() {
@@ -20,8 +19,6 @@ function chevronsHighlight() {
 			if (p_nodes[e].nodeType == 3) { //If the node has text, if not a <br>
 
 				var node_text = p_nodes[e].data.replace(/</gi, `${replacementChar}<`).split(replacementChar)
-
-				if (node_text.length > 1) { //If highlighting is needed in the first place
 				
 					for (let a = 0; a < node_text.length; a++) {
 						node_text[a] = node_text[a].replace(/>/gi, `>${replacementChar}`).split(replacementChar)
@@ -38,8 +35,6 @@ function chevronsHighlight() {
 
 					}
 
-				} else {to_add.push(document.createTextNode(node_text[0]))} //If not highlighting needed in first place, just add
-
 			} else {to_add.push(p_nodes[e])} //Just add it directly if it doesn't have text
 			
 		}
@@ -52,7 +47,7 @@ function chevronsHighlight() {
 	}
 }
 
-function quotationsHighlight() { // THIS FUNCTION WILL BE WORKEN ON IN A FUTURE COMMIT
+function quotationsHighlight() {
 	const replacementChar = "¤"
 	var p = document.getElementById("lesson").getElementsByTagName("p") //Get all paragraphs
 
@@ -64,20 +59,29 @@ function quotationsHighlight() { // THIS FUNCTION WILL BE WORKEN ON IN A FUTURE 
 
 			if (p_nodes[e].nodeType == 3) { //If the node has text, if not a <br>
 
+				// ABOUT THE WHOLE .REPLACE.SPLIT:
+				/// To know if the quotation mark marks the beginning or the end of a 'quote',
+				/// It looks if there's a space before then after that quotation mark.
+				/// However, not all 'quotes' have a space before them, but they all have a character that isn't from the alphabet.
+				//// It would be very easy to replace the blank space by some REGEXP on the replace field,
+				//// But it would basically destroy whatever character matched the REGEXP.
+				/// Therefore, replacements would need to be made case-by-case, saving the matching character into a variable,
+				/// Then using that variable in the replacement process. Replacement wouldn't be global anymore.
+
 				var node_text = p_nodes[e].data.replace(/ "/gi, ' ¤"').split(replacementChar)
 				
 				for (let a = 0; a < node_text.length; a++) {
 					node_text[a] = node_text[a].replace(/" /gi, '"¤ ').split(replacementChar)
-					if (node_text[a].length > 1) {
-						var node_highlight = document.createElement("span")
-						node_highlight.classList.add("highlight-quotation")
-						node_highlight.appendChild(document.createTextNode(node_text[a][0]))
-						to_add.push(node_highlight)
-						node_text[a] = node_text[a][1] // For adding non-highlight text
-					}
 
-					to_add.push(document.createTextNode(node_text[a])) //Add non-highlight text
-					
+					for (let u = 0; u < node_text[a].length; u++) {
+						if (node_text[a][u].charAt(0) == '"' && node_text[a][u].charAt(node_text[a][u].length - 1) == '"') {
+							//Highlight
+							var node_highlight = document.createElement("span")
+							node_highlight.classList.add("highlight-quotation")
+							node_highlight.appendChild(document.createTextNode(node_text[a][u]))
+							to_add.push(node_highlight)
+						} else {to_add.push(document.createTextNode(node_text[a][u]))} //Don't highlight
+					}
 				}
 
 			} else {to_add.push(p_nodes[e])} //Just add it directly if it doesn't have text
