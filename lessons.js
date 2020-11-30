@@ -24,7 +24,7 @@ function chevronsHighlight(p) {
 			if (p_nodes[e].nodeType == 3) { //If the node has text, if not a <br>
 
 				var node_text = p_nodes[e].data.replace(/</gi, `${replacementChar}<`).split(replacementChar)
-				
+
 					for (let a = 0; a < node_text.length; a++) {
 						node_text[a] = node_text[a].replace(/>/gi, `>${replacementChar}`).split(replacementChar)
 
@@ -41,7 +41,7 @@ function chevronsHighlight(p) {
 					}
 
 			} else {to_add.push(p_nodes[e])} //Just add it directly if it doesn't have text
-			
+
 		}
 
 		//Removes old paragraphs by removing the last paragraph until none remains
@@ -63,39 +63,42 @@ function quotationsHighlight(p) {
 
 			if (p_nodes[e].nodeType == 3) { //If the node has text, if not a <br>
 
-				// ABOUT THE WHOLE .REPLACE.SPLIT:
-				/// To know if the quotation mark marks the beginning or the end of a 'quote',
-				/// It looks if there's a space before then after that quotation mark.
-				/// However, not all 'quotes' have a space before them, but they all have a character that isn't from the alphabet.
-				//// It would be very easy to replace the blank space by some REGEXP on the replace field,
-				//// But it would basically destroy whatever character matched the REGEXP.
-				/// Therefore, replacements would need to be made case-by-case, saving the matching character into a variable,
-				/// Then using that variable in the replacement process. Replacement wouldn't be global anymore.
+				// First, we are using regex to extract the words that are within quotes, regardless of period endings
+				/// or line breaks before or after, etc.
+				//// Then, we split up each node into sections (node_text) separated at quotations marks (including the "" separators)
+				/// Iterate through node_text, and check if the item we are on is in the extractedQuotes array.
+				// If so, add a span and highlight class, and append to the document. Otherwise, just append it as is
 
-				var node_text = p_nodes[e].data.replace(/ "/gi, ` ${replacementChar}"`).split(replacementChar)
-				
-				for (let a = 0; a < node_text.length; a++) {
-					node_text[a] = node_text[a].replace(/" /gi, `"${replacementChar} `).split(replacementChar)
+				var regex = /"(.*?)"/g; // find words within quotes, including quotes
+				const extractQuotes = p_nodes[e].data.match(regex) // extract the words within quotes into an array
 
-					for (let u = 0; u < node_text[a].length; u++) {
-						if (node_text[a][u].charAt(0) == '"' && node_text[a][u].charAt(node_text[a][u].length - 1) == '"') {
-							//Highlight
+				// Note: the above regex variable will not work properly for splitting the way we want to here
+				// If regex above is used, the closing quote will be a part of the proceeding item in the array
+				// Be careful if trying to consolidate to just one regex variable
+
+				var regexForSplit = /(".*?")/ // capture groups within quotes, including quotes
+				var node_text = p_nodes[e].data.split(regexForSplit) // split p_nodes[e] into array separating quoted words
+
+				for (let a = 0; a < node_text.length; a++) { // loop through the node split up into words
+						if (extractQuotes && extractQuotes.includes(node_text[a])) { // if there are any words in quotes in this group, and this word is one of them -> highlight it
 							var node_highlight = document.createElement("span")
 							node_highlight.classList.add("highlight-quotation")
-							node_highlight.appendChild(document.createTextNode(node_text[a][u]))
+							node_highlight.appendChild(document.createTextNode(node_text[a]))
 							to_add.push(node_highlight)
-						} else {to_add.push(document.createTextNode(node_text[a][u]))} //Don't highlight
+						} else {
+							to_add.push(document.createTextNode(node_text[a])) // if not, don't highlight
+						}
 					}
 				}
-
-			} else {to_add.push(p_nodes[e])} //Just add it directly if it doesn't have text
-			
+			else {to_add.push(p_nodes[e])} //Just add it directly if it doesn't have text
 		}
-		
+
 		//Removes old paragraphs by removing the last paragraph until none remains
 		for (let e = 0; e < p_nodes.length; e++) {p[i].childNodes[e].remove()}
 
 		//Add new paragraphs by adding each paragraph at the end of the object
-		for (let e = 0; e < to_add.length; e++) {p[i].appendChild(to_add[e])}
+		for (let e = 0; e < to_add.length; e++) {
+			p[i].appendChild(to_add[e])
+		}
 	}
 }
