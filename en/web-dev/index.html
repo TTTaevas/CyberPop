@@ -4,14 +4,16 @@
 		<title>Web development</title>
 		<meta charset="utf-8">
 		<base href="../index.html">
-		<link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
-		<link rel="stylesheet" type="text/css" href="../header-footer.css">
-		<link rel="stylesheet" type="text/css" href="../main-page.css">
+		<link rel="shortcut icon" type="image/x-icon" href="../images/favicon.ico">
 		<script type="text/javascript" src="../jquery-3.5.1.min.js"></script>
-		<script type="text/javascript" src="../main-page.js"></script>
-		<script type="text/javascript" src="../header.js"></script>
+
 		<script>$(function() {$("#header").load("./header.html", function(){languageSwitch()})})</script>
+		<script type="text/javascript" src="../header.js"></script>
 		<script>$(function() {$("#footer").load("./footer.html")})</script>
+		<link rel="stylesheet" type="text/css" href="../css/header-footer.css">
+
+		<script type="text/javascript" src="../main-page.js"></script>
+		<link rel="stylesheet" type="text/css" href="../css/main-page.css">
 	</head>
 	<body>
 		<header id="header"></header>
@@ -21,16 +23,16 @@
 			<h2>WEB DEVELOPMENT</h2>
 
 			<div class="presentation">
-				<article class="show" style="background: #222;">
-					<h3 class="show_title">HTML</h3>
+				<article class="sub-category" style="background: #222;">
+					<h3 class="sub-category_title">HTML</h3>
 					<p>Every webpage you visit is most and foremost an HTML document.<br>It is what describes the structure of a webpage to your web browser, so think of it as its skeleton!</p>
 				</article>
-				<article class="show" style="background: #222;">
-					<h3 class="show_title">CSS</h3>
+				<article class="sub-category" style="background: #222;">
+					<h3 class="sub-category_title">CSS</h3>
 					<p>CSS is what makes the webpage beautiful and organised!<br>It completely changes how your web browser renders the HTML document with shaping, positionning and colors.</p>
 				</article>
-				<article class="show" style="background: #222;">
-					<h3 class="show_title">JS</h3>
+				<article class="sub-category" style="background: #222;">
+					<h3 class="sub-category_title">JS</h3>
 					<p>Webpages are usually better when you can interact with them. That's one of many reasons why JS is used on so many websites!<br>Curious to see all the other reasons?</p>
 				</article>
 			</div>
@@ -42,7 +44,7 @@
 			</div>
 
 			<div class="hidden">
-				<h3 class="show_title">Hypertext Markup Language</h3>
+				<h3 class="sub-category_title">Hypertext Markup Language</h3>
 				<ul>
 					<li><a href="./web-dev/html/initial-html-structure.html"><button>The initial structure of your own HTML document</button></a></li>
 					<li><a href="./web-dev/html/headings-sections-attributes.html"><button>Headings, sections and attributes</button></a></li>
@@ -50,7 +52,7 @@
 				</ul>
 			</div>
 			<div class="hidden">
-				<h3 class="show_title">Cascading Style Sheets</h3>
+				<h3 class="sub-category_title">Cascading Style Sheets</h3>
 				<ul>
 					<li><a href="./web-dev/css/html-use-css-file.html"><button>Make the HTML use your own CSS file</button></a></li>
 					<li><a href="./web-dev/css/having-control-over-size.html"><button>Having control over the size of your HTML elements with CSS</button></a></li>
@@ -58,7 +60,7 @@
 				</ul>
 			</div>
 			<div class="hidden">
-				<h3 class="show_title">Javascript</h3>
+				<h3 class="sub-category_title">Javascript</h3>
 				<ul>
 					<li><a href="./web-dev/js/execute-js-by-html-click.html"><button>Execute JS code by clicking on a HTML element</button></a></li>
 					<li><a href="./web-dev/js/understanding-variables-conditions-functions.html"><button>Understanding the concept of variables, conditions and functions</button></a></li>

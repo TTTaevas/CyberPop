@@ -3,14 +3,16 @@
 	<head>
 		<title>CyberPop!</title>
 		<meta charset="utf-8">
-		<link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
-		<link rel="stylesheet" type="text/css" href="../header-footer.css">
-		<link rel="stylesheet" type="text/css" href="../main-page.css">
+		<link rel="shortcut icon" type="image/x-icon" href="../images/favicon.ico">
 		<script type="text/javascript" src="../jquery-3.5.1.min.js"></script>
-		<script type="text/javascript" src="../main-page.js"></script>
-		<script type="text/javascript" src="../header.js"></script>
+
 		<script>$(function() {$("#header").load("./header.html", function(){languageSwitch()})})</script>
+		<script type="text/javascript" src="../header.js"></script>
 		<script>$(function() {$("#footer").load("./footer.html")})</script>
+		<link rel="stylesheet" type="text/css" href="../css/header-footer.css">
+
+		<script type="text/javascript" src="../main-page.js"></script>
+		<link rel="stylesheet" type="text/css" href="../css/main-page.css">
 	</head>
 	<body>
 		<header id="header"></header>
@@ -20,16 +22,16 @@
 			<h2>WEB ENTWICKLUNG</h2>
 
 			<div class="presentation">
-				<article class="show" style="background: #222;">
-					<h3 class="show_title">HTML</h3>
+				<article class="sub-category" style="background: #222;">
+					<h3 class="sub-category_title">HTML</h3>
 					<p>Jede Webseite die du besuchst ist mehr oder weniger ein HTML Dokument.<br>Es beschreibt die Struktur einer Webseite für den browser, eigentlich wie ein Skelett!</p>
 				</article>
-				<article class="show" style="background: #222;">
-					<h3 class="show_title">CSS</h3>
+				<article class="sub-category" style="background: #222;">
+					<h3 class="sub-category_title">CSS</h3>
 					<p>CSS sorgt für die Gestaltung und richtige Anordnung!<br>Es gibt dem Browser Informationen wie er das HTML Dokument anzeigen soll. Dabei gibt es Anweisungen über Form, Farbe und Anordnung der Inhalte.</p>
 				</article>
-				<article class="show" style="background: #222;">
-					<h3 class="show_title">JS</h3>
+				<article class="sub-category" style="background: #222;">
+					<h3 class="sub-category_title">JS</h3>
 					<p>Wenseiten sind aber viel cooler, wenn man mit ihnen interagieren kann. Das ist der Grund weshalb JS in sovielen Webseiten verwendet wird<br>Du willst mehr darüber wissen?</p>
 				</article>
 			</div>
@@ -41,7 +43,7 @@
 			</div>
 
 			<div class="hidden">
-				<h3 class="show_title">Hypertext Markup Language</h3>
+				<h3 class="sub-category_title">Hypertext Markup Language</h3>
 				<ul>
 					<li><a href="./web-dev/html/initial-html-structure.html"><button>Die Grundstruktur deines HTML Dokuments</button></a></li>
 					<li><a href="./web-dev/html/headings-sections-attributes.html"><button>Überschriften, Absätze and Attribute</button></a></li>
@@ -49,7 +51,7 @@
 				</ul>
 			</div>
 			<div class="hidden">
-				<h3 class="show_title">Cascading Style Sheets</h3>
+				<h3 class="sub-category_title">Cascading Style Sheets</h3>
 				<ul>
 					<li><a href="./web-dev/css/html-use-css-file.html"><button>Füge der HTML Datei deine eigenen CSS Dateien hinzu</button></a></li>
 					<li><a href="./web-dev/css/having-control-over-size.html"><button>Mit CSS kannst du auch die Größe deiner HTML Elemente anpassen</button></a></li>
@@ -57,7 +59,7 @@
 				</ul>
 			</div>
 			<div class="hidden">
-				<h3 class="show_title">Javascript</h3>
+				<h3 class="sub-category_title">Javascript</h3>
 				<ul>
 					<li><a href="./web-dev/js/execute-js-by-html-click.html"><button>Führe JS Code mit HTML Elementen aus</button></a></li>
 					<li><a href="./web-dev/js/understanding-variables-conditions-functions.html"><button>Variablen, Bedingungen und Funktionen</button></a></li>

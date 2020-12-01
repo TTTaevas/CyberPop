@@ -4,17 +4,20 @@
 		<title>Exécuter du JS en cliquant sur un élément HTML</title>
 		<meta charset="utf-8">
 		<base href="../../index.html">
-		<link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
-		<link rel="stylesheet" type="text/css" href="../header-footer.css">
-		<link rel="stylesheet" type="text/css" href="../lessons.css">
+		<link rel="shortcut icon" type="image/x-icon" href="../images/favicon.ico">
 		<script type="text/javascript" src="../jquery-3.5.1.min.js"></script>
-		<script type="text/javascript" src="../menu.js"></script>
+
+		<script>$(function() {$("#header").load("./header.html", function(){languageSwitch()})})</script>
 		<script type="text/javascript" src="../header.js"></script>
-		<script type="text/javascript" src="../lessons.js"></script>
+		<script>$(function() {$("#footer").load("./footer.html")})</script>
+		<link rel="stylesheet" type="text/css" href="../css/header-footer.css">
+
 		<script>$(function() {$("#menu_toggle").load("./menu_toggle.html")})</script>
 		<script>$(function() {$("#menu_content").load("./web-dev/menu_content.html", function(){changeButtons()})})</script>
-		<script>$(function() {$("#header").load("./header.html", function(){languageSwitch()})})</script>
-		<script>$(function() {$("#footer").load("./footer.html")})</script>
+		<script type="text/javascript" src="../menu.js"></script>
+
+		<script type="text/javascript" src="../lessons.js"></script>
+		<link rel="stylesheet" type="text/css" href="../css/lessons.css">
 	</head>
 	<body onload="highlightLesson()">
 		<div id="menu">

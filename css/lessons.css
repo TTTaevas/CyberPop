@@ -8,7 +8,7 @@
 	text-align: left;
 	padding: 5px;
 	margin: 0px;
-	background-image: url(./resources/bg2.jpg);
+	background-image: url(../images/bg2.jpg);
 }
 
 #menu_content {
@@ -87,7 +87,7 @@
 }
 
 .other-lessons {
-	background-image: url(./resources/bg.jpg);
+	background-image: url(../images/bg.jpg);
 	display: flex;
 	padding: 20px;
 }
