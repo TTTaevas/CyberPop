@@ -32,7 +32,7 @@ function chevronsHighlight(p) {
 							if (node_text[a][u].charAt(0) == "<" && node_text[a][u].charAt(node_text[a][u].length - 1) == ">") {
 								//Highlight
 								var node_highlight = document.createElement("span")
-								node_highlight.classList.add("highlight")
+								node_highlight.classList.add("highlight-chevrons")
 								node_highlight.appendChild(document.createTextNode(node_text[a][u]))
 								to_add.push(node_highlight)
 							} else {to_add.push(document.createTextNode(node_text[a][u]))} //Don't highlight
@@ -53,8 +53,6 @@ function chevronsHighlight(p) {
 }
 
 function quotationsHighlight(p) {
-	const replacementChar = "¤"
-
 	for (let i = 0; i < p.length; i++) {
 		var p_nodes = p[i].childNodes
 		var to_add = []
@@ -80,17 +78,18 @@ function quotationsHighlight(p) {
 				var node_text = p_nodes[e].data.split(regexForSplit) // split p_nodes[e] into array separating quoted words
 
 				for (let a = 0; a < node_text.length; a++) { // loop through the node split up into words
-						if (extractQuotes && extractQuotes.includes(node_text[a])) { // if there are any words in quotes in this group, and this word is one of them -> highlight it
-							var node_highlight = document.createElement("span")
-							node_highlight.classList.add("highlight-quotation")
-							node_highlight.appendChild(document.createTextNode(node_text[a]))
-							to_add.push(node_highlight)
-						} else {
-							to_add.push(document.createTextNode(node_text[a])) // if not, don't highlight
-						}
+					if (extractQuotes && extractQuotes.includes(node_text[a])) { // if there are any words in quotes in this group, and this word is one of them -> highlight it
+						var node_highlight = document.createElement("span")
+						node_highlight.classList.add("highlight-quotation")
+						node_highlight.appendChild(document.createTextNode(node_text[a]))
+						to_add.push(node_highlight)
+					} else {
+						to_add.push(document.createTextNode(node_text[a])) // if not, don't highlight
 					}
 				}
-			else {to_add.push(p_nodes[e])} //Just add it directly if it doesn't have text
+
+			} else {to_add.push(p_nodes[e])} //Just add it directly if it doesn't have text
+			
 		}
 
 		//Removes old paragraphs by removing the last paragraph until none remains
