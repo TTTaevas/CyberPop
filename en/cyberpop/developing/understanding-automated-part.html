@@ -29,6 +29,28 @@
 
 		<div id="lesson">
 			<h1>Understanding the automated part of the website</h1>
+
+			<p>As we have seen in the previous lesson, CyberPop works only thanks to front-end technologies; HTML, CSS and JS. There is no back-end technology used that makes, for example, one page entirely different depending of the user, everything is pre-defined thanks to the page's &lt;head&gt; and &lt;head&gt;.</p>
+
+			<p>The &lt;body&gt; of a page has the essential, what's unique to the page, while the &lt;head&gt; has stuff like menus, headers and footers. But both the &lt;head&gt; and the &lt;body&gt; are partially affected by the "automation" CyberPop has!</p>
+
+			<p>You certainly have already understood that this "automation" happens on the client's side, by the scripts located in the root folder, loaded from &lt;script&gt; elements in the &lt;head&gt;.<br>Automation, however, only happens in the webpages that serve as lessons, so let's take a look at how it works on this very one, on the one you are currently reading!</p>
+
+			<p>Two main things happen simultaniously when your browser loads a lesson; it loads the &lt;body&gt; and the &lt;script&gt; elements located in the head at the same time.<br>Most of those scripts work the same way; Either they import functions or they load an .html file in the body, such as the footer.</p>
+
+			<p>Two scripts in particular have a slight difference: They execute a JS function once they loaded their respective .html file.</p>
+
+			<p>The first script that does that is the one that loads the header into the body, as it executes the function that sets which URLs the buttons from the language menu should lead to!<br>It basically ensures that the page you go to when you click one of those buttons is the same page you are currently on, but in the right language.<br>It's only a few lines of code, so nothing too complicated there!</p>
+
+			<p>The second script is the one that changes the content of the buttons on the bottom once the "menu" is loaded; even though the buttons have a default value, the final result is depends of the menu that is accesible by clicking on the button on the left of the webpage, for convenience's sake.<br>Less importantly, it also features the only line of code that deals with highlighting the background of the current lesson in that same menu.</p>
+
+			<p>The buttons' final results depend of the menu as it is that that determines the order of the lessons, at least within lessons.<br>Hopefully that makes sense; the lessons' order is determined only by each language's main page and by the menu featured within those lessons, and for lessons, it is easier to access the latter!</p>
+
+			<p>The last automated thing is the highlighting in lessons. You see, text like &lt;body&gt; or "body" is different from normal text, as they have a &lt;span&gt; element with some CSS class. However, those elements aren't in the original &lt;body&gt; of lessons; they are added automatically once &lt;body&gt; fully loads thanks to a function. Again, for convenience's sake.</p>
+
+			<p>This function basically goes through all of the lesson's paragraphs' "childNodes" and does its best to detect stuff that should be highlighted.<br>You may ask yourself, what "should be highlighted"? Figure it out by yourself, read more lessons or read the code!</p>
+
+			<p>By now, you should have a great understanding of how CyberPop works!<br>I really hope to see you get involved with this website's development one way or another!</p>
 		</div>
 
 		<div class="other-lessons">
