@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<title>Qu'est-ce que CyberPop ?</title>
+		<meta charset="utf-8">
+		<base href="../../index.html">
+		<link rel="shortcut icon" type="image/x-icon" href="../images/favicon.ico">
+		<script type="text/javascript" src="../jquery-3.5.1.min.js"></script>
+
+		<script>$(function() {$("#header").load("./header.html", function(){languageSwitch()})})</script>
+		<script type="text/javascript" src="../header.js"></script>
+		<script>$(function() {$("#footer").load("./footer.html")})</script>
+		<link rel="stylesheet" type="text/css" href="../css/header-footer.css">
+
+		<script>$(function() {$("#menu_toggle").load("./menu_toggle.html")})</script>
+		<script>$(function() {$("#menu_content").load("./cyberpop/menu_content.html", function(){changeButtons()})})</script>
+		<script type="text/javascript" src="../menu.js"></script>
+
+		<script type="text/javascript" src="../lessons.js"></script>
+		<link rel="stylesheet" type="text/css" href="../css/lessons.css">
+	</head>
+	<body onload="highlightLesson()">
+		<div id="menu">
+			<div id="menu_toggle"></div>
+			<div id="menu_content"></div>
+		</div> 
+		
+		<header id="header"></header>
+
+		<div id="lesson">
+			<h1>Qu'est-ce que CyberPop ?</h1>
+
+			<p>Welcome to CyberPop!<br>This website has been created in 2020 in order to help people from all around the world with understanding the main concepts of technology, using "lessons" as a way to teach them.</p>
+
+			<p>"Lessons" can be found on CyberPop's main page.<br>Did you know that what you are reading right now is also considered as one?</p>
+
+			<p>They are mainly composed by paragraphs and images.<br>The purpose of images may differ depending of the type of lesson, but in the case of Web Development's HTML lessons, images are screenshots of HTML and lead to the result of that same HTML when clicked onto!</p>
+
+			<p>For example, below this can be found the image used in the third HTML lesson of the Web Development category.</p>
+
+			<a href="./web-dev/html/images-links-comments-example.html" target="_blank"><img src="./web-dev/images/html-3-1.png" alt="Image used in another lesson!"></a>
+
+			<p>As CyberPop aims to help people from all around the globe, it is built to be available in multiple languages.<br>The entirety of the website, from menus to lessons, is currently available in both English and French!</p>
+
+			<p>The website is in constant development in order for it to feature more lessons and more features.<br>Check back every now and then!</p>
+
+			<p>You may click on the button below to access the next lesson about CyberPop, which is about navigating through the website.</p>
+		</div>
+
+		<div class="other-lessons">
+			<a id="next-lesson" href="./cyberpop/visiting/navigate-through-website.html">Next lesson -></a>
+		</div>
+
+		<footer id="footer"></footer>
+	</body>
+</html>

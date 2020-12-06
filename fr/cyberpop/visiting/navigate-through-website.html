@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<title>Comment naviguer à travers le site web ?</title>
+		<meta charset="utf-8">
+		<base href="../../index.html">
+		<link rel="shortcut icon" type="image/x-icon" href="../images/favicon.ico">
+		<script type="text/javascript" src="../jquery-3.5.1.min.js"></script>
+
+		<script>$(function() {$("#header").load("./header.html", function(){languageSwitch()})})</script>
+		<script type="text/javascript" src="../header.js"></script>
+		<script>$(function() {$("#footer").load("./footer.html")})</script>
+		<link rel="stylesheet" type="text/css" href="../css/header-footer.css">
+
+		<script>$(function() {$("#menu_toggle").load("./menu_toggle.html")})</script>
+		<script>$(function() {$("#menu_content").load("./cyberpop/menu_content.html", function(){changeButtons()})})</script>
+		<script type="text/javascript" src="../menu.js"></script>
+
+		<script type="text/javascript" src="../lessons.js"></script>
+		<link rel="stylesheet" type="text/css" href="../css/lessons.css">
+	</head>
+	<body onload="highlightLesson()">
+		<div id="menu">
+			<div id="menu_toggle"></div>
+			<div id="menu_content"></div>
+		</div> 
+		
+		<header id="header"></header>
+
+		<div id="lesson">
+			<h1>Comment naviguer à travers le site web ?</h1>
+
+			<p>CyberPop is built so you can go to any part of the website from anywhere.<br>First, let's take a look at how to go to the main page!</p>
+
+			<p>On top of any of CyberPop's pages can be found a common header, composed essentially of the website's logo, its motto, as well as something on the top right, we'll talk about that in just a bit.<br>By simply clicking on the website's logo (or near it), you will get back to its main page!</p>
+
+			<img src="./cyberpop/images/visiting-2-1.png" alt="CyberPop's header">
+
+			<p>What's on the top right is your friendly language menu, simply hover on it, click on the language of your choice, and you will be taken to the page you were on, but in the language you have chosen!<br>If you want to try it out by yourself right now, you can use that menu to go to the French version of that lesson, then you can go back to the English version.</p>
+
+			<img src="./cyberpop/images/visiting-2-2.png" alt="CyberPop's language menu">
+
+			<p>Now, on the bottom of each lesson, you'll find one or two buttons leading to a lesson, with an arrow indicating the relation between the lesson you are currently on and the lesson the button will lead you to.<br>A button with an arrow pointing to the left will lead you to the lesson that precedes the current one, while a button with an arrow pointing to the right will lead you to the lesson that follows the current one!</p>
+
+			<p>When there are two buttons, the button that leads you to the next lesson will always be to the right of the one leading you to the previous lesson.<br>If you encounter a lesson with only one button available, it simply means there is no lesson that preceeds or no lessons that follows it.</p>
+
+			<img src="./cyberpop/images/visiting-2-3.png" alt="CyberPop's lessons' buttons">
+
+			<p>Buttons are not the only way of going through lessons, though!<br>On the left of your screen can be found a pink/purple square/rectangle with a sign on it.</p>
+
+			<p>Clicking on it will show the current lesson's category's menu. Clicking anywhere on the menu besides the text will revert its state, hiding it!</p>
+
+			<img src="./cyberpop/images/visiting-2-4.png" alt="CyberPop's lessons' category menu">
+
+			<p>The big white text on the black background is the lesson's category's name.<br>The slightly less bigger text on purplish background is a "sub-category"'s name, while the part highlighted by a very pink background shows which lesson you are currently reading!</p>
+
+			<p>The other relatively small texts on purplish background are lessons' name. You simply need to click on them to check them out!<br>Maybe give it a try right now, by going to the previous lesson without using the buttons below?</p>
+		</div>
+
+		<div class="other-lessons">
+			<a id="prev-lesson" href="./cyberpop/visiting/what-is-cyberpop.html"><- Previous lesson</a>
+			<a id="next-lesson" href="./cyberpop/developing/understanding-file-structure.html">Next lesson -></a>
+		</div>
+
+		<footer id="footer"></footer>
+	</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<title>Bien comprendre la structure des fichiers de CyberPop</title>
+		<meta charset="utf-8">
+		<base href="../../index.html">
+		<link rel="shortcut icon" type="image/x-icon" href="../images/favicon.ico">
+		<script type="text/javascript" src="../jquery-3.5.1.min.js"></script>
+
+		<script>$(function() {$("#header").load("./header.html", function(){languageSwitch()})})</script>
+		<script type="text/javascript" src="../header.js"></script>
+		<script>$(function() {$("#footer").load("./footer.html")})</script>
+		<link rel="stylesheet" type="text/css" href="../css/header-footer.css">
+
+		<script>$(function() {$("#menu_toggle").load("./menu_toggle.html")})</script>
+		<script>$(function() {$("#menu_content").load("./cyberpop/menu_content.html", function(){changeButtons()})})</script>
+		<script type="text/javascript" src="../menu.js"></script>
+
+		<script type="text/javascript" src="../lessons.js"></script>
+		<link rel="stylesheet" type="text/css" href="../css/lessons.css">
+	</head>
+	<body onload="highlightLesson()">
+		<div id="menu">
+			<div id="menu_toggle"></div>
+			<div id="menu_content"></div>
+		</div> 
+		
+		<header id="header"></header>
+
+		<div id="lesson">
+			<h1>Bien comprendre la structure des fichiers de CyberPop</h1>
+
+			<p>This lesson's purpose is to make you understand the file structure of CyberPop, which should only interest you if you're interested in developping CyberPop or making your own version of it.</p>
+
+			<p>If you are still interested, welcome!<br>CyberPop's a website that only consists of front-end technology, using only HTML, CSS and JS.<br>Webpages, fonts, images and scripts are all hosted on the same server, there is no use whatsoever of third-party servers, besides all images used in "example webpages" <a href="./web-dev/css/having-control-over-size-example.html" target="_blank">(example CSS 2-2)</a>, which are hosted only on Wikimedia's servers for memory's sake.</p>
+
+			<p>All of CyberPop's webpages are pre-built and decomposed in a few parts, which are loaded client-side by all the automation that we will be talking about next lesson.<br>Those parts differ depending of which part of the website you're on.</p>
+
+			<p>Essentially, the website is divided by the number of available languages. Those parts are represented by their respective language's ISO 639-1 code, so for example, the French part of the website can be found in the "fr" folder, while the English part can be found in the "en" folder.</p>
+
+			<p>At the root folder's index.html is the language selection screen. It sends the user to the right folder's index.html, so if the user chooses "FRANCAIS", they'll be sent to the "fr" folder's index.html, which loads that same folder's header and footer, notably.</p>
+
+			<p>Every "visitable" webpage (beside "example webpages") that are not direct children to a folder named after a language uses in their &lt;head&gt; a &lt;base&gt; element referencing that folder, so when they load something such as an header, it's relatively to the folder rather than themselves; the head doesn't have to be modified for every webpage, besides that &lt;base&gt; element.</p>
+
+			<p>The scripts used by the entire website can be found in the root folder for simplicity's sake, while the css and the images such as backgrounds can be found in their own folder, still located in the root folder.<br>However, images used only in specific lessons are located in their own folder located in the same lesson's category's folder, so for example, the images in the previous lesson can be found in the images folder which is within the folder named "cyberpop".</p>
+
+			<p>Not quite the same logic applies to CSS&JS specific to one lesson's "example webpage". Not only are they located in the same folder as the "example webpage", but they also share the same name, just not the same extension.<br>An "example webpage" will have an .html extension, while the elements it (and only it) uses will have a .css, .js or some other extension.</p>
+
+			<p>You may also notice there is a "404.html" file located in the root folder.<br>It works in a completely different way than all other "visitable" webpages, due to it working exclusively on "GitHub Pages" and how this service works.</p>
+
+			<p>When hosted on this service, the website's URL will be something like "yourname.github.io/CyberPop", which can cause webpages to think the root folder is the actual root folder's parent as it is usually expected for websites to have a url that do not follow a slash.<br>This is the reason why it uses a &lt;base&gt; element despite its position in the root folder!</p>
+
+			<p>Hopefully that covers everything on that topic!</p>
+		</div>
+
+		<div class="other-lessons">
+			<a id="prev-lesson" href="./cyberpop/visiting/navigate-through-website.html"><- Previous lesson</a>
+			<a id="next-lesson" href="./cyberpop/developing/understanding-automated-part.html">Next lesson -></a>
+		</div>
+
+		<footer id="footer"></footer>
+	</body>
+</html>
