@@ -30,32 +30,32 @@
 		<div id="lesson">
 			<h1>Bien comprendre la structure des fichiers de CyberPop</h1>
 
-			<p>This lesson's purpose is to make you understand the file structure of CyberPop, which should only interest you if you're interested in developping CyberPop or making your own version of it.</p>
+			<p>Cette leçon est là pour vous aider à comprendre comment fonctionne la structure des fichiers de CyberPop, ce qui devrait vous intéresser uniquement si vous êtes intéressé par développer CyberPop ou en faire votre propre version.</p>
 
-			<p>If you are still interested, welcome!<br>CyberPop's a website that only consists of front-end technology, using only HTML, CSS and JS.<br>Webpages, fonts, images and scripts are all hosted on the same server, there is no use whatsoever of third-party servers, besides all images used in "example webpages" <a href="./web-dev/css/having-control-over-size-example.html" target="_blank">(example CSS 2-2)</a>, which are hosted only on Wikimedia's servers for memory's sake.</p>
+			<p>Si vous êtes toujours intéressé, bienvenue !<br>CyberPop est un site web qui n'utilise que des technologies de "front-end" (des fois traduit en "web frontal"), il utilise seulement du HTML, du CSS et du JS.<br>Les pages web, les polices d'écritues, les images, les scripts, tout ça, c'est localisé sur le même serveur, il n'y a aucune utilisation de serveurs tiers, mises à part pour toutes les images utilisées dans les "pages web d'exemple" <a href="./web-dev/css/having-control-over-size-example.html" target="_blank">(exemple CSS 2-2)</a>, qui sont localisées sur les serveurs de Wikimedia afin d'économiser de la mémoire.</p>
 
-			<p>All of CyberPop's webpages are pre-built and decomposed in a few parts, which are loaded client-side by all the automation that we will be talking about next lesson.<br>Those parts differ depending of which part of the website you're on.</p>
+			<p>Toutes les pages web de CyberPop sont pré-construites et sont composées de plusieurs parties séparées, qui sont chargées du côté du client par toute l'automatisation de laquelle nous parlons dans la prochaine leçon.<br>Ces parties diffèrent en fonction de quelle partie du site web vous êtes.</p>
 
-			<p>Essentially, the website is divided by the number of available languages. Those parts are represented by their respective language's ISO 639-1 code, so for example, the French part of the website can be found in the "fr" folder, while the English part can be found in the "en" folder.</p>
+			<p>En gros, le site web est divisé par le nombre de langues disponibles. Ces parties sont representées par le code ISO 639-1 de leur langue respective, donc par exemple, la partie Anglaise du site web peut être retrouvée dans le dossier "en" pendant que la partie Française se retrouve dans le dossier "fr".</p>
 
-			<p>At the root folder's index.html is the language selection screen. It sends the user to the right folder's index.html, so if the user chooses "FRANCAIS", they'll be sent to the "fr" folder's index.html, which loads that same folder's header and footer, notably.</p>
+			<p>Dans le "root folder" (traduit parfois par "répertoire racine"), dans index.html se trouve l'écran où l'on choisit la langue. Il envoit l'utilisateur dans l'index.html du bon dossier, donc si l'utilisateur choisit "ENGLISH", il sera envoyé dans l'index.html du dossier "en", qui charge notamment l'entête et le bas de page du même dossier.</p>
 
-			<p>Every "visitable" webpage (beside "example webpages") that are not direct children to a folder named after a language uses in their &lt;head&gt; a &lt;base&gt; element referencing that folder, so when they load something such as an header, it's relatively to the folder rather than themselves; the head doesn't have to be modified for every webpage, besides that &lt;base&gt; element.</p>
+			<p>Mises à part les "pages web d'exemple", chaque page web dîte "visitable" qui n'est pas un enfant direct d'un dossier nommé après une langue utilise dans sa &lt;head&gt; un élément &lt;base&gt; faisant référence à ce dossier, donc quand elle charge quelque chose comme une entête, c'est relatif au dossier plutôt qu'eux-mêmes; la tête n'a pas a être modifiée pour chaque page, sauf pour ce même élément &lt;base&gt;.</p>
 
-			<p>The scripts used by the entire website can be found in the root folder for simplicity's sake, while the css and the images such as backgrounds can be found in their own folder, still located in the root folder.<br>However, images used only in specific lessons are located in their own folder located in the same lesson's category's folder, so for example, the images in the previous lesson can be found in the images folder which is within the folder named "cyberpop".</p>
+			<p>Les scripts utilisés par le website tout entier se retrouvent dans le "root folder" pour rendre les choses simples, alors que le css et les images telles que les fonds peuvent être trouvés dans leur propre dossier, qui sera toujours localisé dans le "root folder".<br>Cependant, les images utilisées seulement par des leçons spécifiques sont localisées dans leur prore dossier qui est localisé dans le dossier de la catégorie de cette même leçon, donc par exemple, les images utilisées dans la leçon précédente peuvent être trouvées dans le dossier images qui se trouve dans le dossier "cyberpop".</p>
 
-			<p>Not quite the same logic applies to CSS&JS specific to one lesson's "example webpage". Not only are they located in the same folder as the "example webpage", but they also share the same name, just not the same extension.<br>An "example webpage" will have an .html extension, while the elements it (and only it) uses will have a .css, .js or some other extension.</p>
+			<p>Ce n'est pas exactement la même logique qui s'applique aux CSS&JS spécifiques aux "pages web d'exemple". Non seulement se trouvent-ils dans le même dossier que leur "page web d'exemple", mais ils partagent aussi le même nom, avec la différence de l'extension.<br>Une "page web d'exemple" aura une extension .html, alors que les éléments qu'elle utilise auront une extension .css, .js ou autre chose du genre.</p>
 
-			<p>You may also notice there is a "404.html" file located in the root folder.<br>It works in a completely different way than all other "visitable" webpages, due to it working exclusively on "GitHub Pages" and how this service works.</p>
+			<p>Vous avez peut-être remarqué le fichier "404.html" qui peut être trouvé dans le "root folder".<br>Il fonctionne d'une façon complètement différente que les autres pages web dîtes "visitables" à cause du fait qu'elle ne marche exclusivement que sur "GitHub Pages" et à cause de comment ça fonctionne.</p>
 
-			<p>When hosted on this service, the website's URL will be something like "yourname.github.io/CyberPop", which can cause webpages to think the root folder is the actual root folder's parent as it is usually expected for websites to have a url that do not follow a slash.<br>This is the reason why it uses a &lt;base&gt; element despite its position in the root folder!</p>
+			<p>Quand hébergé sur ce service, l'URL du siteweb sera quelque chose comme "votrenom.github.io/CyberPop", ce qui peut faire que les pages web pensent que le "root folder" est le parent du vrai "root folder", car les sites web ont généralement une URL qui ne suit pas un slash ("/").<br>C'est la raison pour laquelle cette page web utilise un élément &lt;base&gt; malgré le fait qu'elle soit dans le "root folder" !</p>
 
-			<p>Hopefully that covers everything on that topic!</p>
+			<p>En espérant que couvre tout ce qu'il y a sur le sujet !</p>
 		</div>
 
 		<div class="other-lessons">
-			<a id="prev-lesson" href="./cyberpop/visiting/navigate-through-website.html"><- Previous lesson</a>
-			<a id="next-lesson" href="./cyberpop/developing/understanding-automated-part.html">Next lesson -></a>
+			<a id="prev-lesson" href="./cyberpop/visiting/navigate-through-website.html"><- Précédente leçon</a>
+			<a id="next-lesson" href="./cyberpop/developing/understanding-automated-part.html">Leçon suivante -></a>
 		</div>
 
 		<footer id="footer"></footer>
