@@ -30,27 +30,27 @@
 		<div id="lesson">
 			<h1>Bien comprendre la partie automatisée du site web</h1>
 
-			<p>As we have seen in the previous lesson, CyberPop works only thanks to front-end technologies; HTML, CSS and JS. There is no back-end technology used that makes, for example, one page entirely different depending of the user, everything is pre-defined thanks to the page's &lt;head&gt; and &lt;head&gt;.</p>
+			<p>Comme on a pu le constater lors de la précédente leçon, CyberPop ne fonctionne que grâce aux technologies de "front-end"; HTML, CSS et JS. Il n'y a aucune technologie "back-end" utilisée pour, par exemple, rendre une certaine page complètement différente en fonction de l'utilisateur, car tout est prédifini grâce à l'&lt;head&gt; et le &lt;body&gt; de la page.</p>
 
-			<p>The &lt;body&gt; of a page has the essential, what's unique to the page, while the &lt;head&gt; has stuff like menus, headers and footers. But both the &lt;head&gt; and the &lt;body&gt; are partially affected by the "automation" CyberPop has!</p>
+			<p>Le &lt;body&gt; d'une page avant qu'elle charge contient l'essentiel, ce qui est unique à la page pendant que l'&lt;head&gt; contient ce qui charge des choses telles que les menus, les entêtes et les bas de page dans le &lt;body&gt;. C'est ensuite que le &lt;body&gt; se fait changer par "l'automatisation" que CyberPop a !</p>
 
-			<p>You certainly have already understood that this "automation" happens on the client's side, by the scripts located in the root folder, loaded from &lt;script&gt; elements in the &lt;head&gt;.<br>Automation, however, only happens in the webpages that serve as lessons, so let's take a look at how it works on this very one, on the one you are currently reading!</p>
+			<p>Vous avez certainement déjà compris que cette "automatisation" se passe du côté du client, par les scripts localisés dans le "root folder", chargés depuis les éléments &lt;script&gt; dans l'élément &lt;head&gt;.<br>L'automatisation ne se produit cependant que pour les pages web qui servent de leçons, alors voyons comme elle se passe sur celle que vous êtes en train de lire !</p>
 
-			<p>Two main things happen simultaniously when your browser loads a lesson; it loads the &lt;body&gt; and the &lt;script&gt; elements located in the head at the same time.<br>Most of those scripts work the same way; Either they import functions or they load an .html file in the body, such as the footer.</p>
+			<p>Deux choses importantes se passent simultanément quand votre navigateur web charge une leçon; il charge le &lt;body&gt;, et les éléments &lt;script&gt; localisés dans l'&lt;head&gt; en même temps.<br>La majorité des scripts fonctionnent de la même façon; Soit ils importent des fonctions, soit ils chargent un fichier .html dans le &lt;body&gt;, comme le bas de page.</p>
 
-			<p>Two scripts in particular have a slight difference: They execute a JS function once they loaded their respective .html file.</p>
+			<p>Deux scripts en particulier ont une légère différence: Ils executent une fonction JS une fois qu'ils ont chargé leur fichier .html respectif.</p>
 
-			<p>The first script that does that is the one that loads the header into the body, as it executes the function that sets which URLs the buttons from the language menu should lead to!<br>It basically ensures that the page you go to when you click one of those buttons is the same page you are currently on, but in the right language.<br>It's only a few lines of code, so nothing too complicated there!</p>
+			<p>Le premier script qui fait ça est celui qui charge le header dans le &lt;body&gt;, car il exécute la fonction qui définit les  URLs des boutons du menu des langues !<br>Ce script, en gros, fait en sorte que la page vers laquelle vous tomberez lorsque vous cliquez l'un de ces boutons soit la même sur laquelle vous étiez, mais dans la bonne langue.<br>Ce n'est vraiment que quelques lignes de code, rien de compliqué !</p>
 
-			<p>The second script is the one that changes the content of the buttons on the bottom once the "menu" is loaded; even though the buttons have a default value, the final result is depends of the menu that is accesible by clicking on the button on the left of the webpage, for convenience's sake.<br>Less importantly, it also features the only line of code that deals with highlighting the background of the current lesson in that same menu.</p>
+			<p>Le deuxième script est celui qui change le contenu des boutons en bas de la page une fois que le "menu" est chargé; même si les boutons ont une valeur de base, le résultat final dépend du menu qui est accessible en cliquant sur le bouton à gauche de la page web, pour rendre les choses pratiques.<br>Un petit détail à mentionner est que ça contient aussi la seule ligne de code qui s'occupe de changer la couleur de fond du nom de la leçon que vous lisez dans ce même menu.</p>
 
-			<p>The buttons' final results depend of the menu as it is that that determines the order of the lessons, at least within lessons.<br>Hopefully that makes sense; the lessons' order is determined only by each language's main page and by the menu featured within those lessons, and for lessons, it is easier to access the latter!</p>
+			<p>Ce à quoi ressemble les boutons au final dépend du menu car c'est ça qui détermine l'ordre des leçons, du moins dans les leçons elles-même.<br>J'espère que ça fait du sens pour vous; l'ordre des leçons est déterminé par la page principale de chaque langue ainsi que par le menu utilisé dans les leçons, et pour les leçons, il est plus simple d'accéder à la deuxième option !</p>
 
-			<p>The last automated thing is the highlighting in lessons. You see, text like &lt;body&gt; or "body" is different from normal text, as they have a &lt;span&gt; element with some CSS class. However, those elements aren't in the original &lt;body&gt; of lessons; they are added automatically once &lt;body&gt; fully loads thanks to a function. Again, for convenience's sake.</p>
+			<p>La dernière chose automatisée est la couleur de fond de certains textes dans les leçons, appelé "highlighting". Vous voyez, le texte comme &lt;body&gt; ou "body" diffère du texte normal, car ils ont un élément &lt;span&gt; avec une classe CSS. Mais ces éléments ne sont pas dans le &lt;body&gt; de base des leçons; ils sont ajoutés automatiquement une fois que le  &lt;body&gt; est chargé complètement grâce à une fonction. Une nouvelle fois pour rendre les choses pratiques.</p>
 
-			<p>This function basically goes through all of the lesson's paragraphs' "childNodes" and does its best to detect stuff that should be highlighted.<br>You may ask yourself, what "should be highlighted"? Figure it out by yourself, read more lessons or read the code!</p>
+			<p>Cette fonction va à travers les "childNodes" de chaque paragraphe d'une leçon, et fait de son mieux pour détecter ce qui devrait être affecté par le "highlight".<br>Si vous vous demandez "qu'est-ce qui devrait être affecté par ça ?", découvrez ça par vous-même, lisez plus de leçons ou jetez un oeil au code !</p>
 
-			<p>By now, you should have a great understanding of how CyberPop works!<br>I really hope to see you get involved with this website's development one way or another!</p>
+			<p>Vous devriez désormais comprendre à peu près tout à propos de comment CyberPop fonctionne !<br>J'espère vraiment vous voir faire quelque chose pour le développement de CyberPop, d'une façon ou d'une autre !</p>
 		</div>
 
 		<div class="other-lessons">
